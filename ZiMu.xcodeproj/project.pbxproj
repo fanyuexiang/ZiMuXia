@@ -1,0 +1,777 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21D6657EF54483DFF4CDD13A /* Pods_ZiMu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4829B6B8EC2A1EDF62A3DBEA /* Pods_ZiMu.framework */; };
+		2C10DB632067773F00AE28F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB622067773F00AE28F8 /* ViewController.swift */; };
+		2C10DB662067773F00AE28F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DB642067773F00AE28F8 /* Main.storyboard */; };
+		2C10DB6B2067773F00AE28F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DB692067773F00AE28F8 /* LaunchScreen.storyboard */; };
+		2C10DB7B2067880100AE28F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB742067880100AE28F8 /* AppDelegate.swift */; };
+		2C10DB7C2067880100AE28F8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DB752067880100AE28F8 /* Info.plist */; };
+		2C10DB7E20678C4800AE28F8 /* ZMNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB7D20678C4800AE28F8 /* ZMNetWork.swift */; };
+		2C10DB8120678D3200AE28F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DB8020678D3100AE28F8 /* Assets.xcassets */; };
+		2C10DB8920678DFD00AE28F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB8820678DFD00AE28F8 /* Constants.swift */; };
+		2C10DB8C20678E7900AE28F8 /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB8B20678E7900AE28F8 /* Device.generated.swift */; };
+		2C10DB9920678EAB00AE28F8 /* TYTabPagerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB9020678EAB00AE28F8 /* TYTabPagerBar.m */; };
+		2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB9220678EAB00AE28F8 /* TYTabPagerBarCell.m */; };
+		2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB9420678EAB00AE28F8 /* TYTabPagerBarLayout.m */; };
+		2C10DB9C20678EAB00AE28F8 /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB9620678EAB00AE28F8 /* TYPagerController.m */; };
+		2C10DB9D20678EAB00AE28F8 /* TYPagerViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB9820678EAB00AE28F8 /* TYPagerViewLayout.m */; };
+		2C10DBA120678F8100AE28F8 /* QMUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBA020678F8100AE28F8 /* QMUIKit.framework */; };
+		2C10DBA220678F9600AE28F8 /* QMUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBA020678F8100AE28F8 /* QMUIKit.framework */; };
+		2C10DBA320678F9600AE28F8 /* QMUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBA020678F8100AE28F8 /* QMUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C10DBAA2067A4E900AE28F8 /* ZMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBA92067A4E900AE28F8 /* ZMViewController.swift */; };
+		2C10DBAC2067A50200AE28F8 /* ZMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBAB2067A50200AE28F8 /* ZMTableViewController.swift */; };
+		2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBAD2067A51B00AE28F8 /* ZMNavigationController.swift */; };
+		2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBAF2067A57700AE28F8 /* ZMTabBarController.swift */; };
+		2C10DBB32067A6CA00AE28F8 /* ZMUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBB22067A6CA00AE28F8 /* ZMUtils.swift */; };
+		2C10DBB52067A81E00AE28F8 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBB42067A81E00AE28F8 /* AppColor.swift */; };
+		2C10DBB72067AA1300AE28F8 /* ZMMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBB62067AA1300AE28F8 /* ZMMainViewController.swift */; };
+		2C10DBB92067AA6000AE28F8 /* ZMBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBB82067AA6000AE28F8 /* ZMBaseModel.swift */; };
+		2C10DBBB2067AA8600AE28F8 /* ZMMainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBBA2067AA8600AE28F8 /* ZMMainModels.swift */; };
+		2C10DBC42067B32B00AE28F8 /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBBD2067B32A00AE28F8 /* FSPageControl.swift */; };
+		2C10DBC52067B32B00AE28F8 /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBBE2067B32A00AE28F8 /* FSPagerCollectionView.swift */; };
+		2C10DBC62067B32B00AE28F8 /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBBF2067B32A00AE28F8 /* FSPagerView.swift */; };
+		2C10DBC72067B32B00AE28F8 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBC02067B32A00AE28F8 /* FSPagerViewCell.swift */; };
+		2C10DBC82067B32B00AE28F8 /* FSPagerViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBC12067B32A00AE28F8 /* FSPagerViewLayoutAttributes.swift */; };
+		2C10DBC92067B32B00AE28F8 /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBC22067B32A00AE28F8 /* FSPageViewLayout.swift */; };
+		2C10DBCA2067B32B00AE28F8 /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBC32067B32A00AE28F8 /* FSPageViewTransformer.swift */; };
+		2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBCD2067C82B00AE28F8 /* TFHpple.m */; };
+		2C10DBD32067C82B00AE28F8 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBCF2067C82B00AE28F8 /* TFHppleElement.m */; };
+		2C10DBD42067C82B00AE28F8 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBD12067C82B00AE28F8 /* XPathQuery.m */; };
+		2C10DBD82067C98800AE28F8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBD72067C98800AE28F8 /* libxml2.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C10DBA420678F9600AE28F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C10DBA320678F9600AE28F8 /* QMUIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0746CB88869458A538AF2B86 /* Pods-ZiMu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiMu.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu.release.xcconfig"; sourceTree = "<group>"; };
+		2C10DB5D2067773F00AE28F8 /* ZiMu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZiMu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C10DB622067773F00AE28F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2C10DB652067773F00AE28F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C10DB6A2067773F00AE28F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C10DB742067880100AE28F8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C10DB752067880100AE28F8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C10DB7D20678C4800AE28F8 /* ZMNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMNetWork.swift; sourceTree = "<group>"; };
+		2C10DB8020678D3100AE28F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C10DB8820678DFD00AE28F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C10DB8B20678E7900AE28F8 /* Device.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.generated.swift; sourceTree = "<group>"; };
+		2C10DB8F20678EAB00AE28F8 /* TYTabPagerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerBar.h; sourceTree = "<group>"; };
+		2C10DB9020678EAB00AE28F8 /* TYTabPagerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerBar.m; sourceTree = "<group>"; };
+		2C10DB9120678EAB00AE28F8 /* TYTabPagerBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerBarCell.h; sourceTree = "<group>"; };
+		2C10DB9220678EAB00AE28F8 /* TYTabPagerBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerBarCell.m; sourceTree = "<group>"; };
+		2C10DB9320678EAB00AE28F8 /* TYTabPagerBarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerBarLayout.h; sourceTree = "<group>"; };
+		2C10DB9420678EAB00AE28F8 /* TYTabPagerBarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerBarLayout.m; sourceTree = "<group>"; };
+		2C10DB9520678EAB00AE28F8 /* TYPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerController.h; sourceTree = "<group>"; };
+		2C10DB9620678EAB00AE28F8 /* TYPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerController.m; sourceTree = "<group>"; };
+		2C10DB9720678EAB00AE28F8 /* TYPagerViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerViewLayout.h; sourceTree = "<group>"; };
+		2C10DB9820678EAB00AE28F8 /* TYPagerViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerViewLayout.m; sourceTree = "<group>"; };
+		2C10DB9E20678ED100AE28F8 /* ZiMu_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZiMu_Bridging_Header.h; sourceTree = "<group>"; };
+		2C10DBA020678F8100AE28F8 /* QMUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QMUIKit.framework; sourceTree = "<group>"; };
+		2C10DBA92067A4E900AE28F8 /* ZMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMViewController.swift; sourceTree = "<group>"; };
+		2C10DBAB2067A50200AE28F8 /* ZMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMTableViewController.swift; sourceTree = "<group>"; };
+		2C10DBAD2067A51B00AE28F8 /* ZMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMNavigationController.swift; sourceTree = "<group>"; };
+		2C10DBAF2067A57700AE28F8 /* ZMTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMTabBarController.swift; sourceTree = "<group>"; };
+		2C10DBB22067A6CA00AE28F8 /* ZMUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMUtils.swift; sourceTree = "<group>"; };
+		2C10DBB42067A81E00AE28F8 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		2C10DBB62067AA1300AE28F8 /* ZMMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViewController.swift; sourceTree = "<group>"; };
+		2C10DBB82067AA6000AE28F8 /* ZMBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMBaseModel.swift; sourceTree = "<group>"; };
+		2C10DBBA2067AA8600AE28F8 /* ZMMainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainModels.swift; sourceTree = "<group>"; };
+		2C10DBBD2067B32A00AE28F8 /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
+		2C10DBBE2067B32A00AE28F8 /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerCollectionView.swift; sourceTree = "<group>"; };
+		2C10DBBF2067B32A00AE28F8 /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
+		2C10DBC02067B32A00AE28F8 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
+		2C10DBC12067B32A00AE28F8 /* FSPagerViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewLayoutAttributes.swift; sourceTree = "<group>"; };
+		2C10DBC22067B32A00AE28F8 /* FSPageViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewLayout.swift; sourceTree = "<group>"; };
+		2C10DBC32067B32A00AE28F8 /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewTransformer.swift; sourceTree = "<group>"; };
+		2C10DBCC2067C82B00AE28F8 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		2C10DBCD2067C82B00AE28F8 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		2C10DBCE2067C82B00AE28F8 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		2C10DBCF2067C82B00AE28F8 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		2C10DBD02067C82B00AE28F8 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		2C10DBD12067C82B00AE28F8 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		2C10DBD52067C8E800AE28F8 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		2C10DBD72067C98800AE28F8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		4829B6B8EC2A1EDF62A3DBEA /* Pods_ZiMu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiMu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF742C6C6FDB31DF7E2746CE /* Pods-ZiMu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiMu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C10DB5A2067773F00AE28F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C10DBD82067C98800AE28F8 /* libxml2.tbd in Frameworks */,
+				2C10DBA220678F9600AE28F8 /* QMUIKit.framework in Frameworks */,
+				21D6657EF54483DFF4CDD13A /* Pods_ZiMu.framework in Frameworks */,
+				2C10DBA120678F8100AE28F8 /* QMUIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C10DB542067773F00AE28F8 = {
+			isa = PBXGroup;
+			children = (
+				2C10DB5F2067773F00AE28F8 /* ZiMu */,
+				2C10DB5E2067773F00AE28F8 /* Products */,
+				6EEDE80795708BA51ACA35AA /* Pods */,
+				DB338A0A890F8AA0FAD3E442 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C10DB5E2067773F00AE28F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB5D2067773F00AE28F8 /* ZiMu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C10DB5F2067773F00AE28F8 /* ZiMu */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB722067880100AE28F8 /* Classes */,
+				2C10DB622067773F00AE28F8 /* ViewController.swift */,
+				2C10DB642067773F00AE28F8 /* Main.storyboard */,
+				2C10DB692067773F00AE28F8 /* LaunchScreen.storyboard */,
+			);
+			path = ZiMu;
+			sourceTree = "<group>";
+		};
+		2C10DB722067880100AE28F8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB732067880100AE28F8 /* AppDelegate */,
+				2C10DB8220678DAD00AE28F8 /* Common */,
+				2C10DB772067880100AE28F8 /* Modules */,
+				2C10DB782067880100AE28F8 /* Network */,
+				2C10DB792067880100AE28F8 /* Resource */,
+				2C10DB7A2067880100AE28F8 /* ThirdParty */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2C10DB732067880100AE28F8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB742067880100AE28F8 /* AppDelegate.swift */,
+				2C10DB752067880100AE28F8 /* Info.plist */,
+				2C10DB9E20678ED100AE28F8 /* ZiMu_Bridging_Header.h */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		2C10DB772067880100AE28F8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBA52067A38200AE28F8 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2C10DB782067880100AE28F8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB7D20678C4800AE28F8 /* ZMNetWork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2C10DB792067880100AE28F8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB9F20678F8100AE28F8 /* Framework */,
+				2C10DB7F20678D3100AE28F8 /* Assets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2C10DB7A2067880100AE28F8 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBCB2067C82B00AE28F8 /* TFHpple */,
+				2C10DBBC2067B32A00AE28F8 /* FSPagerView */,
+				2C10DB8D20678EAB00AE28F8 /* TYPagerController */,
+				2C10DB8A20678E7900AE28F8 /* DeviceKit */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		2C10DB7F20678D3100AE28F8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB8020678D3100AE28F8 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2C10DB8220678DAD00AE28F8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB8320678DAD00AE28F8 /* Base */,
+				2C10DB8420678DAD00AE28F8 /* Constant */,
+				2C10DB8520678DAD00AE28F8 /* Extension */,
+				2C10DB8620678DAD00AE28F8 /* Protocol */,
+				2C10DBB12067A63200AE28F8 /* Tool */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2C10DB8320678DAD00AE28F8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBA92067A4E900AE28F8 /* ZMViewController.swift */,
+				2C10DBAB2067A50200AE28F8 /* ZMTableViewController.swift */,
+				2C10DBAD2067A51B00AE28F8 /* ZMNavigationController.swift */,
+				2C10DBB82067AA6000AE28F8 /* ZMBaseModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2C10DB8420678DAD00AE28F8 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB8820678DFD00AE28F8 /* Constants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		2C10DB8520678DAD00AE28F8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2C10DB8620678DAD00AE28F8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		2C10DB8A20678E7900AE28F8 /* DeviceKit */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB8B20678E7900AE28F8 /* Device.generated.swift */,
+			);
+			path = DeviceKit;
+			sourceTree = "<group>";
+		};
+		2C10DB8D20678EAB00AE28F8 /* TYPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB8E20678EAB00AE28F8 /* TabPager */,
+				2C10DB9520678EAB00AE28F8 /* TYPagerController.h */,
+				2C10DB9620678EAB00AE28F8 /* TYPagerController.m */,
+				2C10DB9720678EAB00AE28F8 /* TYPagerViewLayout.h */,
+				2C10DB9820678EAB00AE28F8 /* TYPagerViewLayout.m */,
+			);
+			path = TYPagerController;
+			sourceTree = "<group>";
+		};
+		2C10DB8E20678EAB00AE28F8 /* TabPager */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DB8F20678EAB00AE28F8 /* TYTabPagerBar.h */,
+				2C10DB9020678EAB00AE28F8 /* TYTabPagerBar.m */,
+				2C10DB9120678EAB00AE28F8 /* TYTabPagerBarCell.h */,
+				2C10DB9220678EAB00AE28F8 /* TYTabPagerBarCell.m */,
+				2C10DB9320678EAB00AE28F8 /* TYTabPagerBarLayout.h */,
+				2C10DB9420678EAB00AE28F8 /* TYTabPagerBarLayout.m */,
+			);
+			path = TabPager;
+			sourceTree = "<group>";
+		};
+		2C10DB9F20678F8100AE28F8 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBA020678F8100AE28F8 /* QMUIKit.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		2C10DBA52067A38200AE28F8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBA62067A38200AE28F8 /* Controller */,
+				2C10DBA72067A38200AE28F8 /* Model */,
+				2C10DBA82067A38200AE28F8 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2C10DBA62067A38200AE28F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBAF2067A57700AE28F8 /* ZMTabBarController.swift */,
+				2C10DBB62067AA1300AE28F8 /* ZMMainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2C10DBA72067A38200AE28F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBBA2067AA8600AE28F8 /* ZMMainModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C10DBA82067A38200AE28F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C10DBB12067A63200AE28F8 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBB22067A6CA00AE28F8 /* ZMUtils.swift */,
+				2C10DBB42067A81E00AE28F8 /* AppColor.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		2C10DBBC2067B32A00AE28F8 /* FSPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBBD2067B32A00AE28F8 /* FSPageControl.swift */,
+				2C10DBBE2067B32A00AE28F8 /* FSPagerCollectionView.swift */,
+				2C10DBBF2067B32A00AE28F8 /* FSPagerView.swift */,
+				2C10DBC02067B32A00AE28F8 /* FSPagerViewCell.swift */,
+				2C10DBC12067B32A00AE28F8 /* FSPagerViewLayoutAttributes.swift */,
+				2C10DBC22067B32A00AE28F8 /* FSPageViewLayout.swift */,
+				2C10DBC32067B32A00AE28F8 /* FSPageViewTransformer.swift */,
+			);
+			path = FSPagerView;
+			sourceTree = "<group>";
+		};
+		2C10DBCB2067C82B00AE28F8 /* TFHpple */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBCC2067C82B00AE28F8 /* TFHpple.h */,
+				2C10DBCD2067C82B00AE28F8 /* TFHpple.m */,
+				2C10DBCE2067C82B00AE28F8 /* TFHppleElement.h */,
+				2C10DBCF2067C82B00AE28F8 /* TFHppleElement.m */,
+				2C10DBD02067C82B00AE28F8 /* XPathQuery.h */,
+				2C10DBD12067C82B00AE28F8 /* XPathQuery.m */,
+			);
+			path = TFHpple;
+			sourceTree = "<group>";
+		};
+		6EEDE80795708BA51ACA35AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF742C6C6FDB31DF7E2746CE /* Pods-ZiMu.debug.xcconfig */,
+				0746CB88869458A538AF2B86 /* Pods-ZiMu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB338A0A890F8AA0FAD3E442 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBD72067C98800AE28F8 /* libxml2.tbd */,
+				2C10DBD52067C8E800AE28F8 /* libxml2.2.tbd */,
+				4829B6B8EC2A1EDF62A3DBEA /* Pods_ZiMu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C10DB5C2067773F00AE28F8 /* ZiMu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C10DB6F2067773F00AE28F8 /* Build configuration list for PBXNativeTarget "ZiMu" */;
+			buildPhases = (
+				74BE40A03F47DB17F35F87F5 /* [CP] Check Pods Manifest.lock */,
+				2C10DB592067773F00AE28F8 /* Sources */,
+				2C10DB5A2067773F00AE28F8 /* Frameworks */,
+				2C10DB5B2067773F00AE28F8 /* Resources */,
+				E00B8CAEB7A848D5B3875677 /* [CP] Embed Pods Frameworks */,
+				BECC0772C1A45AA33DF7913D /* [CP] Copy Pods Resources */,
+				2C10DBA420678F9600AE28F8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZiMu;
+			productName = ZiMu;
+			productReference = 2C10DB5D2067773F00AE28F8 /* ZiMu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C10DB552067773F00AE28F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZM;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Fancy;
+				TargetAttributes = {
+					2C10DB5C2067773F00AE28F8 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2C10DB582067773F00AE28F8 /* Build configuration list for PBXProject "ZiMu" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C10DB542067773F00AE28F8;
+			productRefGroup = 2C10DB5E2067773F00AE28F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C10DB5C2067773F00AE28F8 /* ZiMu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C10DB5B2067773F00AE28F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C10DB7C2067880100AE28F8 /* Info.plist in Resources */,
+				2C10DB6B2067773F00AE28F8 /* LaunchScreen.storyboard in Resources */,
+				2C10DB8120678D3200AE28F8 /* Assets.xcassets in Resources */,
+				2C10DB662067773F00AE28F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74BE40A03F47DB17F35F87F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZiMu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BECC0772C1A45AA33DF7913D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E00B8CAEB7A848D5B3875677 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C10DB592067773F00AE28F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C10DB7B2067880100AE28F8 /* AppDelegate.swift in Sources */,
+				2C10DBB92067AA6000AE28F8 /* ZMBaseModel.swift in Sources */,
+				2C10DB632067773F00AE28F8 /* ViewController.swift in Sources */,
+				2C10DB9C20678EAB00AE28F8 /* TYPagerController.m in Sources */,
+				2C10DBC82067B32B00AE28F8 /* FSPagerViewLayoutAttributes.swift in Sources */,
+				2C10DB9D20678EAB00AE28F8 /* TYPagerViewLayout.m in Sources */,
+				2C10DBC62067B32B00AE28F8 /* FSPagerView.swift in Sources */,
+				2C10DBAC2067A50200AE28F8 /* ZMTableViewController.swift in Sources */,
+				2C10DBD32067C82B00AE28F8 /* TFHppleElement.m in Sources */,
+				2C10DBB72067AA1300AE28F8 /* ZMMainViewController.swift in Sources */,
+				2C10DBAA2067A4E900AE28F8 /* ZMViewController.swift in Sources */,
+				2C10DB7E20678C4800AE28F8 /* ZMNetWork.swift in Sources */,
+				2C10DB8C20678E7900AE28F8 /* Device.generated.swift in Sources */,
+				2C10DBC52067B32B00AE28F8 /* FSPagerCollectionView.swift in Sources */,
+				2C10DB9920678EAB00AE28F8 /* TYTabPagerBar.m in Sources */,
+				2C10DBC72067B32B00AE28F8 /* FSPagerViewCell.swift in Sources */,
+				2C10DBD42067C82B00AE28F8 /* XPathQuery.m in Sources */,
+				2C10DBB52067A81E00AE28F8 /* AppColor.swift in Sources */,
+				2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */,
+				2C10DBC92067B32B00AE28F8 /* FSPageViewLayout.swift in Sources */,
+				2C10DBCA2067B32B00AE28F8 /* FSPageViewTransformer.swift in Sources */,
+				2C10DBC42067B32B00AE28F8 /* FSPageControl.swift in Sources */,
+				2C10DB8920678DFD00AE28F8 /* Constants.swift in Sources */,
+				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
+				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
+				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
+				2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */,
+				2C10DBB32067A6CA00AE28F8 /* ZMUtils.swift in Sources */,
+				2C10DBBB2067AA8600AE28F8 /* ZMMainModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C10DB642067773F00AE28F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C10DB652067773F00AE28F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2C10DB692067773F00AE28F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C10DB6A2067773F00AE28F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C10DB6D2067773F00AE28F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2C10DB6E2067773F00AE28F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C10DB702067773F00AE28F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF742C6C6FDB31DF7E2746CE /* Pods-ZiMu.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZiMu/Classes/Resource/Framework",
+				);
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
+				INFOPLIST_FILE = "$(SRCROOT)/ZiMu/Classes/AppDelegate/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fancy.ZiMu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ZiMu/Classes/AppDelegate/ZiMu_Bridging_Header.h;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2C10DB712067773F00AE28F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0746CB88869458A538AF2B86 /* Pods-ZiMu.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZiMu/Classes/Resource/Framework",
+				);
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
+				INFOPLIST_FILE = "$(SRCROOT)/ZiMu/Classes/AppDelegate/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fancy.ZiMu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ZiMu/Classes/AppDelegate/ZiMu_Bridging_Header.h;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C10DB582067773F00AE28F8 /* Build configuration list for PBXProject "ZiMu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C10DB6D2067773F00AE28F8 /* Debug */,
+				2C10DB6E2067773F00AE28F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C10DB6F2067773F00AE28F8 /* Build configuration list for PBXNativeTarget "ZiMu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C10DB702067773F00AE28F8 /* Debug */,
+				2C10DB712067773F00AE28F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C10DB552067773F00AE28F8 /* Project object */;
+}
