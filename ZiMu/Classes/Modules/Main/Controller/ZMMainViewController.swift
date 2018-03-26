@@ -143,14 +143,14 @@ extension ZMMainViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ZMMovieCollectionViewCell.CellIdentifier, for: indexPath) as! ZMMovieCollectionViewCell
+        let cell = collectionView.cellForItem(at: indexPath) as! ZMMovieCollectionViewCell
         UIView.animate(withDuration: 0.2) {
             cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ZMMovieCollectionViewCell.CellIdentifier, for: indexPath) as! ZMMovieCollectionViewCell
+        let cell = collectionView.cellForItem(at: indexPath) as! ZMMovieCollectionViewCell
         UIView.animate(withDuration: 0.2) {
             cell.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
@@ -175,7 +175,7 @@ extension ZMMainViewController: UICollectionViewDelegate, UICollectionViewDataSo
         } else {
             scale = 0.66
         }
-        leftItemLabel.transform = CGAffineTransform.init(scaleX: scale, y: scale)
+        leftItemLabel.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
     
 }

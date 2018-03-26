@@ -28,7 +28,7 @@ protocol  RequestTarget {
 
 extension RequestTarget {
     var BaseUrl: String {
-        return "http://www.zimuxia.cn/"
+        return "https://pixabay.com/api/"
     }
     
     var encoding: URLEncoding {

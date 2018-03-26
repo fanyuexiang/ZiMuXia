@@ -44,6 +44,10 @@
 		2C10DBD32067C82B00AE28F8 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBCF2067C82B00AE28F8 /* TFHppleElement.m */; };
 		2C10DBD42067C82B00AE28F8 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBD12067C82B00AE28F8 /* XPathQuery.m */; };
 		2C10DBD82067C98800AE28F8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBD72067C98800AE28F8 /* libxml2.tbd */; };
+		2C10DBE92069362A00AE28F8 /* ZMClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBE62069362A00AE28F8 /* ZMClassificationViewController.swift */; };
+		2C10DBEA2069362A00AE28F8 /* ZMClassificationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBE82069362A00AE28F8 /* ZMClassificationViews.swift */; };
+		2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBEB20693D1300AE28F8 /* PixabayAPI.swift */; };
+		2C10DBEF206940BE00AE28F8 /* ZMClassificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBEE206940BE00AE28F8 /* ZMClassificationModels.swift */; };
 		B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B812068C0E700773368 /* ZMMainViews.swift */; };
 		B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B832068C25200773368 /* UILabel+ZM.swift */; };
 		B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B852068C4DA00773368 /* CGFloat+WT.swift */; };
@@ -54,7 +58,6 @@
 		B1954B932068EAAC00773368 /* ZJFlexibleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B8F2068EAAC00773368 /* ZJFlexibleDataSource.swift */; };
 		B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */; };
 		B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B952068F77800773368 /* ZMRefreshControl.swift */; };
-		B1954B9A2068FDE300773368 /* ZMClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B992068FDE300773368 /* ZMClassificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +122,10 @@
 		2C10DBD12067C82B00AE28F8 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		2C10DBD52067C8E800AE28F8 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		2C10DBD72067C98800AE28F8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		2C10DBE62069362A00AE28F8 /* ZMClassificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMClassificationViewController.swift; sourceTree = "<group>"; };
+		2C10DBE82069362A00AE28F8 /* ZMClassificationViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMClassificationViews.swift; sourceTree = "<group>"; };
+		2C10DBEB20693D1300AE28F8 /* PixabayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayAPI.swift; sourceTree = "<group>"; };
+		2C10DBEE206940BE00AE28F8 /* ZMClassificationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMClassificationModels.swift; sourceTree = "<group>"; };
 		4829B6B8EC2A1EDF62A3DBEA /* Pods_ZiMu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiMu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1954B812068C0E700773368 /* ZMMainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViews.swift; sourceTree = "<group>"; };
 		B1954B832068C25200773368 /* UILabel+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ZM.swift"; sourceTree = "<group>"; };
@@ -131,7 +138,6 @@
 		B1954B8F2068EAAC00773368 /* ZJFlexibleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJFlexibleDataSource.swift; sourceTree = "<group>"; };
 		B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJFlexibleLayout.swift; sourceTree = "<group>"; };
 		B1954B952068F77800773368 /* ZMRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMRefreshControl.swift; sourceTree = "<group>"; };
-		B1954B992068FDE300773368 /* ZMClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMClassificationViewController.swift; sourceTree = "<group>"; };
 		EF742C6C6FDB31DF7E2746CE /* Pods-ZiMu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiMu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,7 +211,7 @@
 		2C10DB772067880100AE28F8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B1954B972068FC8F00773368 /* Cassification */,
+				2C10DBE42069362A00AE28F8 /* Classification */,
 				2C10DBA52067A38200AE28F8 /* Main */,
 			);
 			path = Modules;
@@ -215,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				2C10DB7D20678C4800AE28F8 /* ZMNetWork.swift */,
+				2C10DBEB20693D1300AE28F8 /* PixabayAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -411,6 +418,40 @@
 			path = TFHpple;
 			sourceTree = "<group>";
 		};
+		2C10DBE42069362A00AE28F8 /* Classification */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBE52069362A00AE28F8 /* Controller */,
+				2C10DBE72069362A00AE28F8 /* View */,
+				2C10DBED2069409600AE28F8 /* Model */,
+			);
+			path = Classification;
+			sourceTree = "<group>";
+		};
+		2C10DBE52069362A00AE28F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBE62069362A00AE28F8 /* ZMClassificationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2C10DBE72069362A00AE28F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBE82069362A00AE28F8 /* ZMClassificationViews.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C10DBED2069409600AE28F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C10DBEE206940BE00AE28F8 /* ZMClassificationModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6EEDE80795708BA51ACA35AA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,22 +470,6 @@
 				B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */,
 			);
 			path = ZJFlexibleLayout;
-			sourceTree = "<group>";
-		};
-		B1954B972068FC8F00773368 /* Cassification */ = {
-			isa = PBXGroup;
-			children = (
-				B1954B982068FC8F00773368 /* Controller */,
-			);
-			path = Cassification;
-			sourceTree = "<group>";
-		};
-		B1954B982068FC8F00773368 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B1954B992068FDE300773368 /* ZMClassificationViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		DB338A0A890F8AA0FAD3E442 /* Frameworks */ = {
@@ -619,19 +644,22 @@
 				2C10DBAC2067A50200AE28F8 /* ZMTableViewController.swift in Sources */,
 				B1954B922068EAAC00773368 /* Utils.swift in Sources */,
 				2C10DBD32067C82B00AE28F8 /* TFHppleElement.m in Sources */,
+				2C10DBEF206940BE00AE28F8 /* ZMClassificationModels.swift in Sources */,
 				B1954B912068EAAC00773368 /* ColPosition.swift in Sources */,
 				2C10DBB72067AA1300AE28F8 /* ZMMainViewController.swift in Sources */,
 				2C10DBAA2067A4E900AE28F8 /* ZMViewController.swift in Sources */,
 				2C10DB7E20678C4800AE28F8 /* ZMNetWork.swift in Sources */,
+				2C10DBEA2069362A00AE28F8 /* ZMClassificationViews.swift in Sources */,
 				2C10DB8C20678E7900AE28F8 /* Device.generated.swift in Sources */,
 				2C10DBC52067B32B00AE28F8 /* FSPagerCollectionView.swift in Sources */,
 				2C10DB9920678EAB00AE28F8 /* TYTabPagerBar.m in Sources */,
 				B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */,
 				2C10DBC72067B32B00AE28F8 /* FSPagerViewCell.swift in Sources */,
 				2C10DBD42067C82B00AE28F8 /* XPathQuery.m in Sources */,
-				B1954B9A2068FDE300773368 /* ZMClassificationViewController.swift in Sources */,
+				2C10DBE92069362A00AE28F8 /* ZMClassificationViewController.swift in Sources */,
 				2C10DBB52067A81E00AE28F8 /* AppColor.swift in Sources */,
 				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
+				2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */,
 				2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */,
 				2C10DBC92067B32B00AE28F8 /* FSPageViewLayout.swift in Sources */,
 				2C10DBCA2067B32B00AE28F8 /* FSPageViewTransformer.swift in Sources */,
