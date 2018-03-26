@@ -19,12 +19,12 @@ final class WTTabBarController: ESTabBarController {
     
     fileprivate func setupChildControllers() {
         let msgVC = ZMNavigationController(rootViewController: ZMMainViewController())
-        let findVC = ZMNavigationController(rootViewController: ViewController())
+        let findVC = ZMNavigationController(rootViewController: ZMClassificationViewController())
         let mineVC = ZMNavigationController(rootViewController: ViewController())
     
-        msgVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: nil, image: UIImage(named: "icon_tabbar_msg_nor"), selectedImage: UIImage(named: "icon_tabbar_msg_sel"))
-        findVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: nil, image: UIImage(named: "icon_tabbar_search_nor"), selectedImage: UIImage(named: "icon_tabbar_search_sel"))
-        mineVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: nil, image: UIImage(named: "icon_tabbar_mine_nor"), selectedImage: UIImage(named: "icon_tabbar_mine_sel"))
+        msgVC.tabBarItem = ESTabBarItem.init(WTBaseTabBarItemContentView(), title: nil, image: UIImage(named: "tabbar_movie_def"), selectedImage: UIImage(named: "tabbar_movie_sel"))
+        findVC.tabBarItem = ESTabBarItem.init(WTBaseTabBarItemContentView(), title: nil, image: UIImage(named: "tabbar_tv_def"), selectedImage: UIImage(named: "tabbar_tv_sel"))
+        mineVC.tabBarItem = ESTabBarItem.init(WTBaseTabBarItemContentView(), title: nil, image: UIImage(named: "tabbar_mine_def"), selectedImage: UIImage(named: "tabbar_mine_sel"))
         viewControllers = [msgVC, findVC, mineVC]
     }
     

@@ -55,13 +55,8 @@ class ZMError {
     static let otherError: NSError = NSError(domain: "Server", code: -999, userInfo: [NSLocalizedDescriptionKey: "其他错误"])
     
     class func handleError(_ error: Error?) -> Void {
-        // 过滤状态码非200和0(服务器返回逻辑错误码为0)
         if error == nil { return }
         guard let error = error as NSError? else { return }
-        if error.code != 200 && error.code != 0 {
-            dPrint(message: error.localizedDescription)
-            return
-        }
         let msg: String = error.localizedDescription
         QMUITips.show(withText: msg)
     }

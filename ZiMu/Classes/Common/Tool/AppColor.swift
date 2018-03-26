@@ -12,7 +12,8 @@ import QMUIKit
 struct AppColor {
 
     struct theme {
-        static let titleColor = UIColor.qmui_color(withHexString: "#333333")
-        static let subTitleColor = UIColor.qmui_color(withHexString: "#666666")
+        static let titleColor = UIColor.qmui_color(withHexString: "#333333")!
+        static let subTitleColor = UIColor.qmui_color(withHexString: "#666666")!
+        static let separateYellow = UIColor.qmui_color(withHexString: "#F5D547")!
     }
 }

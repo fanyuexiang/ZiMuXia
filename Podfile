@@ -11,7 +11,8 @@ def common_pods
     pod 'IQKeyboardManagerSwift'
     pod 'ESTabBarController-swift'
     pod 'SKPhotoBrowser'
-    
+    pod 'MJRefresh'
+    pod 'GTMWebKit'
 end
 
 def sdk_pods

@@ -12,7 +12,6 @@
 		2C10DB662067773F00AE28F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DB642067773F00AE28F8 /* Main.storyboard */; };
 		2C10DB6B2067773F00AE28F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DB692067773F00AE28F8 /* LaunchScreen.storyboard */; };
 		2C10DB7B2067880100AE28F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB742067880100AE28F8 /* AppDelegate.swift */; };
-		2C10DB7C2067880100AE28F8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DB752067880100AE28F8 /* Info.plist */; };
 		2C10DB7E20678C4800AE28F8 /* ZMNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB7D20678C4800AE28F8 /* ZMNetWork.swift */; };
 		2C10DB8120678D3200AE28F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DB8020678D3100AE28F8 /* Assets.xcassets */; };
 		2C10DB8920678DFD00AE28F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB8820678DFD00AE28F8 /* Constants.swift */; };
@@ -45,6 +44,17 @@
 		2C10DBD32067C82B00AE28F8 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBCF2067C82B00AE28F8 /* TFHppleElement.m */; };
 		2C10DBD42067C82B00AE28F8 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBD12067C82B00AE28F8 /* XPathQuery.m */; };
 		2C10DBD82067C98800AE28F8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBD72067C98800AE28F8 /* libxml2.tbd */; };
+		B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B812068C0E700773368 /* ZMMainViews.swift */; };
+		B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B832068C25200773368 /* UILabel+ZM.swift */; };
+		B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B852068C4DA00773368 /* CGFloat+WT.swift */; };
+		B1954B892068C4DB00773368 /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = B1954B862068C4DB00773368 /* UIImageView+CornerRadius.m */; };
+		B1954B8B2068C6DF00773368 /* UIImageView+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B8A2068C6DF00773368 /* UIImageView+ZM.swift */; };
+		B1954B912068EAAC00773368 /* ColPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B8D2068EAAC00773368 /* ColPosition.swift */; };
+		B1954B922068EAAC00773368 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B8E2068EAAC00773368 /* Utils.swift */; };
+		B1954B932068EAAC00773368 /* ZJFlexibleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B8F2068EAAC00773368 /* ZJFlexibleDataSource.swift */; };
+		B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */; };
+		B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B952068F77800773368 /* ZMRefreshControl.swift */; };
+		B1954B9A2068FDE300773368 /* ZMClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B992068FDE300773368 /* ZMClassificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,6 +120,18 @@
 		2C10DBD52067C8E800AE28F8 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		2C10DBD72067C98800AE28F8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		4829B6B8EC2A1EDF62A3DBEA /* Pods_ZiMu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiMu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1954B812068C0E700773368 /* ZMMainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViews.swift; sourceTree = "<group>"; };
+		B1954B832068C25200773368 /* UILabel+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ZM.swift"; sourceTree = "<group>"; };
+		B1954B852068C4DA00773368 /* CGFloat+WT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+WT.swift"; sourceTree = "<group>"; };
+		B1954B862068C4DB00773368 /* UIImageView+CornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CornerRadius.m"; sourceTree = "<group>"; };
+		B1954B872068C4DB00773368 /* UIImageView+CornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CornerRadius.h"; sourceTree = "<group>"; };
+		B1954B8A2068C6DF00773368 /* UIImageView+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ZM.swift"; sourceTree = "<group>"; };
+		B1954B8D2068EAAC00773368 /* ColPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColPosition.swift; sourceTree = "<group>"; };
+		B1954B8E2068EAAC00773368 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B1954B8F2068EAAC00773368 /* ZJFlexibleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJFlexibleDataSource.swift; sourceTree = "<group>"; };
+		B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJFlexibleLayout.swift; sourceTree = "<group>"; };
+		B1954B952068F77800773368 /* ZMRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMRefreshControl.swift; sourceTree = "<group>"; };
+		B1954B992068FDE300773368 /* ZMClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMClassificationViewController.swift; sourceTree = "<group>"; };
 		EF742C6C6FDB31DF7E2746CE /* Pods-ZiMu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiMu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +205,7 @@
 		2C10DB772067880100AE28F8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B1954B972068FC8F00773368 /* Cassification */,
 				2C10DBA52067A38200AE28F8 /* Main */,
 			);
 			path = Modules;
@@ -208,6 +231,7 @@
 		2C10DB7A2067880100AE28F8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */,
 				2C10DBCB2067C82B00AE28F8 /* TFHpple */,
 				2C10DBBC2067B32A00AE28F8 /* FSPagerView */,
 				2C10DB8D20678EAB00AE28F8 /* TYPagerController */,
@@ -243,6 +267,7 @@
 				2C10DBAB2067A50200AE28F8 /* ZMTableViewController.swift */,
 				2C10DBAD2067A51B00AE28F8 /* ZMNavigationController.swift */,
 				2C10DBB82067AA6000AE28F8 /* ZMBaseModel.swift */,
+				B1954B952068F77800773368 /* ZMRefreshControl.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -258,6 +283,11 @@
 		2C10DB8520678DAD00AE28F8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B1954B852068C4DA00773368 /* CGFloat+WT.swift */,
+				B1954B872068C4DB00773368 /* UIImageView+CornerRadius.h */,
+				B1954B862068C4DB00773368 /* UIImageView+CornerRadius.m */,
+				B1954B832068C25200773368 /* UILabel+ZM.swift */,
+				B1954B8A2068C6DF00773368 /* UIImageView+ZM.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -340,6 +370,7 @@
 		2C10DBA82067A38200AE28F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B1954B812068C0E700773368 /* ZMMainViews.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +418,33 @@
 				0746CB88869458A538AF2B86 /* Pods-ZiMu.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B1954B8D2068EAAC00773368 /* ColPosition.swift */,
+				B1954B8E2068EAAC00773368 /* Utils.swift */,
+				B1954B8F2068EAAC00773368 /* ZJFlexibleDataSource.swift */,
+				B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */,
+			);
+			path = ZJFlexibleLayout;
+			sourceTree = "<group>";
+		};
+		B1954B972068FC8F00773368 /* Cassification */ = {
+			isa = PBXGroup;
+			children = (
+				B1954B982068FC8F00773368 /* Controller */,
+			);
+			path = Cassification;
+			sourceTree = "<group>";
+		};
+		B1954B982068FC8F00773368 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1954B992068FDE300773368 /* ZMClassificationViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		DB338A0A890F8AA0FAD3E442 /* Frameworks */ = {
@@ -463,7 +521,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C10DB7C2067880100AE28F8 /* Info.plist in Resources */,
 				2C10DB6B2067773F00AE28F8 /* LaunchScreen.storyboard in Resources */,
 				2C10DB8120678D3200AE28F8 /* Assets.xcassets in Resources */,
 				2C10DB662067773F00AE28F8 /* Main.storyboard in Resources */,
@@ -515,8 +572,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMWebKit/GTMWebKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -525,8 +584,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMWebKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -544,29 +605,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C10DB7B2067880100AE28F8 /* AppDelegate.swift in Sources */,
+				B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */,
+				B1954B892068C4DB00773368 /* UIImageView+CornerRadius.m in Sources */,
 				2C10DBB92067AA6000AE28F8 /* ZMBaseModel.swift in Sources */,
 				2C10DB632067773F00AE28F8 /* ViewController.swift in Sources */,
+				B1954B8B2068C6DF00773368 /* UIImageView+ZM.swift in Sources */,
+				B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */,
 				2C10DB9C20678EAB00AE28F8 /* TYPagerController.m in Sources */,
 				2C10DBC82067B32B00AE28F8 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				2C10DB9D20678EAB00AE28F8 /* TYPagerViewLayout.m in Sources */,
 				2C10DBC62067B32B00AE28F8 /* FSPagerView.swift in Sources */,
+				B1954B932068EAAC00773368 /* ZJFlexibleDataSource.swift in Sources */,
 				2C10DBAC2067A50200AE28F8 /* ZMTableViewController.swift in Sources */,
+				B1954B922068EAAC00773368 /* Utils.swift in Sources */,
 				2C10DBD32067C82B00AE28F8 /* TFHppleElement.m in Sources */,
+				B1954B912068EAAC00773368 /* ColPosition.swift in Sources */,
 				2C10DBB72067AA1300AE28F8 /* ZMMainViewController.swift in Sources */,
 				2C10DBAA2067A4E900AE28F8 /* ZMViewController.swift in Sources */,
 				2C10DB7E20678C4800AE28F8 /* ZMNetWork.swift in Sources */,
 				2C10DB8C20678E7900AE28F8 /* Device.generated.swift in Sources */,
 				2C10DBC52067B32B00AE28F8 /* FSPagerCollectionView.swift in Sources */,
 				2C10DB9920678EAB00AE28F8 /* TYTabPagerBar.m in Sources */,
+				B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */,
 				2C10DBC72067B32B00AE28F8 /* FSPagerViewCell.swift in Sources */,
 				2C10DBD42067C82B00AE28F8 /* XPathQuery.m in Sources */,
+				B1954B9A2068FDE300773368 /* ZMClassificationViewController.swift in Sources */,
 				2C10DBB52067A81E00AE28F8 /* AppColor.swift in Sources */,
+				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
 				2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */,
 				2C10DBC92067B32B00AE28F8 /* FSPageViewLayout.swift in Sources */,
 				2C10DBCA2067B32B00AE28F8 /* FSPageViewTransformer.swift in Sources */,
 				2C10DBC42067B32B00AE28F8 /* FSPageControl.swift in Sources */,
 				2C10DB8920678DFD00AE28F8 /* Constants.swift in Sources */,
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
+				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
 				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
 				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
 				2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */,
@@ -709,6 +781,7 @@
 			baseConfigurationReference = EF742C6C6FDB31DF7E2746CE /* Pods-ZiMu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -732,6 +805,7 @@
 			baseConfigurationReference = 0746CB88869458A538AF2B86 /* Pods-ZiMu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

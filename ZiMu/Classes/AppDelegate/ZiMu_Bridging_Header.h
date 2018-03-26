@@ -9,6 +9,9 @@
 #ifndef ZiMu_Bridging_Header_h
 #define ZiMu_Bridging_Header_h
 
+// 解析html
 #import "TFHpple.h"
+// 圆角优化
+#import "UIImageView+CornerRadius.h"
 
 #endif /* ZiMu_Bridging_Header_h */
