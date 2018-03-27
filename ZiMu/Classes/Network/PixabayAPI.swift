@@ -40,3 +40,18 @@ extension PixabayAPI {
     }
     
 }
+
+fileprivate func getBgImage() {
+    let q = ""
+    let page = 1
+    let perPage = 10
+    ZMNetWork.shared.getDataFromAPI(requestTarget: PixabayAPI.search(q: q, perPage: perPage, page: page)) { (response, error) in
+        if error != nil {
+            ZMError.handleError(error)
+        } else {
+            response?.mapArray(type: ZMPixabayImage.self, key: "hits", callback: {  (result) in
+                
+            })
+        }
+    }
+}

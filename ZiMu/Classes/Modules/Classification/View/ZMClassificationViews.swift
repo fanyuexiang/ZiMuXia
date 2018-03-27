@@ -22,6 +22,12 @@ final class ZMClassificationCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel(textColor: .white, fontSize: 18.adapted, FontName: kFontMediumName, needShadow: true, shadowColor: .lightGray)
+        label.backgroundColor = AppColor.theme.separateYellow
+        label.layer.borderColor = UIColor.white.cgColor
+        label.layer.borderWidth = 2
+        label.textAlignment = .center
+        label.layer.cornerRadius = 20.adapted
+        label.clipsToBounds = true
         return label
     }()
     
@@ -46,15 +52,17 @@ final class ZMClassificationCell: UITableViewCell {
         titleLabel.snp.makeConstraints {
             $0.centerY.equalTo(self).offset(-10.adapted)
             $0.left.equalTo(self).offset(30.adapted)
+            $0.width.equalTo(100.adapted)
+            $0.height.equalTo(40.adapted)
         }
     }
     
-    public func setupCell(title: String) {
+    public func setupCell(title: String?, img: String?) {
         titleLabel.text = title
+        if let image = img {
+            bgImageView.image = UIImage(named: image)
+        }
     }
     
-    public func setupImageView(with data: ZMPixabayImage) {
-        bgImageView.setImage(url: data.webformatURL)
-    }
 }
 

@@ -20,7 +20,7 @@ final class WTTabBarController: ESTabBarController {
     fileprivate func setupChildControllers() {
         let msgVC = ZMNavigationController(rootViewController: ZMMainViewController())
         let findVC = ZMNavigationController(rootViewController: ZMClassificationViewController())
-        let mineVC = ZMNavigationController(rootViewController: ViewController())
+        let mineVC = ZMNavigationController(rootViewController: ZMAboutViewController(style: .grouped))
     
         msgVC.tabBarItem = ESTabBarItem.init(WTBaseTabBarItemContentView(), title: nil, image: UIImage(named: "tabbar_movie_def"), selectedImage: UIImage(named: "tabbar_movie_sel"))
         findVC.tabBarItem = ESTabBarItem.init(WTBaseTabBarItemContentView(), title: nil, image: UIImage(named: "tabbar_tv_def"), selectedImage: UIImage(named: "tabbar_tv_sel"))

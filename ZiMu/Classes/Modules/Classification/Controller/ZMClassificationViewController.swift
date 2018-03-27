@@ -19,8 +19,12 @@ final class ZMClassificationViewController: ZMTableViewController {
     }()
     
     // data
-    let dataSource = ["英美社","韩语社","日语社","德语社","法语社"]
-    var imageData = [ZMPixabayImage]()
+    let dataSource = [
+                       ["title":"英美社", "img":"img_classification_usa"],
+                       ["title":"韩语社", "img":"img_classification_korea"],
+                       ["title":"日语社", "img":"img_classification_japan"],
+                       ["title":"德语社", "img":"img_classification_germany"],
+                       ["title":"法语社", "img":"img_classification_france"]]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,8 +35,6 @@ final class ZMClassificationViewController: ZMTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
-        // network
-        getBgImage()
     }
     
     override func initTableView() {
@@ -41,6 +43,7 @@ final class ZMClassificationViewController: ZMTableViewController {
         tableView.estimatedSectionFooterHeight = 0
         tableView.estimatedSectionHeaderHeight = 0
         tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 20.adapted, left: 0, bottom: 20.adapted, right: 0)
         tableView.register(ZMClassificationCell.self, forCellReuseIdentifier: ZMClassificationCell.CellIdentifier)
     }
     
@@ -76,10 +79,7 @@ extension ZMClassificationViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ZMClassificationCell.CellIdentifier, for: indexPath) as! ZMClassificationCell
-        cell.setupCell(title: dataSource[indexPath.row])
-        if imageData.count > 5 {
-            cell.setupImageView(with: imageData[indexPath.row])
-        }
+        cell.setupCell(title: dataSource[indexPath.row]["title"], img: dataSource[indexPath.row]["img"])
         return cell
     }
     
@@ -117,29 +117,8 @@ extension ZMClassificationViewController {
 
 }
 
-// MARK: - 网络
 extension ZMClassificationViewController {
-    fileprivate func getBgImage() {
-        let q = ""
-        let page = 1
-        let perPage = 10
-        ZMNetWork.shared.getDataFromAPI(requestTarget: PixabayAPI.search(q: q, perPage: perPage, page: page)) { (response, error) in
-            if error != nil {
-                ZMError.handleError(error)
-            } else {
-                response?.mapArray(type: ZMPixabayImage.self, key: "hits", callback: {  [weak self] (result) in
-                    guard let strongSelf = self else { return }
-                    switch result {
-                    case .failure(let error):
-                        ZMError.handleError(error)
-                    case .success(let data):
-                        strongSelf.imageData = data
-                        strongSelf.tableView.reloadData()
-                    }
-                })
-            }
-        }
-    }
+    
     
     
 }

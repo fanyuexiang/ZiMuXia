@@ -48,6 +48,12 @@
 		2C10DBEA2069362A00AE28F8 /* ZMClassificationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBE82069362A00AE28F8 /* ZMClassificationViews.swift */; };
 		2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBEB20693D1300AE28F8 /* PixabayAPI.swift */; };
 		2C10DBEF206940BE00AE28F8 /* ZMClassificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBEE206940BE00AE28F8 /* ZMClassificationModels.swift */; };
+		B10B35572069DA9F0093867A /* ZMAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B35562069DA9F0093867A /* ZMAboutViewController.swift */; };
+		B10B355A2069DD720093867A /* ZMAboutViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B35592069DD720093867A /* ZMAboutViews.swift */; };
+		B10B355D2069E42F0093867A /* ZMAboutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B355C2069E42F0093867A /* ZMAboutModels.swift */; };
+		B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B355E2069E5030093867A /* ZMFoundersViewController.swift */; };
+		B10B3562206A50400093867A /* ZMIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3561206A50400093867A /* ZMIntroduceViewController.swift */; };
+		B10B3564206A531E0093867A /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3563206A531E0093867A /* AppFont.swift */; };
 		B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B812068C0E700773368 /* ZMMainViews.swift */; };
 		B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B832068C25200773368 /* UILabel+ZM.swift */; };
 		B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B852068C4DA00773368 /* CGFloat+WT.swift */; };
@@ -127,6 +133,12 @@
 		2C10DBEB20693D1300AE28F8 /* PixabayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayAPI.swift; sourceTree = "<group>"; };
 		2C10DBEE206940BE00AE28F8 /* ZMClassificationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMClassificationModels.swift; sourceTree = "<group>"; };
 		4829B6B8EC2A1EDF62A3DBEA /* Pods_ZiMu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiMu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10B35562069DA9F0093867A /* ZMAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMAboutViewController.swift; sourceTree = "<group>"; };
+		B10B35592069DD720093867A /* ZMAboutViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMAboutViews.swift; sourceTree = "<group>"; };
+		B10B355C2069E42F0093867A /* ZMAboutModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMAboutModels.swift; sourceTree = "<group>"; };
+		B10B355E2069E5030093867A /* ZMFoundersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMFoundersViewController.swift; sourceTree = "<group>"; };
+		B10B3561206A50400093867A /* ZMIntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMIntroduceViewController.swift; sourceTree = "<group>"; };
+		B10B3563206A531E0093867A /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		B1954B812068C0E700773368 /* ZMMainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViews.swift; sourceTree = "<group>"; };
 		B1954B832068C25200773368 /* UILabel+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ZM.swift"; sourceTree = "<group>"; };
 		B1954B852068C4DA00773368 /* CGFloat+WT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+WT.swift"; sourceTree = "<group>"; };
@@ -211,6 +223,7 @@
 		2C10DB772067880100AE28F8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B10B35542069DA9F0093867A /* About */,
 				2C10DBE42069362A00AE28F8 /* Classification */,
 				2C10DBA52067A38200AE28F8 /* Main */,
 			);
@@ -387,6 +400,7 @@
 			children = (
 				2C10DBB22067A6CA00AE28F8 /* ZMUtils.swift */,
 				2C10DBB42067A81E00AE28F8 /* AppColor.swift */,
+				B10B3563206A531E0093867A /* AppFont.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -459,6 +473,42 @@
 				0746CB88869458A538AF2B86 /* Pods-ZiMu.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B10B35542069DA9F0093867A /* About */ = {
+			isa = PBXGroup;
+			children = (
+				B10B355B2069E42F0093867A /* Model */,
+				B10B35552069DA9F0093867A /* Controller */,
+				B10B35582069DD720093867A /* View */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		B10B35552069DA9F0093867A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B10B35562069DA9F0093867A /* ZMAboutViewController.swift */,
+				B10B355E2069E5030093867A /* ZMFoundersViewController.swift */,
+				B10B3561206A50400093867A /* ZMIntroduceViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B10B35582069DD720093867A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B10B35592069DD720093867A /* ZMAboutViews.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B10B355B2069E42F0093867A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B10B355C2069E42F0093867A /* ZMAboutModels.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */ = {
@@ -637,6 +687,7 @@
 				B1954B8B2068C6DF00773368 /* UIImageView+ZM.swift in Sources */,
 				B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */,
 				2C10DB9C20678EAB00AE28F8 /* TYPagerController.m in Sources */,
+				B10B355A2069DD720093867A /* ZMAboutViews.swift in Sources */,
 				2C10DBC82067B32B00AE28F8 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				2C10DB9D20678EAB00AE28F8 /* TYPagerViewLayout.m in Sources */,
 				2C10DBC62067B32B00AE28F8 /* FSPagerView.swift in Sources */,
@@ -660,6 +711,7 @@
 				2C10DBB52067A81E00AE28F8 /* AppColor.swift in Sources */,
 				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
 				2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */,
+				B10B355D2069E42F0093867A /* ZMAboutModels.swift in Sources */,
 				2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */,
 				2C10DBC92067B32B00AE28F8 /* FSPageViewLayout.swift in Sources */,
 				2C10DBCA2067B32B00AE28F8 /* FSPageViewTransformer.swift in Sources */,
@@ -667,9 +719,13 @@
 				2C10DB8920678DFD00AE28F8 /* Constants.swift in Sources */,
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
 				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
+				B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */,
 				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
+				B10B35572069DA9F0093867A /* ZMAboutViewController.swift in Sources */,
 				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
+				B10B3564206A531E0093867A /* AppFont.swift in Sources */,
 				2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */,
+				B10B3562206A50400093867A /* ZMIntroduceViewController.swift in Sources */,
 				2C10DBB32067A6CA00AE28F8 /* ZMUtils.swift in Sources */,
 				2C10DBBB2067AA8600AE28F8 /* ZMMainModels.swift in Sources */,
 			);
@@ -810,7 +866,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D4MJW49P7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZiMu/Classes/Resource/Framework",
@@ -820,8 +878,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fancy.ZiMu;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.artally;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ZiMu/Classes/AppDelegate/ZiMu_Bridging_Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -834,7 +893,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D4MJW49P7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZiMu/Classes/Resource/Framework",
@@ -844,8 +905,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fancy.ZiMu;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.artally;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ZiMu/Classes/AppDelegate/ZiMu_Bridging_Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
