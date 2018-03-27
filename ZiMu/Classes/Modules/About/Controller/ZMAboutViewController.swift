@@ -7,7 +7,9 @@
 //
 
 import Foundation
-import GTMWebKit
+import Kingfisher
+import QMUIKit
+import AcknowList
 
 /// 分类
 final class ZMAboutViewController: ZMTableViewController {
@@ -26,15 +28,25 @@ final class ZMAboutViewController: ZMTableViewController {
                        ["title":"FIX创始人"]],
                        [["title":"版权声明"],
                        ["title":"开源协议"]]]
+    private var totalSize: Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        refreshTotalCacheSize()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
+    }
+    
+    func refreshTotalCacheSize() {
+        ImageCache.default.calculateDiskCacheSize { [weak self]  bytes in
+            guard let strongSelf = self else { return }
+            strongSelf.totalSize = Int(bytes/1024/1024)
+            strongSelf.tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+        }
     }
     
     override func initTableView() {
@@ -63,6 +75,37 @@ final class ZMAboutViewController: ZMTableViewController {
         }
     }
     
+    // MARK: - 操作
+    fileprivate func deleteCache() {
+        let cancelAction = QMUIAlertAction(title: "取消", style: .cancel) { (_) in }
+        let confirmAction = QMUIAlertAction(title: "确定", style: .destructive) { [weak self] _ in
+            guard let strongSelf = self else { return }
+            QMUITips.showLoading("正在清理", detailText: nil, in: strongSelf.view)
+            ImageCache.default.clearDiskCache {
+                QMUITips.hideAllTips(in: strongSelf.view)
+                strongSelf.refreshTotalCacheSize()
+            }
+        }
+        let alertController = QMUIAlertController(title: "", message: "确定清除？", preferredStyle: .actionSheet)
+        alertController?.addAction(cancelAction)
+        alertController?.addAction(confirmAction)
+        alertController?.showWith(animated: true)
+    }
+    
+    fileprivate func copyrightDeclaration() {
+        let alertController = QMUIAlertController(title: "版权声明", message: "所有内容均来自互联网分享站点所提供的公开引用资源", preferredStyle: .alert)
+        let cancelAction = QMUIAlertAction(title: "确定", style: .cancel) { (_) in }
+        alertController?.addAction(cancelAction)
+        alertController?.showWith(animated: true)
+    }
+    
+    fileprivate func publicLicense() {
+        let path = Bundle.main.path(forResource: "Pods-ZiMu-acknowledgements", ofType: "plist")
+        let viewController = AcknowListViewController(acknowledgementsPlistPath: path)
+        viewController.title = "致谢"
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
 
 // MARK: - tableView delegate & dataSource
@@ -89,23 +132,31 @@ extension ZMAboutViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ZMAboutCell.CellIdentifier, for: indexPath) as! ZMAboutCell
-        cell.setupCell(title: dataSource[indexPath.section][indexPath.row]["title"], info: "")
+        let size = (indexPath.section == 0 && indexPath.row == 1) ? "\(totalSize)M" : ""
+        cell.setupCell(title: dataSource[indexPath.section][indexPath.row]["title"], info: size)
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            break
+            if indexPath.row == 0 {
+                
+            } else {
+                deleteCache()
+            }
         case 1:
             if indexPath.row == 0 {
-//               let webVC = GTMWebViewController(with: "http://www.zimuxia.cn/%E5%85%B3%E4%BA%8Efix", navigType: .navbar)
                 navigationController?.pushViewController(ZMIntroduceViewController(), animated: true)
             } else {
                 navigationController?.pushViewController(ZMFoundersViewController(), animated: true)
             }
         default:
-            break
+            if indexPath.row == 0 {
+                copyrightDeclaration()
+            } else {
+                publicLicense()
+            }
         }
     }
 

@@ -135,7 +135,7 @@ final class ZMNetWork {
             switch status {
             case .notReachable:
                 //Show error state
-                break
+                QMUITips.show(withText: "网络连接已断开，请检查设置")
             case .reachable(_), .unknown:
                 break
             }

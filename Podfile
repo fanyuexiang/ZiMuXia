@@ -13,6 +13,7 @@ def common_pods
     pod 'SKPhotoBrowser'
     pod 'MJRefresh'
     pod 'GTMWebKit'
+    pod 'AcknowList'
 end
 
 def sdk_pods

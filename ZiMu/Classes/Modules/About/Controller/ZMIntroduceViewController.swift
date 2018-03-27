@@ -17,8 +17,7 @@ final class ZMIntroduceViewController: ZMViewController {
     fileprivate lazy var textView: UITextView = {
         let textView = UITextView()
         textView.isEditable = false
-        textView.font = AppFont.regularFont(16.adapted)
-        textView.textColor = AppColor.theme.subTitleColor
+        textView.textContainerInset = UIEdgeInsets(top:0, left: 12.adapted, bottom: 0, right: 12.adapted)
         return textView
     }()
     
@@ -45,23 +44,25 @@ final class ZMIntroduceViewController: ZMViewController {
 // MARK: - network
 extension ZMIntroduceViewController {
     fileprivate func getIntroduce() {
+        showLoading()
         Alamofire.request("http://www.zimuxia.cn/%e5%85%b3%e4%ba%8efix")
             .responseData { [weak self] (response) in
                 guard let strongSelf = self else { return }
+                strongSelf.hideLoading()
                 if response.result.error  == nil {
                     if let htmlData = response.result.value {
                         if let doc = TFHpple(htmlData: htmlData) {
                             for node in doc.search(withXPathQuery: "//div[@class='content-box']") {
                                 let data = node as! TFHppleElement
                                 if let significanceNode = data.search(withXPathQuery: "//div").first as? TFHppleElement {
-                                    strongSelf.textView.text = significanceNode.content
+                                    strongSelf.textView.attributedText =  AppFont.attributeString(kFontRegularName, text: significanceNode.content, fontSize: 14, fontColor: AppColor.theme.subTitleColor)
                                 }
                             }
-                    } else {
-                        ZMError.handleError(response.result.error)
+                        }
                     }
+                }else {
+                    ZMError.handleError(response.result.error)
                 }
-            }
         }
     }
 }

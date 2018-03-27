@@ -58,6 +58,13 @@ class ZMViewController: QMUICommonViewController {
     }
     
     // toast
+    public func showLoading() {
+        QMUITips.showLoading(in: view)
+    }
+    
+    public func hideLoading() {
+        QMUITips.hideAllTips(in: view)
+    }
     
     deinit {
         kNotificationCenter.removeObserver(self)

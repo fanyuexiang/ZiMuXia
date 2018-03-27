@@ -86,9 +86,11 @@ extension ZMFoundersViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 extension ZMFoundersViewController {
     
     fileprivate func getFounders() {
+        showLoading()
         Alamofire.request("http://www.zimuxia.cn/%E5%88%9B%E5%A7%8B%E4%BA%BA")
             .responseData { [weak self] (response) in
                 guard let strongSelf = self else { return }
+                strongSelf.hideLoading()
                 if response.result.error  == nil {
                     if let htmlData = response.result.value {
                         if let doc = TFHpple(htmlData: htmlData) {
@@ -115,9 +117,9 @@ extension ZMFoundersViewController {
                         }
                         strongSelf.pageControl.numberOfPages = strongSelf.founders.count
                         strongSelf.pagerView.reloadData()
-                    } else {
-                        ZMError.handleError(response.result.error)
                     }
+                } else {
+                    ZMError.handleError(response.result.error)
                 }
         }
     }

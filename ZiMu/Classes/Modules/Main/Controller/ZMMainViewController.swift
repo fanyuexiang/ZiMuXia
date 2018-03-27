@@ -51,7 +51,7 @@ final class ZMMainViewController: ZMViewController {
     // data
     fileprivate lazy var banners = [ZMBanner]()
     fileprivate lazy var movies = [ZMMovie]()
-    fileprivate lazy var currentPage: Int = 0
+    fileprivate lazy var currentPage: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -202,9 +202,11 @@ extension ZMMainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 // MARK: - 网络
 extension ZMMainViewController {
     fileprivate func getBanner() {
+        showLoading()
         Alamofire.request("http://www.zimuxia.cn/")
             .responseData { [weak self] (response) in
             guard let strongSelf = self else { return }
+            strongSelf.hideLoading()
             if response.result.error  == nil {
                 if let htmlData = response.result.value {
                     if let doc = TFHpple(htmlData: htmlData) {
@@ -255,12 +257,12 @@ extension ZMMainViewController {
     }
     
     @objc fileprivate func getAllMovies() {
-        currentPage += 1
         Alamofire.request("http://www.zimuxia.cn/%E6%88%91%E4%BB%AC%E7%9A%84%E4%BD%9C%E5%93%81?set=\(currentPage)")
             .responseData { [weak self] (response) in
                 guard let strongSelf = self else { return }
                 strongSelf.refreshAutoNormalFooter.endRefreshing()
                 if response.result.error  == nil {
+                    strongSelf.currentPage += 1
                     if let htmlData = response.result.value {
                         if let doc = TFHpple(htmlData: htmlData) {
                             for node in doc.search(withXPathQuery: "//div[@class='pg-item']") {

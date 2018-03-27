@@ -26,6 +26,7 @@ final class ZMClassificationViewController: ZMTableViewController {
                        ["title":"德语社", "img":"img_classification_germany"],
                        ["title":"法语社", "img":"img_classification_france"]]
     
+    private var firstAppear: Bool = true
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -54,6 +55,7 @@ final class ZMClassificationViewController: ZMTableViewController {
     }
     
     private func animateTableView() {
+        if !firstAppear { return }
         let cells = tableView.visibleCells
         let tableHeight: CGFloat = tableView.bounds.size.height
         for (index, cell) in cells.enumerated() {
@@ -62,8 +64,30 @@ final class ZMClassificationViewController: ZMTableViewController {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0);
             }, completion: nil)
         }
+        firstAppear = false
     }
     
+    fileprivate func pushToCatList(with index: Int) {
+        let catListVC = ZMCatListViewController(cat: getCat(with: index))
+        navigationController?.pushViewController(catListVC, animated: true)
+    }
+    
+    fileprivate func getCat(with index: Int) -> String {
+        switch index {
+        case 0:
+            return ""
+        case 1:
+            return CAT_KOREA
+        case 2:
+            return CAT_JAPAN
+        case 3:
+            return CAT_GERMANY
+        case 4:
+            return CAT_FRANCE
+        default:
+            return ""
+        }
+    }
 }
 
 // MARK: - tableView delegate & dataSource
@@ -98,7 +122,7 @@ extension ZMClassificationViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        pushToCatList(with: indexPath.row)
     }
 
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -117,8 +141,3 @@ extension ZMClassificationViewController {
 
 }
 
-extension ZMClassificationViewController {
-    
-    
-    
-}

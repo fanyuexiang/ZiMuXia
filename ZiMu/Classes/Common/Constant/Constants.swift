@@ -48,10 +48,16 @@ let ENGLISH = "en"
 
 /// catch key
 
+/// network
+let CAT_KOREA = "fix韩语社"
+let CAT_GERMANY = "昆仑德语社"
+let CAT_JAPAN = "fix日语社"
+let CAT_FRANCE = "fix法语社"
+let CAT_USA_TV = "欧美剧集"
+let CAT_USA_MOVIE = "欧美电影"
+let CAT_USA_DOCUMENTARY = "综艺纪录"
 
-/// APP 环境
-let APP_ENVIRONMENT = "test"
-let APP_SERVER = "http://testinterface.wondertech.com.cn/"
+
 
 // MARK: - typealias
 typealias VoidCallback = (() -> Void)

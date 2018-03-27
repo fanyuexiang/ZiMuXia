@@ -15,6 +15,7 @@ final class ZMAboutCell: UITableViewCell {
     private lazy var arrowImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "icon_contact_arrow")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -43,6 +44,8 @@ final class ZMAboutCell: UITableViewCell {
         arrowImageView.snp.makeConstraints {
             $0.centerY.equalTo(self)
             $0.right.equalTo(self).offset(-12.adapted)
+            $0.height.equalTo(16.adapted)
+            $0.width.equalTo(6.adapted)
         }
         
         titleLabel.snp.makeConstraints {
