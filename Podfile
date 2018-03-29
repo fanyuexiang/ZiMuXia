@@ -10,9 +10,7 @@ def common_pods
     pod 'SnapKit'
     pod 'IQKeyboardManagerSwift'
     pod 'ESTabBarController-swift'
-    pod 'SKPhotoBrowser'
     pod 'MJRefresh'
-    pod 'GTMWebKit'
     pod 'AcknowList'
 end
 
@@ -25,6 +23,7 @@ def temp_pods
     pod 'WCDB.swift'
     pod 'Kanna'
     pod 'Ji'
+    pod 'AXWebViewController'
 end
 
 target 'ZiMu' do

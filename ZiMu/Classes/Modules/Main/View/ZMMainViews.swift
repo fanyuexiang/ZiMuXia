@@ -92,7 +92,9 @@ final class ZMMovieCollectionViewCell: UICollectionViewCell {
     // UI
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.zm_cornerRadiusAdvance(6, rectCornerType: .allCorners)
+        imageView.backgroundColor = AppColor.theme.bgLightGrayColor
+//        imageView.zm_cornerRadiusAdvance(6, rectCornerType: .allCorners)
+        imageView.layer.cornerRadius = 6
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -110,10 +112,10 @@ final class ZMMovieCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var separateLayer: CALayer = {
-        let layer = CALayer()
-        layer.backgroundColor = AppColor.theme.separateYellow.cgColor
-        return layer
+    private lazy var separater: UIView = {
+        let separater = UIView()
+        separater.backgroundColor = AppColor.theme.separateYellow
+        return separater
     }()
     
     override init(frame: CGRect) {
@@ -128,7 +130,7 @@ final class ZMMovieCollectionViewCell: UICollectionViewCell {
     private func addSubViews() {
         addSubview(backgroundImageView)
         addSubview(nameLabel)
-        contentView.layer.addSublayer(separateLayer)
+        addSubview(separater)
         addSubview(infoLabel)
     }
     
@@ -151,13 +153,19 @@ final class ZMMovieCollectionViewCell: UICollectionViewCell {
                 .offset(6.adapted)
         }
         
-        separateLayer.frame = CGRect(x: (self.qmui_width - 50.adapted)/2 , y: nameLabel.qmui_bottom+3, width: 50.adapted, height: 1)
+        separater.snp.makeConstraints {
+            $0.width.equalTo(50.adapted)
+            $0.height.equalTo(1)
+            $0.centerX.equalTo(self)
+            $0.top.equalTo(nameLabel.snp.bottom)
+                .offset(3.adapted)
+        }
     }
     
     public func setupCell(with data: ZMMovie) {
-        backgroundImageView.setImage(url: data.backgroundImage)
+        backgroundImageView.setImage(url: data.poster)
         nameLabel.text = data.name
-        infoLabel.text = data.info
+        infoLabel.text = data.classification
     }
 }
 
@@ -245,7 +253,80 @@ final class WTBaseTabBarItemContentView: ESTabBarItemContentView {
     
 }
 
+/// search result cell
+final class ZMSearchResultCell: UITableViewCell {
+    static let CellIdentifier = "ZMSearchResultCell"
+    // UI
+    private lazy var arrowImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "icon_contact_arrow")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel(textColor: AppColor.theme.titleColor, fontSize: 16.adapted, FontName: kFontRegularName)
+        return label
+    }()
+    
+    private lazy var infoLabel: UILabel = {
+        let label = UILabel(textColor: AppColor.theme.subTitleColor, fontSize: 12.adapted, FontName: kFontRegularName)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        addViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        arrowImageView.snp.makeConstraints {
+            $0.centerY.equalTo(self)
+            $0.right.equalTo(self).offset(-12.adapted)
+            $0.height.equalTo(16.adapted)
+            $0.width.equalTo(6.adapted)
+        }
+        
+        nameLabel.snp.makeConstraints {
+            $0.top.equalTo(self).offset(12.adapted)
+            $0.right.equalTo(arrowImageView.snp.left)
+                .offset(-12.adapted)
+            $0.left.equalTo(self).offset(20.adapted)
+        }
+        
+        infoLabel.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom)
+                .offset(6.adapted)
+            $0.left.equalTo(self).offset(20.adapted)
+            $0.right.equalTo(arrowImageView.snp.left)
+                .offset(-12.adapted)
+        }
+    }
+    
+    private func addViews() {
+        addSubview(arrowImageView)
+        addSubview(nameLabel)
+        addSubview(infoLabel)
+    }
+    
+    public func setupCell(with data: ZMMovie) {
+        nameLabel.text = data.name
+        infoLabel.text = data.producerInfo
+    }
+    
+}
 
+
+
+
+/// blur view
 open class VisualEffectView: UIVisualEffectView {
     
     /// Returns the instance of UIBlurEffect.

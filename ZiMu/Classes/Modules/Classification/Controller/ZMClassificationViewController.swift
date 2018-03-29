@@ -68,8 +68,12 @@ final class ZMClassificationViewController: ZMTableViewController {
     }
     
     fileprivate func pushToCatList(with index: Int) {
-        let catListVC = ZMCatListViewController(cat: getCat(with: index))
-        navigationController?.pushViewController(catListVC, animated: true)
+        if index == 0 {
+            navigationController?.pushViewController(ZMMoviePagerViewController(), animated: true)
+        } else {
+            let catListVC = ZMCatListViewController(cat: getCat(with: index))
+            navigationController?.pushViewController(catListVC, animated: true)
+        }
     }
     
     fileprivate func getCat(with index: Int) -> String {

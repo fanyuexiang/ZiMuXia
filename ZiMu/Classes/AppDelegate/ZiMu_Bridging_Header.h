@@ -13,5 +13,7 @@
 #import "TFHpple.h"
 // 圆角优化
 #import "UIImageView+CornerRadius.h"
-
+// 分页
+#import "TYPagerController.h"
+#import "TYTabPagerBar.h"
 #endif /* ZiMu_Bridging_Header_h */

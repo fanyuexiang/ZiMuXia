@@ -117,7 +117,10 @@ extension ZMCatListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = movies[indexPath.item]
-        print(data.name)
+        if let url = data.homepageUrl {
+            let detailVC = ZMMovieDetailViewController(url: url, movie: data)
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -143,11 +146,15 @@ extension ZMCatListViewController {
             .responseData { [weak self] (response) in
                 guard let strongSelf = self else { return }
                 strongSelf.hideLoading()
-                strongSelf.refreshAutoNormalFooter.endRefreshing()
                 if response.result.error  == nil {
-                    strongSelf.currentPage += 1
                     if let htmlData = response.result.value {
                         if let doc = TFHpple(htmlData: htmlData) {
+                            if doc.search(withXPathQuery: "//div[@class='pg-item']").count != 0 {
+                                strongSelf.currentPage += 1
+                                strongSelf.refreshAutoNormalFooter.endRefreshing()
+                            } else {
+                                strongSelf.refreshAutoNormalFooter.endRefreshingWithNoMoreData()
+                            }
                             for node in doc.search(withXPathQuery: "//div[@class='pg-item']") {
                                 let movie = ZMMovie()
                                 let data = node as! TFHppleElement
@@ -156,14 +163,14 @@ extension ZMCatListViewController {
                                 }
                                 
                                 if let urlNode = (data.search(withXPathQuery: "//a").first as? TFHppleElement) {
-                                    movie.url = urlNode["href"] as? String
+                                    movie.homepageUrl = urlNode["href"] as? String
                                 }
                                 
                                 if let bgNode = (data.search(withXPathQuery: "//img").first as? TFHppleElement) {
-                                    movie.backgroundImage = bgNode["src"] as? String
+                                    movie.poster = bgNode["src"] as? String
                                 }
                                 
-                                movie.info = (data.search(withXPathQuery: "//span[@class='pg-categories']").first as? TFHppleElement)?.content
+                                movie.classification = (data.search(withXPathQuery: "//span[@class='pg-categories']").first as? TFHppleElement)?.content
                                 strongSelf.movies.append(movie)
                             }
                         }
@@ -172,6 +179,7 @@ extension ZMCatListViewController {
                         ZMError.handleError(response.result.error)
                     }
                 } else {
+                    strongSelf.refreshAutoNormalFooter.endRefreshingWithNoMoreData()
                     ZMError.handleError(response.result.error)
                 }
         }

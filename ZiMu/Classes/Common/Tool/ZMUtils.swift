@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import QMUIKit
-import SKPhotoBrowser
 
 class ZMUtils {
     
@@ -79,29 +78,6 @@ class ZMUtils {
     class func imageWithColor(_ color: UIColor, size: CGSize = CGSize(width: 1.0, height: 1.0), cornerRadius: CGFloat = 0) -> UIImage {
         let image = UIImage.qmui_image(with: color, size: size, cornerRadius: cornerRadius)
         return image!
-    }
-
-    /// 查看大图
-    class func viewOriginalImage(url: String?,
-                                 controller: UIViewController? = nil,
-                                 originImage: UIImage? = nil,
-                                 fromView: UIView? = nil,
-                                 delegate: SKPhotoBrowserDelegate? = nil) {
-        if let url = url {
-            var images = [SKPhoto]()
-            let photo = SKPhoto.photoWithImageURL(url)
-            photo.shouldCachePhotoURLImage = true
-            images.append(photo)
-            SKPhotoBrowserOptions.displayCloseButton = false
-            SKPhotoBrowserOptions.enableSingleTapDismiss = true
-            SKPhotoBrowserOptions.displayStatusbar = false
-            SKPhotoBrowserOptions.displayAction = false
-            
-            let browser = fromView != nil ? SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: fromView!) : SKPhotoBrowser(photos: images)
-            browser.initializePageIndex(0)
-            browser.delegate = delegate
-            controller != nil ? controller!.present(browser, animated: true, completion: nil) : currentTopViewController()?.present(browser, animated: true, completion: nil)
-        }
     }
     
 }

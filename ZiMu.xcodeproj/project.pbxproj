@@ -57,6 +57,9 @@
 		B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B355E2069E5030093867A /* ZMFoundersViewController.swift */; };
 		B10B3562206A50400093867A /* ZMIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3561206A50400093867A /* ZMIntroduceViewController.swift */; };
 		B10B3564206A531E0093867A /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3563206A531E0093867A /* AppFont.swift */; };
+		B10B3566206B3ADF0093867A /* ZMSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3565206B3ADF0093867A /* ZMSearchViewController.swift */; };
+		B10B356B206B68830093867A /* ZMTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B356A206B68830093867A /* ZMTransition.swift */; };
+		B10B3570206B8B5E0093867A /* ZMMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B356F206B8B5E0093867A /* ZMMovieDetailViewController.swift */; };
 		B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B812068C0E700773368 /* ZMMainViews.swift */; };
 		B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B832068C25200773368 /* UILabel+ZM.swift */; };
 		B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B852068C4DA00773368 /* CGFloat+WT.swift */; };
@@ -145,6 +148,9 @@
 		B10B355E2069E5030093867A /* ZMFoundersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMFoundersViewController.swift; sourceTree = "<group>"; };
 		B10B3561206A50400093867A /* ZMIntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMIntroduceViewController.swift; sourceTree = "<group>"; };
 		B10B3563206A531E0093867A /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		B10B3565206B3ADF0093867A /* ZMSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMSearchViewController.swift; sourceTree = "<group>"; };
+		B10B356A206B68830093867A /* ZMTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMTransition.swift; sourceTree = "<group>"; };
+		B10B356F206B8B5E0093867A /* ZMMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMovieDetailViewController.swift; sourceTree = "<group>"; };
 		B1954B812068C0E700773368 /* ZMMainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViews.swift; sourceTree = "<group>"; };
 		B1954B832068C25200773368 /* UILabel+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ZM.swift"; sourceTree = "<group>"; };
 		B1954B852068C4DA00773368 /* CGFloat+WT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+WT.swift"; sourceTree = "<group>"; };
@@ -382,6 +388,8 @@
 			children = (
 				2C10DBAF2067A57700AE28F8 /* ZMTabBarController.swift */,
 				2C10DBB62067AA1300AE28F8 /* ZMMainViewController.swift */,
+				B10B3565206B3ADF0093867A /* ZMSearchViewController.swift */,
+				B10B356F206B8B5E0093867A /* ZMMovieDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				B1954B812068C0E700773368 /* ZMMainViews.swift */,
+				B10B356A206B68830093867A /* ZMTransition.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -658,12 +667,10 @@
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMWebKit/GTMWebKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -671,12 +678,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMWebKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,10 +739,13 @@
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
 				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
 				B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */,
+				B10B3566206B3ADF0093867A /* ZMSearchViewController.swift in Sources */,
 				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
 				B10B35572069DA9F0093867A /* ZMAboutViewController.swift in Sources */,
 				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
+				B10B3570206B8B5E0093867A /* ZMMovieDetailViewController.swift in Sources */,
 				B10B3564206A531E0093867A /* AppFont.swift in Sources */,
+				B10B356B206B68830093867A /* ZMTransition.swift in Sources */,
 				2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */,
 				B10B3562206A50400093867A /* ZMIntroduceViewController.swift in Sources */,
 				2C10DBB32067A6CA00AE28F8 /* ZMUtils.swift in Sources */,

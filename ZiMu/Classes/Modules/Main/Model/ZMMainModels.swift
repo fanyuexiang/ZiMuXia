@@ -30,12 +30,27 @@ final class ZMBanner: ZMBaseModel {
             return ""
         }
     }
+    
+    func mapToMovie() -> ZMMovie {
+        let movie = ZMMovie()
+        movie.name = title
+        movie.poster = backgroundImage
+        movie.homepageUrl = url
+        return movie
+    }
 }
 
 /// 电影
 final class ZMMovie: ZMBaseModel {
     var name: String?
-    var info: String?
-    var backgroundImage: String?
-    var url: String?
+    var classification: String?
+    var poster: String?
+    var homepagePoster: String?
+    var homepageUrl: String?
+    var producerInfo: String?
+    var synopsis: String?
+}
+
+final class ZMBaiduYun: ZMBaseModel {
+    
 }
