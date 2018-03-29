@@ -16,5 +16,6 @@ struct AppColor {
         static let subTitleColor = UIColor.qmui_color(withHexString: "#666666")!
         static let separateYellow = UIColor.qmui_color(withHexString: "#F5D547")!
         static let bgLightGrayColor = UIColor.qmui_color(withHexString: "#D3D3D3")!
+        static let bgDarkColor = UIColor.qmui_color(withHexString: "#161C27")!
     }
 }

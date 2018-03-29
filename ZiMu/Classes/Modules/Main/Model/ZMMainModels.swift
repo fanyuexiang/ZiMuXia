@@ -49,8 +49,10 @@ final class ZMMovie: ZMBaseModel {
     var homepageUrl: String?
     var producerInfo: String?
     var synopsis: String?
+    var baiduYuns: [ZMBaiduYun] = [ZMBaiduYun]()
 }
 
 final class ZMBaiduYun: ZMBaseModel {
-    
+    var title: String?
+    var url: String?
 }

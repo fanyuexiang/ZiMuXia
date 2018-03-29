@@ -60,6 +60,9 @@
 		B10B3566206B3ADF0093867A /* ZMSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3565206B3ADF0093867A /* ZMSearchViewController.swift */; };
 		B10B356B206B68830093867A /* ZMTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B356A206B68830093867A /* ZMTransition.swift */; };
 		B10B3570206B8B5E0093867A /* ZMMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B356F206B8B5E0093867A /* ZMMovieDetailViewController.swift */; };
+		B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */; };
+		B10B3580206CA99E0093867A /* UIImage+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B357E206CA99E0093867A /* UIImage+Hue.swift */; };
+		B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B357F206CA99E0093867A /* UIColor+Hue.swift */; };
 		B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B812068C0E700773368 /* ZMMainViews.swift */; };
 		B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B832068C25200773368 /* UILabel+ZM.swift */; };
 		B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B852068C4DA00773368 /* CGFloat+WT.swift */; };
@@ -151,6 +154,9 @@
 		B10B3565206B3ADF0093867A /* ZMSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMSearchViewController.swift; sourceTree = "<group>"; };
 		B10B356A206B68830093867A /* ZMTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMTransition.swift; sourceTree = "<group>"; };
 		B10B356F206B8B5E0093867A /* ZMMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMovieDetailViewController.swift; sourceTree = "<group>"; };
+		B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ZM.swift"; sourceTree = "<group>"; };
+		B10B357E206CA99E0093867A /* UIImage+Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Hue.swift"; sourceTree = "<group>"; };
+		B10B357F206CA99E0093867A /* UIColor+Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hue.swift"; sourceTree = "<group>"; };
 		B1954B812068C0E700773368 /* ZMMainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViews.swift; sourceTree = "<group>"; };
 		B1954B832068C25200773368 /* UILabel+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ZM.swift"; sourceTree = "<group>"; };
 		B1954B852068C4DA00773368 /* CGFloat+WT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+WT.swift"; sourceTree = "<group>"; };
@@ -316,6 +322,9 @@
 		2C10DB8520678DAD00AE28F8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B10B357F206CA99E0093867A /* UIColor+Hue.swift */,
+				B10B357E206CA99E0093867A /* UIImage+Hue.swift */,
+				B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */,
 				B1954B852068C4DA00773368 /* CGFloat+WT.swift */,
 				B1954B872068C4DB00773368 /* UIImageView+CornerRadius.h */,
 				B1954B862068C4DB00773368 /* UIImageView+CornerRadius.m */,
@@ -702,6 +711,7 @@
 				B1954B892068C4DB00773368 /* UIImageView+CornerRadius.m in Sources */,
 				2C10DBB92067AA6000AE28F8 /* ZMBaseModel.swift in Sources */,
 				2C10DB632067773F00AE28F8 /* ViewController.swift in Sources */,
+				B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */,
 				B1954B8B2068C6DF00773368 /* UIImageView+ZM.swift in Sources */,
 				2C10DBF6206A8F2000AE28F8 /* ZMCatListViewController.swift in Sources */,
 				B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */,
@@ -714,6 +724,7 @@
 				2C10DBAC2067A50200AE28F8 /* ZMTableViewController.swift in Sources */,
 				B1954B922068EAAC00773368 /* Utils.swift in Sources */,
 				2C10DBD32067C82B00AE28F8 /* TFHppleElement.m in Sources */,
+				B10B3580206CA99E0093867A /* UIImage+Hue.swift in Sources */,
 				2C10DBEF206940BE00AE28F8 /* ZMClassificationModels.swift in Sources */,
 				B1954B912068EAAC00773368 /* ColPosition.swift in Sources */,
 				2C10DBB72067AA1300AE28F8 /* ZMMainViewController.swift in Sources */,
@@ -736,6 +747,7 @@
 				2C10DBCA2067B32B00AE28F8 /* FSPageViewTransformer.swift in Sources */,
 				2C10DBC42067B32B00AE28F8 /* FSPageControl.swift in Sources */,
 				2C10DB8920678DFD00AE28F8 /* Constants.swift in Sources */,
+				B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */,
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
 				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
 				B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */,
