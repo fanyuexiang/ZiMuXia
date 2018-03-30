@@ -63,6 +63,14 @@
 		B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */; };
 		B10B3580206CA99E0093867A /* UIImage+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B357E206CA99E0093867A /* UIImage+Hue.swift */; };
 		B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B357F206CA99E0093867A /* UIColor+Hue.swift */; };
+		B114F1C4206E0D50004291D8 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BB206E0D50004291D8 /* Animator.swift */; };
+		B114F1C5206E0D50004291D8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BC206E0D50004291D8 /* Card.swift */; };
+		B114F1C6206E0D50004291D8 /* CardArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BD206E0D50004291D8 /* CardArticle.swift */; };
+		B114F1C7206E0D50004291D8 /* CardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BE206E0D50004291D8 /* CardGroup.swift */; };
+		B114F1C8206E0D50004291D8 /* CardGroupSliding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BF206E0D50004291D8 /* CardGroupSliding.swift */; };
+		B114F1C9206E0D50004291D8 /* CardHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C0206E0D50004291D8 /* CardHighlight.swift */; };
+		B114F1CB206E0D50004291D8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C2206E0D50004291D8 /* DetailViewController.swift */; };
+		B114F1CC206E0D50004291D8 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C3206E0D50004291D8 /* LayoutHelper.swift */; };
 		B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B812068C0E700773368 /* ZMMainViews.swift */; };
 		B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B832068C25200773368 /* UILabel+ZM.swift */; };
 		B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B852068C4DA00773368 /* CGFloat+WT.swift */; };
@@ -157,6 +165,14 @@
 		B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ZM.swift"; sourceTree = "<group>"; };
 		B10B357E206CA99E0093867A /* UIImage+Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Hue.swift"; sourceTree = "<group>"; };
 		B10B357F206CA99E0093867A /* UIColor+Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hue.swift"; sourceTree = "<group>"; };
+		B114F1BB206E0D50004291D8 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		B114F1BC206E0D50004291D8 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B114F1BD206E0D50004291D8 /* CardArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardArticle.swift; sourceTree = "<group>"; };
+		B114F1BE206E0D50004291D8 /* CardGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGroup.swift; sourceTree = "<group>"; };
+		B114F1BF206E0D50004291D8 /* CardGroupSliding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGroupSliding.swift; sourceTree = "<group>"; };
+		B114F1C0206E0D50004291D8 /* CardHighlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardHighlight.swift; sourceTree = "<group>"; };
+		B114F1C2206E0D50004291D8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B114F1C3206E0D50004291D8 /* LayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
 		B1954B812068C0E700773368 /* ZMMainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViews.swift; sourceTree = "<group>"; };
 		B1954B832068C25200773368 /* UILabel+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ZM.swift"; sourceTree = "<group>"; };
 		B1954B852068C4DA00773368 /* CGFloat+WT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+WT.swift"; sourceTree = "<group>"; };
@@ -270,6 +286,7 @@
 		2C10DB7A2067880100AE28F8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B114F1BA206E0D50004291D8 /* Cards */,
 				B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */,
 				2C10DBCB2067C82B00AE28F8 /* TFHpple */,
 				2C10DBBC2067B32A00AE28F8 /* FSPagerView */,
@@ -538,6 +555,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B114F1BA206E0D50004291D8 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				B114F1BB206E0D50004291D8 /* Animator.swift */,
+				B114F1BC206E0D50004291D8 /* Card.swift */,
+				B114F1BD206E0D50004291D8 /* CardArticle.swift */,
+				B114F1BE206E0D50004291D8 /* CardGroup.swift */,
+				B114F1BF206E0D50004291D8 /* CardGroupSliding.swift */,
+				B114F1C0206E0D50004291D8 /* CardHighlight.swift */,
+				B114F1C2206E0D50004291D8 /* DetailViewController.swift */,
+				B114F1C3206E0D50004291D8 /* LayoutHelper.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,18 +738,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C10DB7B2067880100AE28F8 /* AppDelegate.swift in Sources */,
+				B114F1C9206E0D50004291D8 /* CardHighlight.swift in Sources */,
 				B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */,
 				2C10DBFB206A996D00AE28F8 /* ZMMoviePagerViewController.swift in Sources */,
 				B1954B892068C4DB00773368 /* UIImageView+CornerRadius.m in Sources */,
 				2C10DBB92067AA6000AE28F8 /* ZMBaseModel.swift in Sources */,
 				2C10DB632067773F00AE28F8 /* ViewController.swift in Sources */,
+				B114F1C4206E0D50004291D8 /* Animator.swift in Sources */,
 				B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */,
 				B1954B8B2068C6DF00773368 /* UIImageView+ZM.swift in Sources */,
 				2C10DBF6206A8F2000AE28F8 /* ZMCatListViewController.swift in Sources */,
 				B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */,
 				2C10DB9C20678EAB00AE28F8 /* TYPagerController.m in Sources */,
+				B114F1C8206E0D50004291D8 /* CardGroupSliding.swift in Sources */,
 				B10B355A2069DD720093867A /* ZMAboutViews.swift in Sources */,
 				2C10DBC82067B32B00AE28F8 /* FSPagerViewLayoutAttributes.swift in Sources */,
+				B114F1C6206E0D50004291D8 /* CardArticle.swift in Sources */,
 				2C10DB9D20678EAB00AE28F8 /* TYPagerViewLayout.m in Sources */,
 				2C10DBC62067B32B00AE28F8 /* FSPagerView.swift in Sources */,
 				B1954B932068EAAC00773368 /* ZJFlexibleDataSource.swift in Sources */,
@@ -733,6 +769,7 @@
 				2C10DBEA2069362A00AE28F8 /* ZMClassificationViews.swift in Sources */,
 				2C10DB8C20678E7900AE28F8 /* Device.generated.swift in Sources */,
 				2C10DBC52067B32B00AE28F8 /* FSPagerCollectionView.swift in Sources */,
+				B114F1C7206E0D50004291D8 /* CardGroup.swift in Sources */,
 				2C10DB9920678EAB00AE28F8 /* TYTabPagerBar.m in Sources */,
 				B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */,
 				2C10DBC72067B32B00AE28F8 /* FSPagerViewCell.swift in Sources */,
@@ -741,6 +778,7 @@
 				2C10DBB52067A81E00AE28F8 /* AppColor.swift in Sources */,
 				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
 				2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */,
+				B114F1C5206E0D50004291D8 /* Card.swift in Sources */,
 				B10B355D2069E42F0093867A /* ZMAboutModels.swift in Sources */,
 				2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */,
 				2C10DBC92067B32B00AE28F8 /* FSPageViewLayout.swift in Sources */,
@@ -750,6 +788,7 @@
 				B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */,
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
 				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
+				B114F1CB206E0D50004291D8 /* DetailViewController.swift in Sources */,
 				B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */,
 				B10B3566206B3ADF0093867A /* ZMSearchViewController.swift in Sources */,
 				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
@@ -758,6 +797,7 @@
 				B10B3570206B8B5E0093867A /* ZMMovieDetailViewController.swift in Sources */,
 				B10B3564206A531E0093867A /* AppFont.swift in Sources */,
 				B10B356B206B68830093867A /* ZMTransition.swift in Sources */,
+				B114F1CC206E0D50004291D8 /* LayoutHelper.swift in Sources */,
 				2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */,
 				B10B3562206A50400093867A /* ZMIntroduceViewController.swift in Sources */,
 				2C10DBB32067A6CA00AE28F8 /* ZMUtils.swift in Sources */,
