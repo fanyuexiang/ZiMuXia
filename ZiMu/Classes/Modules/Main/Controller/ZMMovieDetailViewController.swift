@@ -25,18 +25,13 @@ final class ZMMovieDetailViewController: ZMViewController {
     fileprivate lazy var infoTextView: QMUITextView = {
         let textView = QMUITextView()
         textView.isEditable = false
+//        textView.isScrollEnabled = false
         return textView
     }()
 
     fileprivate lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         return scrollView
-    }()
-    
-    fileprivate lazy var gradientView: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "image_mask")
-        return view
     }()
 
     
@@ -49,6 +44,8 @@ final class ZMMovieDetailViewController: ZMViewController {
         super.init(nibName: nil, bundle: nil)
         self.detailUrl = url
         self.movie = movie != nil ? movie : ZMMovie()
+        postImageView.hero.id = movie?.name
+        postImageView.setImage(url: movie?.poster)
     }
     
     required init!(coder aDecoder: NSCoder!) {
@@ -61,6 +58,8 @@ final class ZMMovieDetailViewController: ZMViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.hero.isEnabled = true
+        self.hero.isEnabled = true
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = .never
         } else {
@@ -73,7 +72,6 @@ final class ZMMovieDetailViewController: ZMViewController {
         super.initSubviews()
         view.addSubview(scrollView)
         scrollView.addSubview(postImageView)
-        postImageView.addSubview(gradientView)
         scrollView.addSubview(infoTextView)
     }
     
@@ -97,12 +95,6 @@ final class ZMMovieDetailViewController: ZMViewController {
             $0.height.equalTo(kScreenWidth*1.4149)
         }
         
-        gradientView.snp.makeConstraints {
-            $0.width.equalTo(kScreenWidth)
-            $0.bottom.left.right.equalTo(postImageView)
-            $0.height.equalTo(200)
-        }
-        
         infoTextView.snp.removeConstraints()
         infoTextView.snp.makeConstraints {
             $0.width.equalTo(kScreenWidth)
@@ -110,17 +102,15 @@ final class ZMMovieDetailViewController: ZMViewController {
             $0.top.equalTo(postImageView.snp.bottom)
             $0.height.equalTo(infoTextView.contentSize.height)
         }
-        
-        
     }
 
     fileprivate func refreshContent() {
-        postImageView.setImage(url: movie.homepagePoster)
+        postImageView.setImage(url: movie.poster)
         infoTextView.attributedText = AppFont.attributeString(kFontRegularName, text: movie.producerInfo, fontSize: 12, fontColor: AppColor.theme.subTitleColor)
         
         viewDidLayoutSubviews()
         
-        print(movie.producerInfo)
+//        print(movie.producerInfo)
     }
 }
 
@@ -128,7 +118,7 @@ final class ZMMovieDetailViewController: ZMViewController {
 extension ZMMovieDetailViewController {
     
     fileprivate func getMovieDetail() {
-        showLoading()
+//        showLoading()
         Alamofire.request(detailUrl)
             .responseData { [weak self] (response) in
                 guard let strongSelf = self else { return }

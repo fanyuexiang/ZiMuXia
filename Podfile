@@ -12,6 +12,7 @@ def common_pods
     pod 'ESTabBarController-swift'
     pod 'MJRefresh'
     pod 'AcknowList'
+    pod 'Hero'
 end
 
 def sdk_pods

@@ -2,6 +2,7 @@ PODS:
   - AcknowList (1.6)
   - Alamofire (4.7.0)
   - ESTabBarController-swift (2.6.1)
+  - Hero (1.1.0)
   - IQKeyboardManagerSwift (5.0.8)
   - Kingfisher (4.6.4)
   - MJRefresh (3.1.15.3)
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - AcknowList
   - Alamofire
   - ESTabBarController-swift
+  - Hero
   - IQKeyboardManagerSwift
   - Kingfisher
   - MJRefresh
@@ -22,12 +24,13 @@ SPEC CHECKSUMS:
   AcknowList: 2b27ccc75110be58be37424c4b08b07bdec628b4
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   ESTabBarController-swift: 1e629e60bc6a87c1ea92a5309489b9f8dde15fa2
+  Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 0c41be1e39c8aded975816fc6221e6e3cefdb878
+PODFILE CHECKSUM: 33097d9294f92757bfe8c963b1fe48b0ec2c7fcb
 
 COCOAPODS: 1.3.1

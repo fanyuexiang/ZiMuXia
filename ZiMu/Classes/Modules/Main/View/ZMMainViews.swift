@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SnapKit
 import ESTabBarController_swift
+import Hero
 
 /// 轮播cell
 final class ZMMainPagerViewCell: FSPagerViewCell {
@@ -166,6 +167,7 @@ final class ZMMovieCollectionViewCell: UICollectionViewCell {
         backgroundImageView.setImage(url: data.poster)
         nameLabel.text = data.name
         infoLabel.text = data.classification
+        backgroundImageView.hero.id = data.name
     }
 }
 

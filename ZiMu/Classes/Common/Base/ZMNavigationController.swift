@@ -17,5 +17,9 @@ class ZMNavigationController: QMUINavigationController {
         }
         super.pushViewController(viewController, animated: animated)
     }
+    
+    override func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return super.navigationController(navigationController, animationControllerFor: operation, from: fromVC, to: toVC)
+    }
 
 }
