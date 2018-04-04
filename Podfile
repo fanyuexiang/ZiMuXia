@@ -13,6 +13,7 @@ def common_pods
     pod 'MJRefresh'
     pod 'AcknowList'
     pod 'Hero'
+    pod 'FMDB', '~> 2.6.2'
 end
 
 def sdk_pods
@@ -25,6 +26,9 @@ def temp_pods
     pod 'Kanna'
     pod 'Ji'
     pod 'AXWebViewController'
+    pod 'WCDB.swift'
+    pod 'Cache'
+    pod 'SQLite.swift'
 end
 
 target 'ZiMu' do

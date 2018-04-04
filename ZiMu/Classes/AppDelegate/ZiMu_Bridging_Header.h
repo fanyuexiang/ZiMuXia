@@ -16,4 +16,6 @@
 // 分页
 #import "TYPagerController.h"
 #import "TYTabPagerBar.h"
+// 数据库
+#import "GYDataCenter.h"
 #endif /* ZiMu_Bridging_Header_h */

@@ -41,18 +41,34 @@ final class ZMBanner: ZMBaseModel {
 }
 
 /// 电影
-final class ZMMovie: ZMBaseModel {
-    var name: String?
-    var classification: String?
-    var poster: String?
-    var homepagePoster: String?
-    var homepageUrl: String?
-    var producerInfo: String?
-    var synopsis: String?
-    var baiduYuns: [ZMBaiduYun] = [ZMBaiduYun]()
+final class ZMMovie: ZMCacheModel {
+    @objc dynamic var name: String?
+    @objc dynamic var classification: String?
+    @objc dynamic var poster: String?
+    @objc dynamic var homepagePoster: String?
+    @objc dynamic var homepageUrl: String?
+    @objc dynamic var producerInfo: String?
+    @objc dynamic var synopsis: String?
+    @objc dynamic var baiduYuns: [ZMBaiduYun] = [ZMBaiduYun]()
+    
+    override class func dbName() -> String {
+        return "ZiMu_Data"
+    }
+    
+    override class func tableName() -> String {
+        return "ZiMu_Collection_Movies"
+    }
+    
+    override class func primaryKey() -> String {
+        return "name"
+    }
+    
+    override class func persistentProperties() -> [Any] {
+        return ["name", "classification","poster","homepagePoster","homepageUrl","producerInfo","synopsis"]
+    }
 }
 
-final class ZMBaiduYun: ZMBaseModel {
-    var title: String?
-    var url: String?
+final class ZMBaiduYun: ZMCacheModel {
+    @objc var title: String?
+    @objc var url: String?
 }

@@ -76,6 +76,12 @@ final class ZMAboutViewController: ZMTableViewController {
     }
     
     // MARK: - 操作
+    fileprivate func myCollection() {
+        let vc = ZMCollectionViewController()
+        vc.title = "我的收藏"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     fileprivate func deleteCache() {
         let cancelAction = QMUIAlertAction(title: "取消", style: .cancel) { (_) in }
         let confirmAction = QMUIAlertAction(title: "确定", style: .destructive) { [weak self] _ in
@@ -141,7 +147,7 @@ extension ZMAboutViewController {
         switch indexPath.section {
         case 0:
             if indexPath.row == 0 {
-                
+                myCollection()
             } else {
                 deleteCache()
             }

@@ -71,6 +71,14 @@
 		B114F1C9206E0D50004291D8 /* CardHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C0206E0D50004291D8 /* CardHighlight.swift */; };
 		B114F1CB206E0D50004291D8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C2206E0D50004291D8 /* DetailViewController.swift */; };
 		B114F1CC206E0D50004291D8 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C3206E0D50004291D8 /* LayoutHelper.swift */; };
+		B17824A820735174006A0778 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17824A720735174006A0778 /* AppCache.swift */; };
+		B178250D20747F06006A0778 /* FMDatabaseQueue+Async.m in Sources */ = {isa = PBXBuildFile; fileRef = B17824FF20747F06006A0778 /* FMDatabaseQueue+Async.m */; };
+		B178250E20747F06006A0778 /* GYReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250420747F06006A0778 /* GYReflection.m */; };
+		B178250F20747F06006A0778 /* GYDCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250720747F06006A0778 /* GYDCUtilities.m */; };
+		B178251020747F06006A0778 /* GYDBRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250820747F06006A0778 /* GYDBRunner.m */; };
+		B178251120747F06006A0778 /* GYModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250B20747F06006A0778 /* GYModelObject.m */; };
+		B178251220747F06006A0778 /* GYDataContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250C20747F06006A0778 /* GYDataContext.m */; };
+		B1782514207488E9006A0778 /* ZMCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1782513207488E9006A0778 /* ZMCollectionViewController.swift */; };
 		B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B812068C0E700773368 /* ZMMainViews.swift */; };
 		B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B832068C25200773368 /* UILabel+ZM.swift */; };
 		B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B852068C4DA00773368 /* CGFloat+WT.swift */; };
@@ -173,6 +181,22 @@
 		B114F1C0206E0D50004291D8 /* CardHighlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardHighlight.swift; sourceTree = "<group>"; };
 		B114F1C2206E0D50004291D8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B114F1C3206E0D50004291D8 /* LayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
+		B17824A720735174006A0778 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
+		B17824FD20747F06006A0778 /* GYDBRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYDBRunner.h; sourceTree = "<group>"; };
+		B17824FF20747F06006A0778 /* FMDatabaseQueue+Async.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabaseQueue+Async.m"; sourceTree = "<group>"; };
+		B178250020747F06006A0778 /* FMDatabaseQueue+Async.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabaseQueue+Async.h"; sourceTree = "<group>"; };
+		B178250120747F06006A0778 /* GYDataContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYDataContext.h; sourceTree = "<group>"; };
+		B178250220747F06006A0778 /* GYModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYModelObject.h; sourceTree = "<group>"; };
+		B178250420747F06006A0778 /* GYReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYReflection.m; sourceTree = "<group>"; };
+		B178250520747F06006A0778 /* GYDCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYDCUtilities.h; sourceTree = "<group>"; };
+		B178250620747F06006A0778 /* GYReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYReflection.h; sourceTree = "<group>"; };
+		B178250720747F06006A0778 /* GYDCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYDCUtilities.m; sourceTree = "<group>"; };
+		B178250820747F06006A0778 /* GYDBRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYDBRunner.m; sourceTree = "<group>"; };
+		B178250920747F06006A0778 /* GYModelObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYModelObjectProtocol.h; sourceTree = "<group>"; };
+		B178250A20747F06006A0778 /* GYDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYDataCenter.h; sourceTree = "<group>"; };
+		B178250B20747F06006A0778 /* GYModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYModelObject.m; sourceTree = "<group>"; };
+		B178250C20747F06006A0778 /* GYDataContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYDataContext.m; sourceTree = "<group>"; };
+		B1782513207488E9006A0778 /* ZMCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMCollectionViewController.swift; sourceTree = "<group>"; };
 		B1954B812068C0E700773368 /* ZMMainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViews.swift; sourceTree = "<group>"; };
 		B1954B832068C25200773368 /* UILabel+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ZM.swift"; sourceTree = "<group>"; };
 		B1954B852068C4DA00773368 /* CGFloat+WT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+WT.swift"; sourceTree = "<group>"; };
@@ -286,6 +310,7 @@
 		2C10DB7A2067880100AE28F8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B17824FC20747F06006A0778 /* GYDataCenter */,
 				B114F1BA206E0D50004291D8 /* Cards */,
 				B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */,
 				2C10DBCB2067C82B00AE28F8 /* TFHpple */,
@@ -443,6 +468,7 @@
 				2C10DBB22067A6CA00AE28F8 /* ZMUtils.swift */,
 				2C10DBB42067A81E00AE28F8 /* AppColor.swift */,
 				B10B3563206A531E0093867A /* AppFont.swift */,
+				B17824A720735174006A0778 /* AppCache.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -535,6 +561,7 @@
 				B10B35562069DA9F0093867A /* ZMAboutViewController.swift */,
 				B10B355E2069E5030093867A /* ZMFoundersViewController.swift */,
 				B10B3561206A50400093867A /* ZMIntroduceViewController.swift */,
+				B1782513207488E9006A0778 /* ZMCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -568,6 +595,43 @@
 				B114F1C3206E0D50004291D8 /* LayoutHelper.swift */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		B17824FC20747F06006A0778 /* GYDataCenter */ = {
+			isa = PBXGroup;
+			children = (
+				B17824FD20747F06006A0778 /* GYDBRunner.h */,
+				B17824FE20747F06006A0778 /* FMDBExtension */,
+				B178250120747F06006A0778 /* GYDataContext.h */,
+				B178250220747F06006A0778 /* GYModelObject.h */,
+				B178250320747F06006A0778 /* Utilities */,
+				B178250820747F06006A0778 /* GYDBRunner.m */,
+				B178250920747F06006A0778 /* GYModelObjectProtocol.h */,
+				B178250A20747F06006A0778 /* GYDataCenter.h */,
+				B178250B20747F06006A0778 /* GYModelObject.m */,
+				B178250C20747F06006A0778 /* GYDataContext.m */,
+			);
+			path = GYDataCenter;
+			sourceTree = "<group>";
+		};
+		B17824FE20747F06006A0778 /* FMDBExtension */ = {
+			isa = PBXGroup;
+			children = (
+				B17824FF20747F06006A0778 /* FMDatabaseQueue+Async.m */,
+				B178250020747F06006A0778 /* FMDatabaseQueue+Async.h */,
+			);
+			path = FMDBExtension;
+			sourceTree = "<group>";
+		};
+		B178250320747F06006A0778 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B178250420747F06006A0778 /* GYReflection.m */,
+				B178250520747F06006A0778 /* GYDCUtilities.h */,
+				B178250620747F06006A0778 /* GYReflection.h */,
+				B178250720747F06006A0778 /* GYDCUtilities.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */ = {
@@ -708,6 +772,7 @@
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -720,6 +785,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -745,6 +811,7 @@
 				2C10DBFB206A996D00AE28F8 /* ZMMoviePagerViewController.swift in Sources */,
 				B1954B892068C4DB00773368 /* UIImageView+CornerRadius.m in Sources */,
 				2C10DBB92067AA6000AE28F8 /* ZMBaseModel.swift in Sources */,
+				B178250D20747F06006A0778 /* FMDatabaseQueue+Async.m in Sources */,
 				2C10DB632067773F00AE28F8 /* ViewController.swift in Sources */,
 				B114F1C4206E0D50004291D8 /* Animator.swift in Sources */,
 				B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */,
@@ -781,6 +848,8 @@
 				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
 				2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */,
 				B114F1C5206E0D50004291D8 /* Card.swift in Sources */,
+				B178251120747F06006A0778 /* GYModelObject.m in Sources */,
+				B178251020747F06006A0778 /* GYDBRunner.m in Sources */,
 				B10B355D2069E42F0093867A /* ZMAboutModels.swift in Sources */,
 				2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */,
 				2C10DBC92067B32B00AE28F8 /* FSPageViewLayout.swift in Sources */,
@@ -789,18 +858,23 @@
 				2C10DB8920678DFD00AE28F8 /* Constants.swift in Sources */,
 				B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */,
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
+				B178250F20747F06006A0778 /* GYDCUtilities.m in Sources */,
 				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
 				B114F1CB206E0D50004291D8 /* DetailViewController.swift in Sources */,
 				B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */,
 				B10B3566206B3ADF0093867A /* ZMSearchViewController.swift in Sources */,
 				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
 				B10B35572069DA9F0093867A /* ZMAboutViewController.swift in Sources */,
+				B1782514207488E9006A0778 /* ZMCollectionViewController.swift in Sources */,
+				B17824A820735174006A0778 /* AppCache.swift in Sources */,
 				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
 				B10B3570206B8B5E0093867A /* ZMMovieDetailViewController.swift in Sources */,
 				B10B3564206A531E0093867A /* AppFont.swift in Sources */,
 				B10B356B206B68830093867A /* ZMTransition.swift in Sources */,
+				B178251220747F06006A0778 /* GYDataContext.m in Sources */,
 				B114F1CC206E0D50004291D8 /* LayoutHelper.swift in Sources */,
 				2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */,
+				B178250E20747F06006A0778 /* GYReflection.m in Sources */,
 				B10B3562206A50400093867A /* ZMIntroduceViewController.swift in Sources */,
 				2C10DBB32067A6CA00AE28F8 /* ZMUtils.swift in Sources */,
 				2C10DBBB2067AA8600AE28F8 /* ZMMainModels.swift in Sources */,

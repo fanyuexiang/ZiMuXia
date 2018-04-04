@@ -21,3 +21,31 @@ class ZMBaseModel: NSObject, Mappable {
     }
 }
 
+class ZMCacheModel: GYModelObject, Mappable {
+    override init() {
+        super.init()
+    }
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+    }
+    
+    override class func dbName() -> String {
+        return ""
+    }
+    
+    override class func tableName() -> String {
+        return ""
+    }
+    
+    override class func primaryKey() -> String {
+        return ""
+    }
+    
+    override class func persistentProperties() -> [Any] {
+        return []
+    }
+}
+

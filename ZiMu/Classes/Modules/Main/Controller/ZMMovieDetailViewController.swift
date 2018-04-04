@@ -109,8 +109,7 @@ final class ZMMovieDetailViewController: ZMViewController {
         infoTextView.attributedText = AppFont.attributeString(kFontRegularName, text: movie.producerInfo, fontSize: 12, fontColor: AppColor.theme.subTitleColor)
         
         viewDidLayoutSubviews()
-        
-//        print(movie.producerInfo)
+        movie.save()
     }
 }
 
@@ -128,12 +127,7 @@ extension ZMMovieDetailViewController {
                         if let doc = TFHpple(htmlData: htmlData) {
                             if let homepagePosterNode = doc.search(withXPathQuery: "//img[@class='img-frame aligncenter']").first as? TFHppleElement {
                                 strongSelf.movie.homepagePoster = homepagePosterNode["src"] as? String
-                                strongSelf.movie.name = homepagePosterNode["alt"] as? String
-                            }
-                            
-                            if let homepagePosterNode = doc.search(withXPathQuery: "//img[@class='img-frame  aligncenter']").first as? TFHppleElement {
-                                strongSelf.movie.homepagePoster = homepagePosterNode["src"] as? String
-                                strongSelf.movie.name = homepagePosterNode["alt"] as? String
+//                                strongSelf.movie.name = homepagePosterNode["alt"] as? String
                             }
                             
                             if let content = doc.search(withXPathQuery: "//div[@class='content-box']").first as? TFHppleElement {
