@@ -66,6 +66,19 @@ final class ZMMovie: ZMCacheModel {
     override class func persistentProperties() -> [Any] {
         return ["name", "classification","poster","homepagePoster","homepageUrl","producerInfo","synopsis"]
     }
+    
+    public func copy() -> ZMMovie {
+        let movie = ZMMovie()
+        movie.name = name
+        movie.classification = classification
+        movie.poster = poster
+        movie.homepagePoster = homepagePoster
+        movie.homepageUrl = homepageUrl
+        movie.producerInfo = producerInfo
+        movie.synopsis = synopsis
+        movie.baiduYuns = baiduYuns
+        return movie
+    }
 }
 
 final class ZMBaiduYun: ZMCacheModel {

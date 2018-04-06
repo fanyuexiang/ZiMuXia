@@ -10,9 +10,14 @@ import UIKit
 import Alamofire
 import QMUIKit
 import MJRefresh
+import SnapKit
 
 /// 详情页
-final class ZMMovieDetailViewController: ZMViewController {
+final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate {
+    
+    // constant
+    private let postImageViewHeight: CGFloat = kScreenWidth*1.4149
+    private var postImageViewHeightConstraint: Constraint?
     
     // UI
     fileprivate lazy var postImageView: UIImageView = {
@@ -22,18 +27,53 @@ final class ZMMovieDetailViewController: ZMViewController {
         return imageView
     }()
     
-    fileprivate lazy var infoTextView: QMUITextView = {
-        let textView = QMUITextView()
-        textView.isEditable = false
-//        textView.isScrollEnabled = false
-        return textView
+    fileprivate lazy var postMaskImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "image_mask")
+        return imageView
+    }()
+    
+    fileprivate lazy var nameLabel: QMUILabel = {
+        let label = QMUILabel(textColor: .white, fontSize: 24.adapted, FontName: kFontSemiboldName)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    fileprivate lazy var infoLabel: QMUILabel = {
+        let label = QMUILabel(textColor: AppColor.theme.subTitleColor, fontSize: 12.adapted, FontName: kFontLightName)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    fileprivate lazy var favoriteBtn: QMUIButton = {
+        let btn = QMUIButton()
+        btn.setImage(UIImage(named: "icon_favorites_def"), for: .normal)
+        btn.setImage(UIImage(named: "icon_favorites_sel"), for: .selected)
+        btn.addTarget(self, action: #selector(ZMMovieDetailViewController.handleFavorite(_:)), for: .touchUpInside)
+        return btn
+    }()
+    
+    fileprivate lazy var baiduYunLabel: QMUILabel = {
+        let label = QMUILabel(textColor: AppColor.theme.subTitleColor, fontSize: 20.adapted, FontName: kFontSemiboldName)
+        label.text = "传送门"
+        return label
+    }()
+    
+    fileprivate lazy var floatLayoutView: QMUIFloatLayoutView = {
+        let floatLayoutView = QMUIFloatLayoutView()
+        floatLayoutView.padding = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        floatLayoutView.itemMargins = UIEdgeInsetsMake(6, 6, 6, 6)
+        floatLayoutView.minimumItemSize = CGSize(width: 65, height: 30)// 以2个字的按钮作为最小宽度
+        return floatLayoutView
     }()
 
     fileprivate lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.delegate = self
         return scrollView
     }()
-
     
     // data
     fileprivate var detailUrl: String!
@@ -43,9 +83,10 @@ final class ZMMovieDetailViewController: ZMViewController {
     init(url: String, movie: ZMMovie? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.detailUrl = url
-        self.movie = movie != nil ? movie : ZMMovie()
+        self.movie = movie != nil ? movie?.copy() : ZMMovie()
         postImageView.hero.id = movie?.name
-        postImageView.setImage(url: movie?.poster)
+        postImageView.setImage(url: movie?.poster ?? movie?.homepagePoster)
+        nameLabel.text = movie?.name
     }
     
     required init!(coder aDecoder: NSCoder!) {
@@ -72,7 +113,13 @@ final class ZMMovieDetailViewController: ZMViewController {
         super.initSubviews()
         view.addSubview(scrollView)
         scrollView.addSubview(postImageView)
-        scrollView.addSubview(infoTextView)
+        scrollView.addSubview(postMaskImageView)
+        scrollView.addSubview(nameLabel)
+        scrollView.addSubview(favoriteBtn)
+        scrollView.addSubview(infoLabel)
+        scrollView.addSubview(baiduYunLabel)
+        scrollView.addSubview(floatLayoutView)
+        
     }
     
     override func navigationBarTintColor() -> UIColor? {
@@ -92,25 +139,123 @@ final class ZMMovieDetailViewController: ZMViewController {
         postImageView.snp.makeConstraints {
             $0.width.equalTo(kScreenWidth)
             $0.top.left.right.equalTo(scrollView)
-            $0.height.equalTo(kScreenWidth*1.4149)
+            postImageViewHeightConstraint = $0.height.equalTo(postImageViewHeight).constraint
         }
         
-        infoTextView.snp.removeConstraints()
-        infoTextView.snp.makeConstraints {
-            $0.width.equalTo(kScreenWidth)
-            $0.bottom.left.right.equalTo(scrollView)
+        postMaskImageView.snp.makeConstraints {
+            $0.edges.equalTo(postImageView)
+        }
+        
+        nameLabel.snp.makeConstraints {
+            $0.bottom.equalTo(postMaskImageView).offset(-30)
+            $0.left.equalTo(postMaskImageView).offset(30)
+            $0.width.lessThanOrEqualToSuperview()
+        }
+        
+        favoriteBtn.snp.makeConstraints {
+            $0.bottom.equalTo(postMaskImageView).offset(-15)
+            $0.right.equalTo(postMaskImageView).offset(-30)
+            $0.height.width.equalTo(50)
+        }
+        
+        infoLabel.snp.makeConstraints {
+            $0.right.equalTo(scrollView).offset(-10)
+            $0.left.equalTo(scrollView).offset(10)
+            $0.width.equalTo(kScreenWidth-20)
             $0.top.equalTo(postImageView.snp.bottom)
-            $0.height.equalTo(infoTextView.contentSize.height)
+        }
+        
+        baiduYunLabel.snp.makeConstraints {
+            $0.top.equalTo(infoLabel.snp.bottom).offset(6)
+            $0.left.equalTo(scrollView).offset(10)
+            $0.width.lessThanOrEqualToSuperview()
+        }
+        
+        let floatLayoutViewSize = floatLayoutView.sizeThatFits(CGSize(width: kScreenWidth, height: CGFloat.greatestFiniteMagnitude))
+        floatLayoutView.snp.removeConstraints()
+        floatLayoutView.snp.makeConstraints {
+            $0.width.equalTo(kScreenWidth)
+            $0.top.equalTo(baiduYunLabel.snp.bottom).offset(6)
+            $0.left.right.equalTo(scrollView)
+            $0.bottom.equalTo(scrollView).offset(-20)
+            $0.height.equalTo(floatLayoutViewSize.height)
+        }
+    }
+    
+    // MARK: - 动画
+    fileprivate func startAnimation() {
+        let nameAnimator = CoreAnimator(view: nameLabel)
+        nameAnimator.make(alpha: 1).move(y: -100).easeIn.animate(t: 1)
+    }
+    
+    // MARK: - action
+    @objc fileprivate func handleFavorite(_ sender: QMUIButton) {
+        if sender.isSelected {
+            movie.delete()
+        } else {
+            movie.save()
+        }
+        sender.isSelected = !sender.isSelected
+    }
+    
+    @objc fileprivate func pushToBaiduYun(_ sender: QMUIButton) {
+        if sender.tag - 1 <= movie.baiduYuns.count {
+            if let url = movie.baiduYuns[sender.tag].url {
+                let webVC = ZMWebViewController()
+                webVC.load(urlString: url)
+                navigationController?.pushViewController(webVC, animated: true)
+            }
         }
     }
 
+    // MARK: - 刷新内容
     fileprivate func refreshContent() {
-        postImageView.setImage(url: movie.poster)
-        infoTextView.attributedText = AppFont.attributeString(kFontRegularName, text: movie.producerInfo, fontSize: 12, fontColor: AppColor.theme.subTitleColor)
+        postImageView.setImage(url: movie.poster ?? movie.homepagePoster)
+        infoLabel.attributedText = AppFont.attributeString(kFontRegularName, text: movie.producerInfo, fontSize: 12, fontColor: AppColor.theme.subTitleColor)
+        nameLabel.text = movie.name
+        infoLabel.sizeToFit()
         
-        viewDidLayoutSubviews()
-        movie.save()
+        for (index, _) in movie.baiduYuns.enumerated() {
+            let btn = QMUIButton()
+            btn.tag = index
+            btn.setTitle(" \(index+1) ", for: .normal)
+            btn.setTitleColor(AppColor.theme.subTitleColor, for: .normal)
+            btn.titleLabel?.font = AppFont.regularFont(14)
+            btn.addTarget(self, action: #selector(ZMMovieDetailViewController.pushToBaiduYun(_:)), for: .touchUpInside)
+            btn.layer.borderWidth = 1
+            btn.layer.borderColor = AppColor.theme.separateYellow.cgColor
+            btn.layer.cornerRadius = 6
+            floatLayoutView.addSubview(btn)
+        }
+        
+        if let name = movie.name {
+            if let movies = ZMMovie.objectsWhere("WHERE name == \"\(name)\"", arguments: nil) as? [ZMMovie] {
+                favoriteBtn.isSelected = movies.count != 0
+            }
+        }
     }
+    
+    // MARK: - UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffset = scrollView.contentOffset
+        if contentOffset.y < 0 {
+            postImageView.snp.remakeConstraints {
+                $0.width.equalTo(kScreenWidth)
+                $0.top.equalTo(scrollView).offset(contentOffset.y)
+                $0.left.right.equalTo(scrollView)
+                postImageViewHeightConstraint = $0.height.equalTo(postImageViewHeight).constraint
+            }
+            postImageViewHeightConstraint?.update(offset: postImageViewHeight - contentOffset.y)
+        } else {
+            postImageView.snp.remakeConstraints {
+                $0.width.equalTo(kScreenWidth)
+                $0.top.left.right.equalTo(scrollView)
+                postImageViewHeightConstraint = $0.height.equalTo(postImageViewHeight).constraint
+            }
+            postImageViewHeightConstraint?.update(offset: postImageViewHeight)
+        }
+    }
+    
 }
 
 // MARK: - 网络
@@ -129,6 +274,9 @@ extension ZMMovieDetailViewController {
                                 strongSelf.movie.homepagePoster = homepagePosterNode["src"] as? String
 //                                strongSelf.movie.name = homepagePosterNode["alt"] as? String
                             }
+                            if let homepagePosterNode = doc.search(withXPathQuery: "//img[@class='img-frame  aligncenter']").first as? TFHppleElement {
+                                strongSelf.movie.homepagePoster = homepagePosterNode["src"] as? String
+                            }
                             
                             if let content = doc.search(withXPathQuery: "//div[@class='content-box']").first as? TFHppleElement {
                                 
@@ -136,7 +284,7 @@ extension ZMMovieDetailViewController {
                                 if strs.count > 0 {
                                     strongSelf.movie.producerInfo = strs[0]
                                 }
-                                
+                                strongSelf.movie.baiduYuns.removeAll()
                                 for node in content.search(withXPathQuery: "//a") {
                                     let data = node as! TFHppleElement
                                     if data.content == "百度网盘" {

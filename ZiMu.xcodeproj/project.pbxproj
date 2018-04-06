@@ -51,6 +51,13 @@
 		2C10DBF4206A85E300AE28F8 /* Pods-ZiMu-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C10DBF3206A85E300AE28F8 /* Pods-ZiMu-acknowledgements.plist */; };
 		2C10DBF6206A8F2000AE28F8 /* ZMCatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBF5206A8F2000AE28F8 /* ZMCatListViewController.swift */; };
 		2C10DBFB206A996D00AE28F8 /* ZMMoviePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBFA206A996D00AE28F8 /* ZMMoviePagerViewController.swift */; };
+		2C335E332077777600223599 /* LSAnimatorLinker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C335E282077777600223599 /* LSAnimatorLinker.m */; };
+		2C335E342077777600223599 /* CoreAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C335E2A2077777600223599 /* CoreAnimator.swift */; };
+		2C335E352077777600223599 /* LSKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C335E2E2077777600223599 /* LSKeyframeAnimationFunctions.c */; };
+		2C335E362077777600223599 /* LSKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C335E302077777600223599 /* LSKeyframeAnimation.m */; };
+		2C335E372077777600223599 /* LSAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C335E312077777600223599 /* LSAnimator.m */; };
+		2C335E382077777600223599 /* LSAnimatorChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C335E322077777600223599 /* LSAnimatorChain.m */; };
+		2C335E3B207782CC00223599 /* ZMWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C335E3A207782CC00223599 /* ZMWebViewController.swift */; };
 		B10B35572069DA9F0093867A /* ZMAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B35562069DA9F0093867A /* ZMAboutViewController.swift */; };
 		B10B355A2069DD720093867A /* ZMAboutViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B35592069DD720093867A /* ZMAboutViews.swift */; };
 		B10B355D2069E42F0093867A /* ZMAboutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B355C2069E42F0093867A /* ZMAboutModels.swift */; };
@@ -63,14 +70,6 @@
 		B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */; };
 		B10B3580206CA99E0093867A /* UIImage+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B357E206CA99E0093867A /* UIImage+Hue.swift */; };
 		B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B357F206CA99E0093867A /* UIColor+Hue.swift */; };
-		B114F1C4206E0D50004291D8 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BB206E0D50004291D8 /* Animator.swift */; };
-		B114F1C5206E0D50004291D8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BC206E0D50004291D8 /* Card.swift */; };
-		B114F1C6206E0D50004291D8 /* CardArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BD206E0D50004291D8 /* CardArticle.swift */; };
-		B114F1C7206E0D50004291D8 /* CardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BE206E0D50004291D8 /* CardGroup.swift */; };
-		B114F1C8206E0D50004291D8 /* CardGroupSliding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1BF206E0D50004291D8 /* CardGroupSliding.swift */; };
-		B114F1C9206E0D50004291D8 /* CardHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C0206E0D50004291D8 /* CardHighlight.swift */; };
-		B114F1CB206E0D50004291D8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C2206E0D50004291D8 /* DetailViewController.swift */; };
-		B114F1CC206E0D50004291D8 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114F1C3206E0D50004291D8 /* LayoutHelper.swift */; };
 		B17824A820735174006A0778 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17824A720735174006A0778 /* AppCache.swift */; };
 		B178250D20747F06006A0778 /* FMDatabaseQueue+Async.m in Sources */ = {isa = PBXBuildFile; fileRef = B17824FF20747F06006A0778 /* FMDatabaseQueue+Async.m */; };
 		B178250E20747F06006A0778 /* GYReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250420747F06006A0778 /* GYReflection.m */; };
@@ -160,6 +159,19 @@
 		2C10DBF3206A85E300AE28F8 /* Pods-ZiMu-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-ZiMu-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		2C10DBF5206A8F2000AE28F8 /* ZMCatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMCatListViewController.swift; sourceTree = "<group>"; };
 		2C10DBFA206A996D00AE28F8 /* ZMMoviePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMoviePagerViewController.swift; sourceTree = "<group>"; };
+		2C335E272077777600223599 /* LSKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
+		2C335E282077777600223599 /* LSAnimatorLinker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAnimatorLinker.m; sourceTree = "<group>"; };
+		2C335E292077777600223599 /* LSAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimator.h; sourceTree = "<group>"; };
+		2C335E2A2077777600223599 /* CoreAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAnimator.swift; sourceTree = "<group>"; };
+		2C335E2B2077777600223599 /* LSKeyframeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSKeyframeAnimation.h; sourceTree = "<group>"; };
+		2C335E2C2077777600223599 /* LSAnimatorChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimatorChain.h; sourceTree = "<group>"; };
+		2C335E2D2077777600223599 /* LSAnimatorLinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimatorLinker.h; sourceTree = "<group>"; };
+		2C335E2E2077777600223599 /* LSKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LSKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
+		2C335E2F2077777600223599 /* LSAnimatorBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimatorBlocks.h; sourceTree = "<group>"; };
+		2C335E302077777600223599 /* LSKeyframeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSKeyframeAnimation.m; sourceTree = "<group>"; };
+		2C335E312077777600223599 /* LSAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAnimator.m; sourceTree = "<group>"; };
+		2C335E322077777600223599 /* LSAnimatorChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAnimatorChain.m; sourceTree = "<group>"; };
+		2C335E3A207782CC00223599 /* ZMWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMWebViewController.swift; sourceTree = "<group>"; };
 		4829B6B8EC2A1EDF62A3DBEA /* Pods_ZiMu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiMu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10B35562069DA9F0093867A /* ZMAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMAboutViewController.swift; sourceTree = "<group>"; };
 		B10B35592069DD720093867A /* ZMAboutViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMAboutViews.swift; sourceTree = "<group>"; };
@@ -173,14 +185,6 @@
 		B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ZM.swift"; sourceTree = "<group>"; };
 		B10B357E206CA99E0093867A /* UIImage+Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Hue.swift"; sourceTree = "<group>"; };
 		B10B357F206CA99E0093867A /* UIColor+Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hue.swift"; sourceTree = "<group>"; };
-		B114F1BB206E0D50004291D8 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		B114F1BC206E0D50004291D8 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		B114F1BD206E0D50004291D8 /* CardArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardArticle.swift; sourceTree = "<group>"; };
-		B114F1BE206E0D50004291D8 /* CardGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGroup.swift; sourceTree = "<group>"; };
-		B114F1BF206E0D50004291D8 /* CardGroupSliding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGroupSliding.swift; sourceTree = "<group>"; };
-		B114F1C0206E0D50004291D8 /* CardHighlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardHighlight.swift; sourceTree = "<group>"; };
-		B114F1C2206E0D50004291D8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		B114F1C3206E0D50004291D8 /* LayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
 		B17824A720735174006A0778 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
 		B17824FD20747F06006A0778 /* GYDBRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYDBRunner.h; sourceTree = "<group>"; };
 		B17824FF20747F06006A0778 /* FMDatabaseQueue+Async.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabaseQueue+Async.m"; sourceTree = "<group>"; };
@@ -310,8 +314,8 @@
 		2C10DB7A2067880100AE28F8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				2C335E262077777600223599 /* CoreAnimator */,
 				B17824FC20747F06006A0778 /* GYDataCenter */,
-				B114F1BA206E0D50004291D8 /* Cards */,
 				B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */,
 				2C10DBCB2067C82B00AE28F8 /* TFHpple */,
 				2C10DBBC2067B32A00AE28F8 /* FSPagerView */,
@@ -347,6 +351,7 @@
 				2C10DBA92067A4E900AE28F8 /* ZMViewController.swift */,
 				2C10DBAB2067A50200AE28F8 /* ZMTableViewController.swift */,
 				2C10DBAD2067A51B00AE28F8 /* ZMNavigationController.swift */,
+				2C335E3A207782CC00223599 /* ZMWebViewController.swift */,
 				2C10DBB82067AA6000AE28F8 /* ZMBaseModel.swift */,
 				B1954B952068F77800773368 /* ZMRefreshControl.swift */,
 			);
@@ -536,6 +541,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2C335E262077777600223599 /* CoreAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				2C335E272077777600223599 /* LSKeyframeAnimationFunctions.h */,
+				2C335E282077777600223599 /* LSAnimatorLinker.m */,
+				2C335E292077777600223599 /* LSAnimator.h */,
+				2C335E2A2077777600223599 /* CoreAnimator.swift */,
+				2C335E2B2077777600223599 /* LSKeyframeAnimation.h */,
+				2C335E2C2077777600223599 /* LSAnimatorChain.h */,
+				2C335E2D2077777600223599 /* LSAnimatorLinker.h */,
+				2C335E2E2077777600223599 /* LSKeyframeAnimationFunctions.c */,
+				2C335E2F2077777600223599 /* LSAnimatorBlocks.h */,
+				2C335E302077777600223599 /* LSKeyframeAnimation.m */,
+				2C335E312077777600223599 /* LSAnimator.m */,
+				2C335E322077777600223599 /* LSAnimatorChain.m */,
+			);
+			path = CoreAnimator;
+			sourceTree = "<group>";
+		};
 		6EEDE80795708BA51ACA35AA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,21 +604,6 @@
 				B10B355C2069E42F0093867A /* ZMAboutModels.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B114F1BA206E0D50004291D8 /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-				B114F1BB206E0D50004291D8 /* Animator.swift */,
-				B114F1BC206E0D50004291D8 /* Card.swift */,
-				B114F1BD206E0D50004291D8 /* CardArticle.swift */,
-				B114F1BE206E0D50004291D8 /* CardGroup.swift */,
-				B114F1BF206E0D50004291D8 /* CardGroupSliding.swift */,
-				B114F1C0206E0D50004291D8 /* CardHighlight.swift */,
-				B114F1C2206E0D50004291D8 /* DetailViewController.swift */,
-				B114F1C3206E0D50004291D8 /* LayoutHelper.swift */,
-			);
-			path = Cards;
 			sourceTree = "<group>";
 		};
 		B17824FC20747F06006A0778 /* GYDataCenter */ = {
@@ -806,23 +815,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C10DB7B2067880100AE28F8 /* AppDelegate.swift in Sources */,
-				B114F1C9206E0D50004291D8 /* CardHighlight.swift in Sources */,
+				2C335E362077777600223599 /* LSKeyframeAnimation.m in Sources */,
 				B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */,
 				2C10DBFB206A996D00AE28F8 /* ZMMoviePagerViewController.swift in Sources */,
 				B1954B892068C4DB00773368 /* UIImageView+CornerRadius.m in Sources */,
 				2C10DBB92067AA6000AE28F8 /* ZMBaseModel.swift in Sources */,
 				B178250D20747F06006A0778 /* FMDatabaseQueue+Async.m in Sources */,
 				2C10DB632067773F00AE28F8 /* ViewController.swift in Sources */,
-				B114F1C4206E0D50004291D8 /* Animator.swift in Sources */,
 				B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */,
 				B1954B8B2068C6DF00773368 /* UIImageView+ZM.swift in Sources */,
 				2C10DBF6206A8F2000AE28F8 /* ZMCatListViewController.swift in Sources */,
 				B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */,
 				2C10DB9C20678EAB00AE28F8 /* TYPagerController.m in Sources */,
-				B114F1C8206E0D50004291D8 /* CardGroupSliding.swift in Sources */,
 				B10B355A2069DD720093867A /* ZMAboutViews.swift in Sources */,
 				2C10DBC82067B32B00AE28F8 /* FSPagerViewLayoutAttributes.swift in Sources */,
-				B114F1C6206E0D50004291D8 /* CardArticle.swift in Sources */,
 				2C10DB9D20678EAB00AE28F8 /* TYPagerViewLayout.m in Sources */,
 				2C10DBC62067B32B00AE28F8 /* FSPagerView.swift in Sources */,
 				B1954B932068EAAC00773368 /* ZJFlexibleDataSource.swift in Sources */,
@@ -838,7 +844,6 @@
 				2C10DBEA2069362A00AE28F8 /* ZMClassificationViews.swift in Sources */,
 				2C10DB8C20678E7900AE28F8 /* Device.generated.swift in Sources */,
 				2C10DBC52067B32B00AE28F8 /* FSPagerCollectionView.swift in Sources */,
-				B114F1C7206E0D50004291D8 /* CardGroup.swift in Sources */,
 				2C10DB9920678EAB00AE28F8 /* TYTabPagerBar.m in Sources */,
 				B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */,
 				2C10DBC72067B32B00AE28F8 /* FSPagerViewCell.swift in Sources */,
@@ -847,8 +852,8 @@
 				2C10DBB52067A81E00AE28F8 /* AppColor.swift in Sources */,
 				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
 				2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */,
-				B114F1C5206E0D50004291D8 /* Card.swift in Sources */,
 				B178251120747F06006A0778 /* GYModelObject.m in Sources */,
+				2C335E332077777600223599 /* LSAnimatorLinker.m in Sources */,
 				B178251020747F06006A0778 /* GYDBRunner.m in Sources */,
 				B10B355D2069E42F0093867A /* ZMAboutModels.swift in Sources */,
 				2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */,
@@ -860,21 +865,24 @@
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
 				B178250F20747F06006A0778 /* GYDCUtilities.m in Sources */,
 				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
-				B114F1CB206E0D50004291D8 /* DetailViewController.swift in Sources */,
 				B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */,
 				B10B3566206B3ADF0093867A /* ZMSearchViewController.swift in Sources */,
 				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
 				B10B35572069DA9F0093867A /* ZMAboutViewController.swift in Sources */,
 				B1782514207488E9006A0778 /* ZMCollectionViewController.swift in Sources */,
+				2C335E3B207782CC00223599 /* ZMWebViewController.swift in Sources */,
 				B17824A820735174006A0778 /* AppCache.swift in Sources */,
 				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
 				B10B3570206B8B5E0093867A /* ZMMovieDetailViewController.swift in Sources */,
+				2C335E342077777600223599 /* CoreAnimator.swift in Sources */,
 				B10B3564206A531E0093867A /* AppFont.swift in Sources */,
 				B10B356B206B68830093867A /* ZMTransition.swift in Sources */,
 				B178251220747F06006A0778 /* GYDataContext.m in Sources */,
-				B114F1CC206E0D50004291D8 /* LayoutHelper.swift in Sources */,
+				2C335E372077777600223599 /* LSAnimator.m in Sources */,
 				2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */,
+				2C335E352077777600223599 /* LSKeyframeAnimationFunctions.c in Sources */,
 				B178250E20747F06006A0778 /* GYReflection.m in Sources */,
+				2C335E382077777600223599 /* LSAnimatorChain.m in Sources */,
 				B10B3562206A50400093867A /* ZMIntroduceViewController.swift in Sources */,
 				2C10DBB32067A6CA00AE28F8 /* ZMUtils.swift in Sources */,
 				2C10DBBB2067AA8600AE28F8 /* ZMMainModels.swift in Sources */,

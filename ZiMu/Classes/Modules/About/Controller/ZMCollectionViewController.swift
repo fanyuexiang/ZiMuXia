@@ -24,12 +24,7 @@ final class ZMCollectionViewController: ZMViewController {
     }()
     
     // data
-    fileprivate lazy var movies: [ZMMovie] = {
-        if let movies = ZMMovie.objectsWhere(nil, arguments: nil) as? [ZMMovie] {
-            return movies
-        }
-        return [ZMMovie]()
-    }()
+    fileprivate lazy var movies: [ZMMovie] = [ZMMovie]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,11 +44,13 @@ final class ZMCollectionViewController: ZMViewController {
     }
     
     private func refreshCollectionView() {
-        if movies.count != 0 {
-            collectionView.reloadData()
-        } else {
+        if let movies = ZMMovie.objectsWhere(nil, arguments: nil) as? [ZMMovie] {
+            self.movies = movies
+        }
+        if movies.count == 0 {
             showEmptyView(withText: "这里是空的啊!!", detailText: "去看看有什么电影", buttonTitle: nil, buttonAction: nil)
         }
+        collectionView.reloadData()
     }
     
 }

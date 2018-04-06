@@ -18,4 +18,6 @@
 #import "TYTabPagerBar.h"
 // 数据库
 #import "GYDataCenter.h"
+// 动画
+#import "LSAnimator.h"
 #endif /* ZiMu_Bridging_Header_h */
