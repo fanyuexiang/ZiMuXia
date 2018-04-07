@@ -32,6 +32,7 @@ final class ZMSearchViewController: ZMTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configRefreshFooter()
+        zmSearchBar.becomeFirstResponder()
     }
     
     override func setupCommonBackItem() {
@@ -60,6 +61,10 @@ final class ZMSearchViewController: ZMTableViewController {
         refreshAutoNormalFooter = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(ZMSearchViewController.search))
         refreshAutoNormalFooter.setTitle("", for: .idle)
         tableView.mj_footer = refreshAutoNormalFooter
+    }
+    
+    override func shouldHideKeyboardWhenTouch(in view: UIView!) -> Bool {
+        return true
     }
     
 }

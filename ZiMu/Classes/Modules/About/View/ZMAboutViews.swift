@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import QMUIKit
 
 /// About cell
 final class ZMAboutCell: UITableViewCell {
@@ -178,3 +179,38 @@ final class ZMFounderPagerViewCell: FSPagerViewCell {
     
 }
 
+/// 底部版本footer
+final class ZMAboutFooter: UITableViewHeaderFooterView {
+    static let CellIdentifier = "ZMAboutFooter"
+    // UI
+    private lazy var aboutLabel: QMUILabel = {
+        let label = QMUILabel(textColor: AppColor.theme.subTitleColor, fontSize: 12, FontName: kFontLightName)
+        label.textAlignment = .center
+//        let appBuild = kBundle.infoDictionary?[kCFBundleVersionKey as String] as? String
+        let appVersion = kBundle.infoDictionary?["CFBundleShortVersionString"] as? String
+        label.text = "© 2018 FIX字幕侠 ZiMu v" + (appVersion ?? "")
+        return label
+    }()
+    
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+        addViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        aboutLabel.snp.makeConstraints {
+            $0.top.equalTo(self).offset(20)
+            $0.centerX.equalTo(self)
+            $0.width.lessThanOrEqualToSuperview()
+        }
+    }
+    
+    fileprivate func addViews() {
+        addSubview(aboutLabel)
+    }
+}

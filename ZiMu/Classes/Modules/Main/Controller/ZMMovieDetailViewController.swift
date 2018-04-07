@@ -11,6 +11,7 @@ import Alamofire
 import QMUIKit
 import MJRefresh
 import SnapKit
+import SafariServices
 
 /// 详情页
 final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate {
@@ -18,6 +19,8 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     // constant
     private let postImageViewHeight: CGFloat = kScreenWidth*1.4149
     private var postImageViewHeightConstraint: Constraint?
+    fileprivate var navigationBarColor: UIColor = .clear
+    fileprivate var navigationTintColor: UIColor = .white
     
     // UI
     fileprivate lazy var postImageView: UIImageView = {
@@ -49,6 +52,7 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     
     fileprivate lazy var favoriteBtn: QMUIButton = {
         let btn = QMUIButton()
+        btn.imageView?.contentMode = .scaleAspectFit
         btn.setImage(UIImage(named: "icon_favorites_def"), for: .normal)
         btn.setImage(UIImage(named: "icon_favorites_sel"), for: .selected)
         btn.addTarget(self, action: #selector(ZMMovieDetailViewController.handleFavorite(_:)), for: .touchUpInside)
@@ -97,10 +101,16 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         super.viewWillAppear(animated)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.zm_reset()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.hero.isEnabled = true
-        self.hero.isEnabled = true
+        navigationController?.hero.isEnabled = true
+        navigationController?.navigationBar
+            .zm_setBackgroundColor(backgroundColor: navigationBarColor)
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = .never
         } else {
@@ -119,15 +129,6 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         scrollView.addSubview(infoLabel)
         scrollView.addSubview(baiduYunLabel)
         scrollView.addSubview(floatLayoutView)
-        
-    }
-    
-    override func navigationBarTintColor() -> UIColor? {
-        return .white
-    }
-    
-    override func navigationBarBackgroundImage() -> UIImage? {
-        return ZMUtils.imageWithColor(.clear)
     }
     
     override func viewDidLayoutSubviews() {
@@ -155,7 +156,7 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         favoriteBtn.snp.makeConstraints {
             $0.bottom.equalTo(postMaskImageView).offset(-15)
             $0.right.equalTo(postMaskImageView).offset(-30)
-            $0.height.width.equalTo(50)
+            $0.width.height.equalTo(50)
         }
         
         infoLabel.snp.makeConstraints {
@@ -181,11 +182,27 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
             $0.height.equalTo(floatLayoutViewSize.height)
         }
     }
+
+    // MARK: - 导航栏
+    override func navigationBarTintColor() -> UIColor? {
+        return navigationTintColor
+    }
     
-    // MARK: - 动画
-    fileprivate func startAnimation() {
-        let nameAnimator = CoreAnimator(view: nameLabel)
-        nameAnimator.make(alpha: 1).move(y: -100).easeIn.animate(t: 1)
+    override func navigationBarBackgroundImage() -> UIImage? {
+        return ZMUtils.imageWithColor(.clear)
+    }
+    
+    fileprivate func changeNavigationBarColor(contentOffset: CGPoint) {
+        if contentOffset.y < 0 {
+            navigationBarColor = .clear
+        } else if contentOffset.y < postImageViewHeight {
+            navigationBarColor = UIColor.white.withAlphaComponent(contentOffset.y / postImageViewHeight)
+        } else {
+            navigationBarColor = .white
+        }
+        navigationTintColor = UIColor(white: 1-contentOffset.y / postImageViewHeight, alpha: 1)
+        navigationController?.navigationBar.tintColor = navigationTintColor
+        navigationController?.navigationBar.zm_setBackgroundColor(backgroundColor: navigationBarColor)
     }
     
     // MARK: - action
@@ -200,10 +217,11 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     
     @objc fileprivate func pushToBaiduYun(_ sender: QMUIButton) {
         if sender.tag - 1 <= movie.baiduYuns.count {
-            if let url = movie.baiduYuns[sender.tag].url {
-                let webVC = ZMWebViewController()
-                webVC.load(urlString: url)
-                navigationController?.pushViewController(webVC, animated: true)
+            if let urlString = movie.baiduYuns[sender.tag].url {
+                if let url = URL(string: urlString) {
+                    let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
+                    present(vc, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -238,6 +256,7 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffset = scrollView.contentOffset
+        changeNavigationBarColor(contentOffset: contentOffset)
         if contentOffset.y < 0 {
             postImageView.snp.remakeConstraints {
                 $0.width.equalTo(kScreenWidth)
@@ -272,10 +291,15 @@ extension ZMMovieDetailViewController {
                         if let doc = TFHpple(htmlData: htmlData) {
                             if let homepagePosterNode = doc.search(withXPathQuery: "//img[@class='img-frame aligncenter']").first as? TFHppleElement {
                                 strongSelf.movie.homepagePoster = homepagePosterNode["src"] as? String
-//                                strongSelf.movie.name = homepagePosterNode["alt"] as? String
+                                if let name = homepagePosterNode["alt"] as? String, name != "" {
+                                    strongSelf.movie.name = name
+                                }
                             }
                             if let homepagePosterNode = doc.search(withXPathQuery: "//img[@class='img-frame  aligncenter']").first as? TFHppleElement {
                                 strongSelf.movie.homepagePoster = homepagePosterNode["src"] as? String
+                                if let name = homepagePosterNode["alt"] as? String, name != "" {
+                                    strongSelf.movie.name = name
+                                }
                             }
                             
                             if let content = doc.search(withXPathQuery: "//div[@class='content-box']").first as? TFHppleElement {

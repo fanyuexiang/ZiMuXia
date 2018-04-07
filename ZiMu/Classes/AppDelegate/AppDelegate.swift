@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configGlobalAppearance()
-        configGlobalKeyboard()
+        configUMCAnalytics()
         configKeyWindow()
         return true
     }
@@ -27,12 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = AppColor.theme.titleColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font : UIFont(name: kFontMediumName, size: 18.0)!]
     }
-
-    private func configGlobalKeyboard() {
-        IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 10
-        IQKeyboardManager.sharedManager().toolbarDoneBarButtonItemText = "完成"
+    
+    private func configUMCAnalytics() {
+        #if DEBUG
+        // 打开调试日志
+        UMConfigure.setLogEnabled(true)
+        #endif
+        UMConfigure.initWithAppkey("5844e3397666135d78000139", channel: "App Store")
     }
     
     private func configKeyWindow() {

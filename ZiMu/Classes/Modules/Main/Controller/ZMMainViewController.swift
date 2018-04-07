@@ -43,6 +43,7 @@ final class ZMMainViewController: ZMViewController {
         collectionView.register(ZMCollectionHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ZMCollectionHeader.CellIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.delaysContentTouches = false
         return collectionView
     }()
     

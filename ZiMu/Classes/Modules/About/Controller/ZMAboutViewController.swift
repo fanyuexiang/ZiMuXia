@@ -9,7 +9,6 @@
 import Foundation
 import Kingfisher
 import QMUIKit
-import AcknowList
 
 /// 分类
 final class ZMAboutViewController: ZMTableViewController {
@@ -56,6 +55,7 @@ final class ZMAboutViewController: ZMTableViewController {
         tableView.estimatedSectionHeaderHeight = 0
         tableView.contentInset = UIEdgeInsets(top: 20.adapted, left: 0, bottom: 20.adapted, right: 0)
         tableView.register(ZMAboutCell.self, forCellReuseIdentifier: ZMAboutCell.CellIdentifier)
+        tableView.register(ZMAboutFooter.self, forHeaderFooterViewReuseIdentifier: ZMAboutFooter.CellIdentifier)
     }
     
     fileprivate func configNavigation() {
@@ -106,10 +106,56 @@ final class ZMAboutViewController: ZMTableViewController {
     }
     
     fileprivate func publicLicense() {
-        let path = Bundle.main.path(forResource: "Pods-ZiMu-acknowledgements", ofType: "plist")
-        let viewController = AcknowListViewController(acknowledgementsPlistPath: path)
-        viewController.title = "致谢"
-        navigationController?.pushViewController(viewController, animated: true)
+//        let path = Bundle.main.path(forResource: "Pods-ZiMu-acknowledgements", ofType: "plist")
+//        let viewController = AcknowListViewController(acknowledgementsPlistPath: path)
+//        viewController.title = "致谢"
+//        navigationController?.pushViewController(viewController, animated: true)
+        
+        let alamofireItem = LicensingItem(
+            title: "Alamofire",
+            license: License.mit(owner: "Alamofire Software Foundation (http://alamofire.org/)", years: "2014-2018")
+        )
+        
+        let ESTabBarControllerItem = LicensingItem(
+            title: "ESTabBarController",
+            license: License.mit(owner: "eggswift", years: "2013-2016")
+        )
+        
+        let FMDBItem = LicensingItem(
+            title: "FMDB",
+            license: License.mit(owner: "Flying Meat Inc", years: "2008-2014")
+        )
+        
+        let HeroItem = LicensingItem(
+            title: "Hero",
+            license: License.ofl(owner: "Luke Zhao <me@lkzhao.com>", years: "2015")
+        )
+        
+        let KingfisherItem = LicensingItem(
+            title: "Kingfisher",
+            license: License.ofl(owner: "Wei Wang", years: "2018")
+        )
+        
+        let MJRefreshItem = LicensingItem(
+            title: "MJRefresh",
+            license: License.ofl(owner: "MJRefresh (https://github.com/CoderMJLee/MJRefresh)", years: "2013-2015")
+        )
+        
+        let ObjectMapperItem = LicensingItem(
+            title: "ObjectMapper",
+            license: License.ofl(owner: "Hearst", years: "2014")
+        )
+
+        let SnapKitItem = LicensingItem(
+            title: "SnapKit",
+            license: License.ofl(owner: "Present SnapKit Team - https://github.com/SnapKit", years: "2011")
+        )
+        
+        let licensingViewController = LicensingViewController()
+        licensingViewController.title = "致谢"
+        licensingViewController.items = [alamofireItem, ESTabBarControllerItem, FMDBItem, HeroItem,KingfisherItem,MJRefreshItem,ObjectMapperItem,SnapKitItem]
+        licensingViewController.titleColor = AppColor.theme.titleColor
+        navigationController?.pushViewController(licensingViewController, animated: true)
     }
     
 }
@@ -133,7 +179,7 @@ extension ZMAboutViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10.adapted
+        return section == 2 ? 40.adapted : 10.adapted
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -163,6 +209,15 @@ extension ZMAboutViewController {
             } else {
                 publicLicense()
             }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == 2 {
+            let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: ZMAboutFooter.CellIdentifier) as! ZMAboutFooter
+            return footer
+        } else {
+            return nil
         }
     }
 
