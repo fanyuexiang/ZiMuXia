@@ -66,6 +66,18 @@
 		B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */; };
 		B10B3580206CA99E0093867A /* UIImage+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B357E206CA99E0093867A /* UIImage+Hue.swift */; };
 		B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B357F206CA99E0093867A /* UIColor+Hue.swift */; };
+		B13AD096207B12E200BA09D4 /* MonkeyKing+WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD08F207B12E100BA09D4 /* MonkeyKing+WebView.swift */; };
+		B13AD097207B12E200BA09D4 /* MonkeyKing+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD090207B12E100BA09D4 /* MonkeyKing+Error.swift */; };
+		B13AD098207B12E200BA09D4 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD091207B12E100BA09D4 /* Networking.swift */; };
+		B13AD099207B12E200BA09D4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD092207B12E100BA09D4 /* Helpers.swift */; };
+		B13AD09A207B12E200BA09D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD093207B12E100BA09D4 /* Extensions.swift */; };
+		B13AD09B207B12E200BA09D4 /* AnyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD094207B12E100BA09D4 /* AnyActivity.swift */; };
+		B13AD09C207B12E200BA09D4 /* MonkeyKing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD095207B12E100BA09D4 /* MonkeyKing.swift */; };
+		B13AD09E207B145200BA09D4 /* APPThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD09D207B145200BA09D4 /* APPThirdParty.swift */; };
+		B13AD0A4207B19BA00BA09D4 /* ShareSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD0A0207B19B900BA09D4 /* ShareSheetCell.swift */; };
+		B13AD0A5207B19BA00BA09D4 /* ShareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD0A1207B19B900BA09D4 /* ShareItem.swift */; };
+		B13AD0A6207B19BA00BA09D4 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD0A2207B19B900BA09D4 /* ShareView.swift */; };
+		B13AD0A7207B19BA00BA09D4 /* ShareItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD0A3207B19B900BA09D4 /* ShareItemCell.swift */; };
 		B17824A820735174006A0778 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17824A720735174006A0778 /* AppCache.swift */; };
 		B178250D20747F06006A0778 /* FMDatabaseQueue+Async.m in Sources */ = {isa = PBXBuildFile; fileRef = B17824FF20747F06006A0778 /* FMDatabaseQueue+Async.m */; };
 		B178250E20747F06006A0778 /* GYReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250420747F06006A0778 /* GYReflection.m */; };
@@ -171,6 +183,18 @@
 		B10B3573206C82F20093867A /* UINavigationBar+ZM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ZM.swift"; sourceTree = "<group>"; };
 		B10B357E206CA99E0093867A /* UIImage+Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Hue.swift"; sourceTree = "<group>"; };
 		B10B357F206CA99E0093867A /* UIColor+Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hue.swift"; sourceTree = "<group>"; };
+		B13AD08F207B12E100BA09D4 /* MonkeyKing+WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MonkeyKing+WebView.swift"; sourceTree = "<group>"; };
+		B13AD090207B12E100BA09D4 /* MonkeyKing+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MonkeyKing+Error.swift"; sourceTree = "<group>"; };
+		B13AD091207B12E100BA09D4 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		B13AD092207B12E100BA09D4 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		B13AD093207B12E100BA09D4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B13AD094207B12E100BA09D4 /* AnyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyActivity.swift; sourceTree = "<group>"; };
+		B13AD095207B12E100BA09D4 /* MonkeyKing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyKing.swift; sourceTree = "<group>"; };
+		B13AD09D207B145200BA09D4 /* APPThirdParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPThirdParty.swift; sourceTree = "<group>"; };
+		B13AD0A0207B19B900BA09D4 /* ShareSheetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetCell.swift; sourceTree = "<group>"; };
+		B13AD0A1207B19B900BA09D4 /* ShareItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareItem.swift; sourceTree = "<group>"; };
+		B13AD0A2207B19B900BA09D4 /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		B13AD0A3207B19B900BA09D4 /* ShareItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareItemCell.swift; sourceTree = "<group>"; };
 		B17824A720735174006A0778 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
 		B17824FD20747F06006A0778 /* GYDBRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYDBRunner.h; sourceTree = "<group>"; };
 		B17824FF20747F06006A0778 /* FMDatabaseQueue+Async.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabaseQueue+Async.m"; sourceTree = "<group>"; };
@@ -299,6 +323,8 @@
 		2C10DB7A2067880100AE28F8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B13AD09F207B19B900BA09D4 /* CWShareView */,
+				B13AD08E207B12E100BA09D4 /* MonkeyKing */,
 				2C335E3F207854E700223599 /* LicensingViewController */,
 				B17824FC20747F06006A0778 /* GYDataCenter */,
 				B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */,
@@ -458,6 +484,7 @@
 				2C10DBB42067A81E00AE28F8 /* AppColor.swift */,
 				B10B3563206A531E0093867A /* AppFont.swift */,
 				B17824A720735174006A0778 /* AppCache.swift */,
+				B13AD09D207B145200BA09D4 /* APPThirdParty.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -580,6 +607,31 @@
 				B10B355C2069E42F0093867A /* ZMAboutModels.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B13AD08E207B12E100BA09D4 /* MonkeyKing */ = {
+			isa = PBXGroup;
+			children = (
+				B13AD08F207B12E100BA09D4 /* MonkeyKing+WebView.swift */,
+				B13AD090207B12E100BA09D4 /* MonkeyKing+Error.swift */,
+				B13AD091207B12E100BA09D4 /* Networking.swift */,
+				B13AD092207B12E100BA09D4 /* Helpers.swift */,
+				B13AD093207B12E100BA09D4 /* Extensions.swift */,
+				B13AD094207B12E100BA09D4 /* AnyActivity.swift */,
+				B13AD095207B12E100BA09D4 /* MonkeyKing.swift */,
+			);
+			path = MonkeyKing;
+			sourceTree = "<group>";
+		};
+		B13AD09F207B19B900BA09D4 /* CWShareView */ = {
+			isa = PBXGroup;
+			children = (
+				B13AD0A0207B19B900BA09D4 /* ShareSheetCell.swift */,
+				B13AD0A1207B19B900BA09D4 /* ShareItem.swift */,
+				B13AD0A2207B19B900BA09D4 /* ShareView.swift */,
+				B13AD0A3207B19B900BA09D4 /* ShareItemCell.swift */,
+			);
+			path = CWShareView;
 			sourceTree = "<group>";
 		};
 		B17824FC20747F06006A0778 /* GYDataCenter */ = {
@@ -788,12 +840,14 @@
 				2C10DB7B2067880100AE28F8 /* AppDelegate.swift in Sources */,
 				B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */,
 				2C10DBFB206A996D00AE28F8 /* ZMMoviePagerViewController.swift in Sources */,
+				B13AD098207B12E200BA09D4 /* Networking.swift in Sources */,
 				B1954B892068C4DB00773368 /* UIImageView+CornerRadius.m in Sources */,
 				2C10DBB92067AA6000AE28F8 /* ZMBaseModel.swift in Sources */,
 				B178250D20747F06006A0778 /* FMDatabaseQueue+Async.m in Sources */,
 				2C10DB632067773F00AE28F8 /* ViewController.swift in Sources */,
 				B10B3581206CA99E0093867A /* UIColor+Hue.swift in Sources */,
 				B1954B8B2068C6DF00773368 /* UIImageView+ZM.swift in Sources */,
+				B13AD096207B12E200BA09D4 /* MonkeyKing+WebView.swift in Sources */,
 				2C10DBF6206A8F2000AE28F8 /* ZMCatListViewController.swift in Sources */,
 				B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */,
 				2C10DB9C20678EAB00AE28F8 /* TYPagerController.m in Sources */,
@@ -803,12 +857,14 @@
 				2C10DBC62067B32B00AE28F8 /* FSPagerView.swift in Sources */,
 				B1954B932068EAAC00773368 /* ZJFlexibleDataSource.swift in Sources */,
 				2C10DBAC2067A50200AE28F8 /* ZMTableViewController.swift in Sources */,
+				B13AD097207B12E200BA09D4 /* MonkeyKing+Error.swift in Sources */,
 				B1954B922068EAAC00773368 /* Utils.swift in Sources */,
 				2C10DBD32067C82B00AE28F8 /* TFHppleElement.m in Sources */,
 				B10B3580206CA99E0093867A /* UIImage+Hue.swift in Sources */,
 				2C10DBEF206940BE00AE28F8 /* ZMClassificationModels.swift in Sources */,
 				B1954B912068EAAC00773368 /* ColPosition.swift in Sources */,
 				2C10DBB72067AA1300AE28F8 /* ZMMainViewController.swift in Sources */,
+				B13AD099207B12E200BA09D4 /* Helpers.swift in Sources */,
 				2C10DBAA2067A4E900AE28F8 /* ZMViewController.swift in Sources */,
 				2C10DB7E20678C4800AE28F8 /* ZMNetWork.swift in Sources */,
 				2C10DBEA2069362A00AE28F8 /* ZMClassificationViews.swift in Sources */,
@@ -821,6 +877,7 @@
 				2C10DBE92069362A00AE28F8 /* ZMClassificationViewController.swift in Sources */,
 				2C10DBB52067A81E00AE28F8 /* AppColor.swift in Sources */,
 				2C335E44207854E700223599 /* LicensingItemCell.swift in Sources */,
+				B13AD0A6207B19BA00BA09D4 /* ShareView.swift in Sources */,
 				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
 				2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */,
 				B178251120747F06006A0778 /* GYModelObject.m in Sources */,
@@ -832,17 +889,23 @@
 				2C10DBC42067B32B00AE28F8 /* FSPageControl.swift in Sources */,
 				2C10DB8920678DFD00AE28F8 /* Constants.swift in Sources */,
 				2C335E47207854E800223599 /* LicensingViewController.swift in Sources */,
+				B13AD09A207B12E200BA09D4 /* Extensions.swift in Sources */,
 				B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */,
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
 				B178250F20747F06006A0778 /* GYDCUtilities.m in Sources */,
+				B13AD09E207B145200BA09D4 /* APPThirdParty.swift in Sources */,
+				B13AD09B207B12E200BA09D4 /* AnyActivity.swift in Sources */,
 				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
+				B13AD0A7207B19BA00BA09D4 /* ShareItemCell.swift in Sources */,
 				B10B355F2069E5030093867A /* ZMFoundersViewController.swift in Sources */,
+				B13AD0A5207B19BA00BA09D4 /* ShareItem.swift in Sources */,
 				B10B3566206B3ADF0093867A /* ZMSearchViewController.swift in Sources */,
 				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
 				B10B35572069DA9F0093867A /* ZMAboutViewController.swift in Sources */,
 				B1782514207488E9006A0778 /* ZMCollectionViewController.swift in Sources */,
 				B17824A820735174006A0778 /* AppCache.swift in Sources */,
 				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
+				B13AD0A4207B19BA00BA09D4 /* ShareSheetCell.swift in Sources */,
 				B10B3570206B8B5E0093867A /* ZMMovieDetailViewController.swift in Sources */,
 				B10B3564206A531E0093867A /* AppFont.swift in Sources */,
 				B10B356B206B68830093867A /* ZMTransition.swift in Sources */,
@@ -854,6 +917,7 @@
 				2C335E46207854E700223599 /* LicensingItem.swift in Sources */,
 				2C10DBB32067A6CA00AE28F8 /* ZMUtils.swift in Sources */,
 				2C10DBBB2067AA8600AE28F8 /* ZMMainModels.swift in Sources */,
+				B13AD09C207B12E200BA09D4 /* MonkeyKing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

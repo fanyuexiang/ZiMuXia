@@ -172,4 +172,39 @@ extension UIImage {
       }
     }
   }
+    
+    
+    /// 压缩图片大小
+    ///
+    /// - Parameters:
+    ///   - maxLength: 最大尺寸(比特)
+    ///   - compress: 压缩系数(0~1)
+    /// - Returns:
+    func compress(maxLength: Int, compress: CGFloat = 0.90) -> Data? {
+        let data = UIImageJPEGRepresentation(self, compress)
+        if (data?.count)! < maxLength || compress < 0{
+            return data
+        }
+        return self.compress(maxLength: maxLength, compress: compress-0.05)
+    }
+    
+    /// 压缩图片至指定尺寸
+    ///
+    /// - Parameters:
+    ///   - OriginImage: 原图
+    ///   - targetWidth: 压缩后图片宽度
+    /// - Returns: 压缩图
+    func compress(OriginImage: UIImage,targetWidth: CGFloat) -> UIImage? {
+        let imageSize = OriginImage.size
+        let width = imageSize.width
+        let height = imageSize.height
+        let targetHeight = targetWidth/width*height
+        
+        UIGraphicsBeginImageContext(CGSize(width: targetWidth, height: targetHeight))
+        OriginImage.draw(in: CGRect(x: 0, y: 0, width: targetWidth, height: targetHeight))
+        let compressedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return  compressedImage
+    }
 }
+

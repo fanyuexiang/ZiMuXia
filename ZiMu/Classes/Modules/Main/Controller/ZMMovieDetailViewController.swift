@@ -108,14 +108,12 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.hero.isEnabled = true
-        navigationController?.navigationBar
-            .zm_setBackgroundColor(backgroundColor: navigationBarColor)
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = .never
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
+        configNavigation()
         getMovieDetail()
     }
     
@@ -184,6 +182,14 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     }
 
     // MARK: - 导航栏
+    fileprivate func configNavigation() {
+        navigationController?.hero.isEnabled = true
+        navigationController?.navigationBar
+            .zm_setBackgroundColor(backgroundColor: navigationBarColor)
+        let rightItem = QMUINavigationButton.barButtonItem(with: UIImage(named: "icon_share"), position: .right, target: self, action: #selector(ZMMovieDetailViewController.share))
+        navigationItem.rightBarButtonItem = rightItem
+    }
+    
     override func navigationBarTintColor() -> UIColor? {
         return navigationTintColor
     }
@@ -206,6 +212,10 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     }
     
     // MARK: - action
+    @objc fileprivate func share() {
+        dPrint(message: "分享")
+    }
+    
     @objc fileprivate func handleFavorite(_ sender: QMUIButton) {
         if sender.isSelected {
             movie.delete()
