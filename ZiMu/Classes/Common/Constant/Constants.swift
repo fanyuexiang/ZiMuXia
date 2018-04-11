@@ -48,7 +48,8 @@ let ENGLISH = "en"
 
 /// catch key
 
-/// network
+/// network 
+let OFFICIAL_SITE = "http://www.zimuxia.cn/"
 let CAT_KOREA = "fix韩语社"
 let CAT_GERMANY = "昆仑德语社"
 let CAT_JAPAN = "fix日语社"

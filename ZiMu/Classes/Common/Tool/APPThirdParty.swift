@@ -48,7 +48,9 @@ class AppThirdParty {
             thumbnail: nil,
             media: nil
         )
-        shareInfo(info, shareType: shareType)
+        shareInfo(info, shareType: shareType) { result in
+            
+        }
     }
     
     class func share(image: UIImage?, thumbnail: UIImage?, shareType: shareType) {
@@ -69,7 +71,9 @@ class AppThirdParty {
             thumbnail: compressedThumbnail,
             media: .image(image)
         )
-        shareInfo(info, shareType: shareType)
+        shareInfo(info, shareType: shareType) { result in
+            
+        }
     }
     
     class func share(url: String?, thumbnail: UIImage?, title: String?, description: String?, shareType: shareType) {
@@ -88,12 +92,14 @@ class AppThirdParty {
             thumbnail: compressedThumbnail,
             media: .url(url)
         )
-        shareInfo(info, shareType: shareType)
+        shareInfo(info, shareType: shareType) { result in
+            print(result)
+        }
     }
     
     
     
-    fileprivate class func shareInfo(_ info: MonkeyKing.Info, shareType: shareType) {
+    fileprivate class func shareInfo(_ info: MonkeyKing.Info, shareType: shareType, completionHandler: @escaping MonkeyKing.DeliverCompletionHandler) {
         var message: MonkeyKing.Message?
         switch shareType {
         case .weChatSession:
@@ -111,10 +117,7 @@ class AppThirdParty {
         }
         
         if let message = message{
-            MonkeyKing.deliver(message) { result in
-                print("result: \(result)")
-//                QMUITips.show(withText: <#T##String?#>)
-            }
+            MonkeyKing.deliver(message, completionHandler: completionHandler)
         }
         
     }

@@ -96,6 +96,7 @@
 		B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */; };
 		B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B952068F77800773368 /* ZMRefreshControl.swift */; };
 		B1B2D12B207DEB0B009EFEAC /* AppThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2D12A207DEB0B009EFEAC /* AppThirdParty.swift */; };
+		B1B2D12F207E0864009EFEAC /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B2D12E207E0864009EFEAC /* TTTAttributedLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -222,6 +223,8 @@
 		B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJFlexibleLayout.swift; sourceTree = "<group>"; };
 		B1954B952068F77800773368 /* ZMRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMRefreshControl.swift; sourceTree = "<group>"; };
 		B1B2D12A207DEB0B009EFEAC /* AppThirdParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppThirdParty.swift; sourceTree = "<group>"; };
+		B1B2D12D207E0864009EFEAC /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		B1B2D12E207E0864009EFEAC /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		EF742C6C6FDB31DF7E2746CE /* Pods-ZiMu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiMu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -323,6 +326,7 @@
 		2C10DB7A2067880100AE28F8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B1B2D12C207E0864009EFEAC /* TTTAttributedLabel */,
 				B13AD09F207B19B900BA09D4 /* CWShareView */,
 				B13AD08E207B12E100BA09D4 /* MonkeyKing */,
 				2C335E3F207854E700223599 /* LicensingViewController */,
@@ -682,6 +686,15 @@
 			path = ZJFlexibleLayout;
 			sourceTree = "<group>";
 		};
+		B1B2D12C207E0864009EFEAC /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B1B2D12D207E0864009EFEAC /* TTTAttributedLabel.h */,
+				B1B2D12E207E0864009EFEAC /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
 		DB338A0A890F8AA0FAD3E442 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +915,7 @@
 				B10B3566206B3ADF0093867A /* ZMSearchViewController.swift in Sources */,
 				2C10DBD22067C82B00AE28F8 /* TFHpple.m in Sources */,
 				B10B35572069DA9F0093867A /* ZMAboutViewController.swift in Sources */,
+				B1B2D12F207E0864009EFEAC /* TTTAttributedLabel.m in Sources */,
 				B1782514207488E9006A0778 /* ZMCollectionViewController.swift in Sources */,
 				B17824A820735174006A0778 /* AppCache.swift in Sources */,
 				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
@@ -1070,7 +1084,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.artally.artally;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.artally;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ZiMu/Classes/AppDelegate/ZiMu_Bridging_Header.h;
@@ -1099,7 +1113,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.artally.artally;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.artally;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ZiMu/Classes/AppDelegate/ZiMu_Bridging_Header.h;

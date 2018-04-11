@@ -183,12 +183,25 @@ final class ZMFounderPagerViewCell: FSPagerViewCell {
 final class ZMAboutFooter: UITableViewHeaderFooterView {
     static let CellIdentifier = "ZMAboutFooter"
     // UI
-    private lazy var aboutLabel: QMUILabel = {
-        let label = QMUILabel(textColor: AppColor.theme.subTitleColor, fontSize: 12, FontName: kFontLightName)
+    private lazy var aboutLabel: TTTAttributedLabel = {
+        let label = TTTAttributedLabel(textColor: AppColor.theme.subTitleColor, fontSize: 12, FontName: kFontLightName)
         label.textAlignment = .center
 //        let appBuild = kBundle.infoDictionary?[kCFBundleVersionKey as String] as? String
         let appVersion = kBundle.infoDictionary?["CFBundleShortVersionString"] as? String
-        label.text = "© 2018 FIX字幕侠 ZiMu v" + (appVersion ?? "")
+        let text = "© 2018 FIX字幕侠 ZiMu v" + (appVersion ?? "")
+        label.text = text
+        label.linkAttributes = [kCTForegroundColorAttributeName : AppColor.theme.titleColor, kCTUnderlineStyleAttributeName: true]
+        label.activeLinkAttributes = [kCTForegroundColorAttributeName : AppColor.theme.subTitleColor, kCTUnderlineStyleAttributeName: true]
+        // 此处使用linkTapBlock而非代理去处理点击事件
+        // label.delegate = self TTTAttributedLabelDelegate
+        let range = text.range(of: "FIX字幕侠")!
+        let nsRange = NSRange(range, in: text)
+        let link = label.addLink(to: URL(string: OFFICIAL_SITE)!, with: nsRange)
+        link?.linkTapBlock = { label, link in
+            if let url = link?.result.url {
+                kApplication.openURL(url)
+            }
+        }
         return label
     }()
     

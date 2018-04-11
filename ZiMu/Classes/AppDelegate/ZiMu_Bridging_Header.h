@@ -21,5 +21,6 @@
 // 友盟
 #import <UMCommon/UMCommon.h>
 #import <UMAnalytics/MobClick.h>
-//#import "UMMobClick/MobClick.h"
+// TTTAttributedLabel
+#import "TTTAttributedLabel.h"
 #endif /* ZiMu_Bridging_Header_h */

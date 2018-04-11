@@ -223,9 +223,30 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         let shareList = [shareItem1,shareItem2,shareItem3,shareItem4,shareItem5,shareItem6]
         let clickedHandler = { [weak self] (shareView: ShareView, indexPath: IndexPath) in
             guard let strongSelf = self else { return }
+            guard let urlString = strongSelf.movie.homepageUrl, let url = URL(string: urlString) else { return }
             if indexPath.section == 1 {
-                if let urlString = strongSelf.movie.homepageUrl, let url = URL(string: urlString) {
+                switch indexPath.row {
+                case 5:
                     kApplication.openURL(url)
+                default:
+                    var type: shareType = .weChatSession
+                    switch indexPath.row {
+                    case 1:
+                        type = .weChatTimeline
+                    case 2:
+                        type = .qqFriend
+                    case 3:
+                        type = .qqZone
+                    case 4:
+                        type = .weibo
+                    default:
+                        break
+                    }
+                    AppThirdParty.share(url: urlString,
+                                        thumbnail: strongSelf.postImageView.image,
+                                        title: strongSelf.movie.name,
+                                        description: strongSelf.movie.producerInfo,
+                                        shareType: type)
                 }
             }
         }

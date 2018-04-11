@@ -46,6 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppThirdParty.registAccount()
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return true
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) { }
 
     func applicationDidEnterBackground(_ application: UIApplication) { }
