@@ -214,6 +214,25 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     // MARK: - action
     @objc fileprivate func share() {
         dPrint(message: "分享")
+        let shareItem1 = ShareItem(title: "发送给朋友", icon: #imageLiteral(resourceName: "Action_Share"))
+        let shareItem2 = ShareItem(title: "分享到朋友圈", icon: #imageLiteral(resourceName: "Action_Moments"))
+        let shareItem3 = ShareItem(title: "分享到QQ", icon: #imageLiteral(resourceName: "Action_QQ"))
+        let shareItem4 = ShareItem(title: "分享到QQ空间", icon: #imageLiteral(resourceName: "Action_qzone"))
+        let shareItem5 = ShareItem(title: "分享到微博", icon: #imageLiteral(resourceName: "Action_Sina"))
+        let shareItem6 = ShareItem(title: "在Safari中打开", icon: #imageLiteral(resourceName: "Action_Safari"))
+        let shareList = [shareItem1,shareItem2,shareItem3,shareItem4,shareItem5,shareItem6]
+        let clickedHandler = { [weak self] (shareView: ShareView, indexPath: IndexPath) in
+            guard let strongSelf = self else { return }
+            if indexPath.section == 1 {
+                if let urlString = strongSelf.movie.homepageUrl, let url = URL(string: urlString) {
+                    kApplication.openURL(url)
+                }
+            }
+        }
+        
+        let shareView = ShareView(squareItems: shareList, clickedHandler: clickedHandler)
+        shareView.show()
+        
     }
     
     @objc fileprivate func handleFavorite(_ sender: QMUIButton) {

@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configGlobalAppearance()
         configUMCAnalytics()
         configKeyWindow()
+        configThirdParty()
         return true
     }
     
@@ -39,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         window?.rootViewController = WTTabBarController()
         window?.makeKeyAndVisible()
+    }
+    
+    private func configThirdParty() {
+        AppThirdParty.registAccount()
     }
     
     func applicationWillResignActive(_ application: UIApplication) { }

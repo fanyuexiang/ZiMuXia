@@ -1,5 +1,5 @@
 //
-//  APPThirdParty.swift
+//  AppThirdParty.swift
 //  ZiMu
 //
 //  Created by fancy on 2018/4/9.
@@ -27,7 +27,7 @@ enum platformType {
     case other
 }
 
-class APPThirdParty {
+class AppThirdParty {
     
     public typealias completionHandler = (_ info: [String: Any]?, _ response: URLResponse?, _ error: Error?) -> Void
     public typealias payCompletionHandler = (_ result: Bool) -> Void

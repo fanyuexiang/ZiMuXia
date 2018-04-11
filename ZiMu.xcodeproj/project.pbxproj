@@ -73,7 +73,6 @@
 		B13AD09A207B12E200BA09D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD093207B12E100BA09D4 /* Extensions.swift */; };
 		B13AD09B207B12E200BA09D4 /* AnyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD094207B12E100BA09D4 /* AnyActivity.swift */; };
 		B13AD09C207B12E200BA09D4 /* MonkeyKing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD095207B12E100BA09D4 /* MonkeyKing.swift */; };
-		B13AD09E207B145200BA09D4 /* APPThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD09D207B145200BA09D4 /* APPThirdParty.swift */; };
 		B13AD0A4207B19BA00BA09D4 /* ShareSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD0A0207B19B900BA09D4 /* ShareSheetCell.swift */; };
 		B13AD0A5207B19BA00BA09D4 /* ShareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD0A1207B19B900BA09D4 /* ShareItem.swift */; };
 		B13AD0A6207B19BA00BA09D4 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AD0A2207B19B900BA09D4 /* ShareView.swift */; };
@@ -96,6 +95,7 @@
 		B1954B932068EAAC00773368 /* ZJFlexibleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B8F2068EAAC00773368 /* ZJFlexibleDataSource.swift */; };
 		B1954B942068EAAC00773368 /* ZJFlexibleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */; };
 		B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B952068F77800773368 /* ZMRefreshControl.swift */; };
+		B1B2D12B207DEB0B009EFEAC /* AppThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2D12A207DEB0B009EFEAC /* AppThirdParty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -190,7 +190,6 @@
 		B13AD093207B12E100BA09D4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B13AD094207B12E100BA09D4 /* AnyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyActivity.swift; sourceTree = "<group>"; };
 		B13AD095207B12E100BA09D4 /* MonkeyKing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyKing.swift; sourceTree = "<group>"; };
-		B13AD09D207B145200BA09D4 /* APPThirdParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPThirdParty.swift; sourceTree = "<group>"; };
 		B13AD0A0207B19B900BA09D4 /* ShareSheetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetCell.swift; sourceTree = "<group>"; };
 		B13AD0A1207B19B900BA09D4 /* ShareItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareItem.swift; sourceTree = "<group>"; };
 		B13AD0A2207B19B900BA09D4 /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
@@ -222,6 +221,7 @@
 		B1954B8F2068EAAC00773368 /* ZJFlexibleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJFlexibleDataSource.swift; sourceTree = "<group>"; };
 		B1954B902068EAAC00773368 /* ZJFlexibleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJFlexibleLayout.swift; sourceTree = "<group>"; };
 		B1954B952068F77800773368 /* ZMRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMRefreshControl.swift; sourceTree = "<group>"; };
+		B1B2D12A207DEB0B009EFEAC /* AppThirdParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppThirdParty.swift; sourceTree = "<group>"; };
 		EF742C6C6FDB31DF7E2746CE /* Pods-ZiMu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiMu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZiMu/Pods-ZiMu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -484,7 +484,7 @@
 				2C10DBB42067A81E00AE28F8 /* AppColor.swift */,
 				B10B3563206A531E0093867A /* AppFont.swift */,
 				B17824A720735174006A0778 /* AppCache.swift */,
-				B13AD09D207B145200BA09D4 /* APPThirdParty.swift */,
+				B1B2D12A207DEB0B009EFEAC /* AppThirdParty.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -881,6 +881,7 @@
 				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
 				2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */,
 				B178251120747F06006A0778 /* GYModelObject.m in Sources */,
+				B1B2D12B207DEB0B009EFEAC /* AppThirdParty.swift in Sources */,
 				B178251020747F06006A0778 /* GYDBRunner.m in Sources */,
 				B10B355D2069E42F0093867A /* ZMAboutModels.swift in Sources */,
 				2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */,
@@ -893,7 +894,6 @@
 				B10B3574206C82F20093867A /* UINavigationBar+ZM.swift in Sources */,
 				2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */,
 				B178250F20747F06006A0778 /* GYDCUtilities.m in Sources */,
-				B13AD09E207B145200BA09D4 /* APPThirdParty.swift in Sources */,
 				B13AD09B207B12E200BA09D4 /* AnyActivity.swift in Sources */,
 				B1954B962068F77800773368 /* ZMRefreshControl.swift in Sources */,
 				B13AD0A7207B19BA00BA09D4 /* ShareItemCell.swift in Sources */,
