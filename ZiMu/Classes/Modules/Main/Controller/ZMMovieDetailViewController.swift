@@ -27,6 +27,9 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.isUserInteractionEnabled = true
+        let addGesture = UITapGestureRecognizer(target: self, action: #selector(ZMMovieDetailViewController.handleImageTaped))
+        imageView.addGestureRecognizer(addGesture)
         return imageView
     }()
     
@@ -77,6 +80,12 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         let scrollView = UIScrollView()
         scrollView.delegate = self
         return scrollView
+    }()
+    
+    fileprivate lazy var imagePreviewVC: QMUIImagePreviewViewController = {
+        let imagePreviewVC = QMUIImagePreviewViewController()
+        imagePreviewVC.imagePreviewView.delegate = self
+        return imagePreviewVC
     }()
     
     // data
@@ -253,7 +262,11 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         
         let shareView = ShareView(squareItems: shareList, clickedHandler: clickedHandler)
         shareView.show()
-        
+    }
+    
+    // 查看大图
+    @objc fileprivate func handleImageTaped() {
+        imagePreviewVC.startPreviewFromRect(inScreen: postImageView.convert(self.postImageView.frame, to: nil), cornerRadius: 0)
     }
     
     @objc fileprivate func handleFavorite(_ sender: QMUIButton) {
@@ -262,6 +275,11 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         } else {
             movie.save()
         }
+        let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        impliesAnimation.values = [1.0, 0.8, 1.0]
+        impliesAnimation.duration = 0.2
+        impliesAnimation.calculationMode = kCAAnimationCubic
+        sender.imageView?.layer.add(impliesAnimation, forKey: nil)
         sender.isSelected = !sender.isSelected
     }
     
@@ -325,6 +343,26 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         }
     }
     
+}
+
+// MARK: - QMUIImagePreviewViewDelegate
+extension ZMMovieDetailViewController: QMUIImagePreviewViewDelegate {
+    
+    func numberOfImages(in imagePreviewView: QMUIImagePreviewView!) -> UInt {
+        return 1
+    }
+    
+    func imagePreviewView(_ imagePreviewView: QMUIImagePreviewView!, renderZoomImageView zoomImageView: QMUIZoomImageView!, at index: UInt) {
+        zoomImageView.image = postImageView.image
+    }
+    
+    func imagePreviewView(_ imagePreviewView: QMUIImagePreviewView!, assetTypeAt index: UInt) -> QMUIImagePreviewMediaType {
+        return .image
+    }
+    
+    func singleTouch(inZooming zoomImageView: QMUIZoomImageView!, location: CGPoint) {
+        imagePreviewVC.endPreviewToRect(inScreen: postImageView.convert(self.postImageView.frame, to: nil))
+    }
 }
 
 // MARK: - 网络

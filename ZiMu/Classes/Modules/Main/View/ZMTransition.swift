@@ -5,7 +5,7 @@
 //  Created by fancy on 2018/3/28.
 //  Copyright © 2018年 Fancy. All rights reserved.
 //
-
+/* 暂存备用 稍后删除
 import Foundation
 
 class PushTransition: NSObject, UIViewControllerAnimatedTransitioning{
@@ -86,3 +86,4 @@ class PopTransition: NSObject, UIViewControllerAnimatedTransitioning{
     
     
 }
+*/

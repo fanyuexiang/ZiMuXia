@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UMConfigure.setLogEnabled(true)
         #endif
         UMConfigure.initWithAppkey("5844e3397666135d78000139", channel: "App Store")
+        MobClick.setCrashReportEnabled(true)
     }
     
     private func configKeyWindow() {

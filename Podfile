@@ -16,6 +16,7 @@ def common_pods
 end
 
 def sdk_pods
+    pod 'UMCCommon'
     pod 'UMCAnalytics'
 end
 

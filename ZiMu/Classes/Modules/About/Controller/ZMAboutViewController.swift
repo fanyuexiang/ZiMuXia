@@ -158,7 +158,36 @@ final class ZMAboutViewController: ZMTableViewController {
         navigationController?.pushViewController(licensingViewController, animated: true)
     }
     
+    fileprivate func appStoreComment() {
+        let url = "https://itunes.apple.com/cn/app/%E6%9D%A5%E4%BD%8F%E5%90%A7/id1191730368?mt=8&action=write-review"
+        kApplication.openURL(URL(string: url)!)
+        /* import StoreKit
+         let vc = SKStoreProductViewController()
+         vc.delegate = self
+         showLoading()
+        vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: 1191730368]) { [weak self] (result, error) in
+            guard let strongSelf = self else { return }
+            strongSelf.hideLoading()
+            if error == nil {
+                strongSelf.present(vc, animated: true, completion: nil)
+            } else {
+                let url = "https://itunes.apple.com/cn/app/%E6%9D%A5%E4%BD%8F%E5%90%A7/id1191730368?mt=8&action=write-review"
+                kApplication.openURL(URL(string: url)!)
+            }
+        }
+         */
+    }
+    
 }
+
+// MARK: - SKStoreProductViewControllerDelegate
+/*
+extension ZMAboutViewController: SKStoreProductViewControllerDelegate {
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+}
+*/
 
 // MARK: - tableView delegate & dataSource
 extension ZMAboutViewController {
