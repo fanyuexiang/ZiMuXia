@@ -21,9 +21,6 @@
 		2C10DB9B20678EAB00AE28F8 /* TYTabPagerBarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB9420678EAB00AE28F8 /* TYTabPagerBarLayout.m */; };
 		2C10DB9C20678EAB00AE28F8 /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB9620678EAB00AE28F8 /* TYPagerController.m */; };
 		2C10DB9D20678EAB00AE28F8 /* TYPagerViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DB9820678EAB00AE28F8 /* TYPagerViewLayout.m */; };
-		2C10DBA120678F8100AE28F8 /* QMUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBA020678F8100AE28F8 /* QMUIKit.framework */; };
-		2C10DBA220678F9600AE28F8 /* QMUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBA020678F8100AE28F8 /* QMUIKit.framework */; };
-		2C10DBA320678F9600AE28F8 /* QMUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C10DBA020678F8100AE28F8 /* QMUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C10DBAA2067A4E900AE28F8 /* ZMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBA92067A4E900AE28F8 /* ZMViewController.swift */; };
 		2C10DBAC2067A50200AE28F8 /* ZMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBAB2067A50200AE28F8 /* ZMTableViewController.swift */; };
 		2C10DBAE2067A51B00AE28F8 /* ZMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10DBAD2067A51B00AE28F8 /* ZMNavigationController.swift */; };
@@ -106,7 +103,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2C10DBA320678F9600AE28F8 /* QMUIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +132,6 @@
 		2C10DB9720678EAB00AE28F8 /* TYPagerViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerViewLayout.h; sourceTree = "<group>"; };
 		2C10DB9820678EAB00AE28F8 /* TYPagerViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerViewLayout.m; sourceTree = "<group>"; };
 		2C10DB9E20678ED100AE28F8 /* ZiMu_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZiMu_Bridging_Header.h; sourceTree = "<group>"; };
-		2C10DBA020678F8100AE28F8 /* QMUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QMUIKit.framework; sourceTree = "<group>"; };
 		2C10DBA92067A4E900AE28F8 /* ZMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMViewController.swift; sourceTree = "<group>"; };
 		2C10DBAB2067A50200AE28F8 /* ZMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMTableViewController.swift; sourceTree = "<group>"; };
 		2C10DBAD2067A51B00AE28F8 /* ZMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMNavigationController.swift; sourceTree = "<group>"; };
@@ -234,9 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C10DBD82067C98800AE28F8 /* libxml2.tbd in Frameworks */,
-				2C10DBA220678F9600AE28F8 /* QMUIKit.framework in Frameworks */,
 				21D6657EF54483DFF4CDD13A /* Pods_ZiMu.framework in Frameworks */,
-				2C10DBA120678F8100AE28F8 /* QMUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +431,6 @@
 		2C10DB9F20678F8100AE28F8 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				2C10DBA020678F8100AE28F8 /* QMUIKit.framework */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -825,6 +817,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -836,6 +829,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

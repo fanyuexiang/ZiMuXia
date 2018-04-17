@@ -12,7 +12,7 @@ def common_pods
     pod 'MJRefresh'
     pod 'Hero'
     pod 'FMDB', '~> 2.6.2'
-    
+    pod 'QMUIKit','~> 2.3.0'
 end
 
 def sdk_pods
