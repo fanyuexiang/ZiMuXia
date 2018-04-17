@@ -34,9 +34,9 @@ class AppThirdParty {
     
     /// regist third account
     class func registAccount() {
-        MonkeyKing.registerAccount(.weChat(appID: "wx5c3814b9b2621efe", appKey: "d51efa368bbd97f8a2901f5a9d734ea2", miniAppID: nil))
-        MonkeyKing.registerAccount(.weibo(appID: "769074942", appKey: "8e83604159be252c7e87887ff549bd1a", redirectURL: "http://www.sharesdk.cn"))
-        MonkeyKing.registerAccount(.qq(appID: "1105376291"))
+        MonkeyKing.registerAccount(.weChat(appID: "wx3089eaac7e69f84e", appKey: "52bae7f7839176f7ad17a10c72dc03ce", miniAppID: nil))
+        MonkeyKing.registerAccount(.weibo(appID: "2660912955", appKey: "99231aecca142ac2c0b8646ce966631b", redirectURL: "http://www.sharesdk.cn"))
+        MonkeyKing.registerAccount(.qq(appID: "1106830042"))
     }
     
     // MARK:- third party share

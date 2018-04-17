@@ -54,13 +54,20 @@ final class ZMMainViewController: ZMViewController {
     fileprivate lazy var movies = [ZMMovie]()
     fileprivate lazy var currentPage: Int = 1
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if banners.count == 0 {
+            getBanner()
+        }
+        if movies.count == 0 {
+            getAllMovies()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
         configRefreshFooter()
-        // network
-        getBanner()
-        getAllMovies()
     }
     
     override func viewDidLayoutSubviews() {
