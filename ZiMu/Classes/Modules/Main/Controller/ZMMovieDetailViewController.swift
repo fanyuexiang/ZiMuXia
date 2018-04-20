@@ -64,7 +64,6 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     
     fileprivate lazy var baiduYunLabel: QMUILabel = {
         let label = QMUILabel(textColor: AppColor.theme.subTitleColor, fontSize: 20.adapted, FontName: kFontSemiboldName)
-        label.text = "传送门"
         return label
     }()
     
@@ -301,6 +300,15 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         nameLabel.text = movie.name
         infoLabel.sizeToFit()
         
+        if let name = movie.name {
+            if let movies = ZMMovie.objectsWhere("WHERE name == \"\(name)\"", arguments: nil) as? [ZMMovie] {
+                favoriteBtn.isSelected = movies.count != 0
+            }
+        }
+    }
+    
+    fileprivate func refreshBaiduYun() {
+        baiduYunLabel.text = "传送门"
         for (index, _) in movie.baiduYuns.enumerated() {
             let btn = QMUIButton()
             btn.tag = index
@@ -313,12 +321,7 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
             btn.layer.cornerRadius = 6
             floatLayoutView.addSubview(btn)
         }
-        
-        if let name = movie.name {
-            if let movies = ZMMovie.objectsWhere("WHERE name == \"\(name)\"", arguments: nil) as? [ZMMovie] {
-                favoriteBtn.isSelected = movies.count != 0
-            }
-        }
+        viewDidLayoutSubviews()
     }
     
     // MARK: - UIScrollViewDelegate
@@ -410,6 +413,7 @@ extension ZMMovieDetailViewController {
                             }
                         }
                     }
+                    strongSelf.shouldShowBaiduYun()
                     strongSelf.refreshContent()
                 } else {
                     ZMError.handleError(response.result.error)
@@ -417,6 +421,19 @@ extension ZMMovieDetailViewController {
         }
     }
     
+    fileprivate func shouldShowBaiduYun() {
+        Alamofire.request("http://fancyfun.herokuapp.com/zimu/api/v1/movie/detail")
+            .responseJSON { [weak self] (response) in
+                guard let strongSelf = self else { return }
+                if let json = response.result.value as? [String:Any] {
+                    if let show = json["data"] as? Bool {
+                        if show {
+                            strongSelf.refreshBaiduYun()
+                        }
+                    }
+                }
+        }
+    }
     
 }
 
