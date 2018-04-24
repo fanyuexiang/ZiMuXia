@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configGlobalAppearance()
         configUMCAnalytics()
+        configUMPush(launchOptions)
         configKeyWindow()
         configThirdParty()
         return true
@@ -37,6 +39,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MobClick.setCrashReportEnabled(true)
     }
     
+    private func configUMPush(_ launchOptions: [AnyHashable : Any]?) {
+        let entity = UMessageRegisterEntity()
+        entity.types = Int(UMessageAuthorizationOptions.badge.rawValue) | Int(UMessageAuthorizationOptions.alert.rawValue) | Int(UMessageAuthorizationOptions.sound.rawValue)
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+           
+        }
+        UMessage.registerForRemoteNotifications(launchOptions: launchOptions, entity: entity) { (granted, error) in
+            if granted {
+                dPrint(message: "注册远程推送")
+                UMessage.setAlias("test", type: kUMessageAliasTypeQQ, response: { (response, error) in
+                    if error != nil {
+                        dPrint(error)
+                    } else {
+                        dPrint(message: "绑定别名成功")
+                    }
+                })
+            }
+        }
+    }
+    
     private func configKeyWindow() {
         window?.backgroundColor = .white
         window?.rootViewController = WTTabBarController()
@@ -53,6 +77,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return true
+    }
+    
+    // MARK: - 推送相关
+    // 注册APNs成功
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        dPrint(message: "device toke: \(deviceTokenString)")
+        UMessage.registerDeviceToken(deviceToken)
+    }
+    
+    // 注册APNs失败
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        dPrint(error)
+    }
+    
+    //iOS10以下使用这两个方法接收通知
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        UMessage.didReceiveRemoteNotification(userInfo)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        UMessage.didReceiveRemoteNotification(userInfo)
+        completionHandler(.newData)
+    }
+    
+    //iOS10新增：处理前台收到通知的代理方法
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        guard let trigger = notification.request.trigger else { return }
+        if trigger.isKind(of: UNPushNotificationTrigger.self) {
+            //应用处于前台时的远程推送接受
+            UMessage.didReceiveRemoteNotification(userInfo)
+        } else {
+            //应用处于前台时的本地推送接受
+        }
+        completionHandler([.sound,.alert])
+    }
+    
+    //iOS10新增：处理后台点击通知的代理方法
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        guard let trigger = response.notification.request.trigger else { return }
+        if trigger.isKind(of: UNPushNotificationTrigger.self) {
+            //应用处于后台时的远程推送接受
+            UMessage.didReceiveRemoteNotification(userInfo)
+        } else {
+            //应用处于后台时的本地推送接受
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) { }

@@ -18,6 +18,7 @@ end
 def sdk_pods
     pod 'UMCCommon'
     pod 'UMCAnalytics'
+    pod 'UMCPush'
 end
 
 def temp_pods
