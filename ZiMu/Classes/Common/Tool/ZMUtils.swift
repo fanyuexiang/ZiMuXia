@@ -80,4 +80,11 @@ class ZMUtils {
         return image!
     }
     
+    class func showAlert(with title: String, message: String, actionTitle: String, handler: @escaping ((QMUIAlertAction?) -> Void)) {
+        let confirm = QMUIAlertAction(title: actionTitle, style: .default, handler: handler)
+        let alertController = QMUIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController?.addAction(confirm)
+        alertController?.showWith(animated: true)
+    }
+    
 }

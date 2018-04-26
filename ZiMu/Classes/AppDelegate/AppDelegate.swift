@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import QMUIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -18,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configGlobalAppearance()
         configUMCAnalytics()
-        configUMPush(launchOptions)
+//        configUMPush(launchOptions)
+        configJPush(launchOptions)
         configKeyWindow()
         configThirdParty()
         return true
@@ -50,15 +52,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UMessage.registerForRemoteNotifications(launchOptions: launchOptions, entity: entity) { (granted, error) in
             if granted {
                 dPrint(message: "注册远程推送")
-                UMessage.setAlias("test", type: kUMessageAliasTypeQQ, response: { (response, error) in
-                    if error != nil {
-                        dPrint(error)
-                    } else {
-                        dPrint(message: "绑定别名成功")
-                    }
-                })
             }
         }
+    }
+    
+    private func configJPush(_ launchOptions: [AnyHashable : Any]?) {
+        #if DEBUG // debug环境下打开log
+//        JPUSHService.setDebugMode()
+        #else     // RELEASE环境下关闭log
+//        JPUSHService.setLogOFF()
+        #endif
+        let entity = JPUSHRegisterEntity()
+        entity.types = Int(JPAuthorizationOptions.alert.rawValue) |  Int(JPAuthorizationOptions.sound.rawValue) |  Int(JPAuthorizationOptions.badge.rawValue)
+        JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
+        JPUSHService.setup(withOption: launchOptions, appKey: "d74dd4ddc25a50fe70ba3c89", channel: "AppStore", apsForProduction: false)
+        // 添加自定义消息监听
+        kNotificationCenter.addObserver(self, selector: #selector(AppDelegate.networkDidReceiveMessage(_:)), name: NSNotification.Name.jpfNetworkDidReceiveMessage, object: nil)
     }
     
     private func configKeyWindow() {
@@ -85,6 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         dPrint(message: "device toke: \(deviceTokenString)")
         UMessage.registerDeviceToken(deviceToken)
+        JPUSHService.registerDeviceToken(deviceToken)
     }
     
     // 注册APNs失败
@@ -94,11 +104,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     //iOS10以下使用这两个方法接收通知
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        //定制自定的的弹出框
+        if kApplication.applicationState == .active {
+//            ZMUtils.showAlert(with: "通知", message: <#T##String#>, actionTitle: <#T##String#>, handler: <#T##((QMUIAlertAction?) -> Void)##((QMUIAlertAction?) -> Void)##(QMUIAlertAction?) -> Void#>)
+        }
         UMessage.didReceiveRemoteNotification(userInfo)
+        JPUSHService.handleRemoteNotification(userInfo)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         UMessage.didReceiveRemoteNotification(userInfo)
+        JPUSHService.handleRemoteNotification(userInfo)
         completionHandler(.newData)
     }
     
@@ -129,16 +145,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func applicationWillResignActive(_ application: UIApplication) { }
-
-    func applicationDidEnterBackground(_ application: UIApplication) { }
-
-    func applicationWillEnterForeground(_ application: UIApplication) { }
-
-    func applicationDidBecomeActive(_ application: UIApplication) { }
-
-    func applicationWillTerminate(_ application: UIApplication) { }
-
-
 }
 
+extension AppDelegate: JPUSHRegisterDelegate {
+    /// 在前台收到推送内容, 执行的方法
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
+        let userInfo = notification.request.content.userInfo
+        dPrint(userInfo)
+        JPUSHService.handleRemoteNotification(userInfo)
+    }
+    /// 在后台收到推送内容, 执行的方法
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
+        let userInfo = response.notification.request.content.userInfo
+        dPrint(userInfo)
+        JPUSHService.handleRemoteNotification(userInfo)
+    }
+    
+    // 自定义消息
+    @objc func networkDidReceiveMessage(_ notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            dPrint(userInfo)
+            if let content = userInfo["content"] {
+                if let extras = userInfo["extras"] as? [String: Any] {
+                    if let title = extras["title"] as? String {
+                        dPrint(message: "\(content)")
+                        dPrint(message: "\(title)")
+                    }
+                }
+            }
+        }
+    }
+}
