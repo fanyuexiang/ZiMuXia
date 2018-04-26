@@ -39,6 +39,8 @@ let kFontRegularName = "PingFangSC-Regular"
 let kFontSemiboldName = "PingFangSC-Semibold"
 
 /// url routes
+let APP_STORE_DOWNLOAD_URL = "https://itunes.apple.com/cn/app/zimu/id1373116179?l=zh&ls=1&mt=8"
+let APP_STORE_COMMENT_URL = "https://itunes.apple.com/cn/app/zimu/id1373116179?mt=8&action=write-review"
 
 /// 语言
 let APP_LANGUAGE = "AppLanguage"

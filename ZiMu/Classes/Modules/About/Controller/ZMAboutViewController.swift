@@ -26,7 +26,8 @@ final class ZMAboutViewController: ZMTableViewController {
                        [["title":"FIX起源"],
                        ["title":"FIX创始人"]],
                        [["title":"版权声明"],
-                       ["title":"开源协议"]]]
+                       ["title":"开源协议"],
+                       ["title":"意见反馈"]]]
     private var totalSize: Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,11 +107,6 @@ final class ZMAboutViewController: ZMTableViewController {
     }
     
     fileprivate func publicLicense() {
-//        let path = Bundle.main.path(forResource: "Pods-ZiMu-acknowledgements", ofType: "plist")
-//        let viewController = AcknowListViewController(acknowledgementsPlistPath: path)
-//        viewController.title = "致谢"
-//        navigationController?.pushViewController(viewController, animated: true)
-        
         let alamofireItem = LicensingItem(
             title: "Alamofire",
             license: License.mit(owner: "Alamofire Software Foundation (http://alamofire.org/)", years: "2014-2018")
@@ -159,8 +155,7 @@ final class ZMAboutViewController: ZMTableViewController {
     }
     
     fileprivate func appStoreComment() {
-        let url = "https://itunes.apple.com/cn/app/%E6%9D%A5%E4%BD%8F%E5%90%A7/id1191730368?mt=8&action=write-review"
-        kApplication.openURL(URL(string: url)!)
+        kApplication.openURL(URL(string: APP_STORE_COMMENT_URL)!)
         /* import StoreKit
          let vc = SKStoreProductViewController()
          vc.delegate = self
@@ -235,8 +230,10 @@ extension ZMAboutViewController {
         default:
             if indexPath.row == 0 {
                 copyrightDeclaration()
-            } else {
+            } else if indexPath.row == 1 {
                 publicLicense()
+            } else if indexPath.row == 2 {
+                appStoreComment()
             }
         }
     }

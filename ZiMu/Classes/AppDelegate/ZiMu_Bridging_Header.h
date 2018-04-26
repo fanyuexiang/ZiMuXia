@@ -21,7 +21,6 @@
 // 友盟
 #import <UMCommon/UMCommon.h>
 #import <UMAnalytics/MobClick.h>
-#import <UMPush/UMessage.h>
 // 极光推送
 #import "JPUSHService.h"
 // TTTAttributedLabel

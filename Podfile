@@ -18,7 +18,6 @@ end
 def sdk_pods
     pod 'UMCCommon'
     pod 'UMCAnalytics'
-    pod 'UMCPush'
     pod 'JPush' 
 end
 

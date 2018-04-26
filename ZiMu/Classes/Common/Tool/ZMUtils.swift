@@ -87,4 +87,13 @@ class ZMUtils {
         alertController?.showWith(animated: true)
     }
     
+    class func showConfirmOrCancelAlert(with title: String, message: String, actionTitle: String, cancelTitle: String, confirmHandler: @escaping ((QMUIAlertAction?) -> Void)) {
+        let confirm = QMUIAlertAction(title: actionTitle, style: .default, handler: confirmHandler)
+        let cancel = QMUIAlertAction(title: cancelTitle, style: .destructive) {_ in }
+        let alertController = QMUIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController?.addAction(cancel)
+        alertController?.addAction(confirm)
+        alertController?.showWith(animated: true)
+    }
+    
 }
