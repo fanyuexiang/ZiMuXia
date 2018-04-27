@@ -394,8 +394,11 @@ extension ZMMovieDetailViewController {
                             }
                             
                             if let content = doc.search(withXPathQuery: "//div[@class='content-box']").first as? TFHppleElement {
-                                
-                                let strs = content.content.components(separatedBy: "【资源下载】")
+                                var downloadStr = "【资源下载】"
+                                if content.content.contains("【剧集下载】") {
+                                    downloadStr = "【剧集下载】"
+                                }
+                                let strs = content.content.components(separatedBy: downloadStr)
                                 if strs.count > 0 {
                                     strongSelf.movie.producerInfo = strs[0]
                                 }

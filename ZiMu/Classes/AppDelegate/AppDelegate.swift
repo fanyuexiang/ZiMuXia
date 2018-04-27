@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         configJPush(launchOptions)
         configKeyWindow()
         configThirdParty()
+        
+        // 重置脚标
+        application.applicationIconBadgeNumber = 0
+        JPUSHService.resetBadge()
         return true
     }
     
@@ -59,7 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     private func configKeyWindow() {
-        JPUSHService.resetBadge() // 重置脚标
         window?.backgroundColor = .white
         window?.rootViewController = WTTabBarController()
         window?.makeKeyAndVisible()
@@ -124,6 +127,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         } else {
             //应用处于后台时的本地推送接受
         }
+    }
+    
+    // App 进入后台
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        kNotificationCenter.post(name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    
+    // App 进入前台
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        kNotificationCenter.post(name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        application.applicationIconBadgeNumber = 0
+        JPUSHService.resetBadge()
     }
     
 }
