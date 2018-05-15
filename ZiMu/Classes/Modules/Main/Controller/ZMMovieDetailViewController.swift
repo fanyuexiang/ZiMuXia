@@ -67,6 +67,49 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         return label
     }()
     
+    fileprivate lazy var introduceLabel: QMUILabel = {
+        let label = QMUILabel(textColor: AppColor.theme.subTitleColor, fontSize: 20.adapted, FontName: kFontSemiboldName)
+        label.text = "简介"
+        return label
+    }()
+    
+    fileprivate lazy var starLabel: QMUILabel = {
+        let label = QMUILabel(textColor: AppColor.theme.subTitleColor, fontSize: 20.adapted, FontName: kFontSemiboldName)
+        label.text = "评分"
+        return label
+    }()
+    
+    fileprivate lazy var starView: ZMStarRateView = {
+        let starView = ZMStarRateView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 40))
+        starView.selectStarUnit = .half
+        starView.callback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.handleStart($0)
+        }
+        return starView
+    }()
+    
+    fileprivate lazy var segmentedControl: BetterSegmentedControl = {
+        let control = BetterSegmentedControl(
+            frame: .zero,
+            titles: ["想看", "看过", "在看","搁置"],
+            index: 5,
+            options: [.backgroundColor(.white),
+                      .titleColor(AppColor.theme.subTitleColor),
+                      .indicatorViewBackgroundColor(AppColor.theme.separateYellow),
+                      .selectedTitleColor(AppColor.theme.titleColor),
+                      .cornerRadius(4),
+                      .titleFont(UIFont(name: "HelveticaNeue", size: 14.0)!),
+                      .selectedTitleFont(UIFont(name: "HelveticaNeue-Medium", size: 14.0)!)]
+        )
+        control.layer.borderColor = AppColor.theme.separateYellow.cgColor
+        control.layer.borderWidth = 1
+        control.layer.cornerRadius = 4
+        control.addTarget(self, action: #selector(ZMMovieDetailViewController.segmentedControllValueChanged(_:)), for: .valueChanged)
+        return control
+    }()
+    
+    
     fileprivate lazy var floatLayoutView: QMUIFloatLayoutView = {
         let floatLayoutView = QMUIFloatLayoutView()
         floatLayoutView.padding = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
@@ -132,6 +175,10 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         scrollView.addSubview(postMaskImageView)
         scrollView.addSubview(nameLabel)
         scrollView.addSubview(favoriteBtn)
+        scrollView.addSubview(starLabel)
+        scrollView.addSubview(starView)
+        scrollView.addSubview(segmentedControl)
+        scrollView.addSubview(introduceLabel)
         scrollView.addSubview(infoLabel)
         scrollView.addSubview(baiduYunLabel)
         scrollView.addSubview(floatLayoutView)
@@ -165,11 +212,41 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
             $0.width.height.equalTo(50)
         }
         
+        starLabel.snp.makeConstraints {
+            $0.left.equalTo(scrollView).offset(10)
+            $0.top.equalTo(postImageView.snp.bottom)
+                .offset(20)
+        }
+        
+        starView.snp.makeConstraints {
+            $0.top.equalTo(starLabel.snp.bottom)
+            .offset(20)
+            $0.height.equalTo(30)
+            $0.left.equalTo(starLabel)
+            $0.width.equalTo(150)
+        }
+        
+        segmentedControl.snp.makeConstraints {
+            $0.top.equalTo(starView.snp.bottom).offset(20)
+            $0.height.equalTo(44)
+            $0.left.equalTo(scrollView).offset(10)
+            $0.right.equalTo(scrollView).offset(-10)
+        }
+        
+        introduceLabel.snp.makeConstraints {
+            $0.right.equalTo(scrollView).offset(-10)
+            $0.left.equalTo(scrollView).offset(10)
+            $0.width.equalTo(kScreenWidth-20)
+            $0.top.equalTo(segmentedControl.snp.bottom)
+                .offset(20)
+        }
+        
         infoLabel.snp.makeConstraints {
             $0.right.equalTo(scrollView).offset(-10)
             $0.left.equalTo(scrollView).offset(10)
             $0.width.equalTo(kScreenWidth-20)
-            $0.top.equalTo(postImageView.snp.bottom)
+            $0.top.equalTo(introduceLabel.snp.bottom)
+                .offset(10)
         }
         
         baiduYunLabel.snp.makeConstraints {
@@ -269,11 +346,8 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
     }
     
     @objc fileprivate func handleFavorite(_ sender: QMUIButton) {
-        if sender.isSelected {
-            movie.delete()
-        } else {
-            movie.save()
-        }
+        movie.isFav = !sender.isSelected
+        movie.save()
         let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         impliesAnimation.values = [1.0, 0.8, 1.0]
         impliesAnimation.duration = 0.2
@@ -292,6 +366,16 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
             }
         }
     }
+    
+    @objc func segmentedControllValueChanged(_ sender: BetterSegmentedControl) {
+        movie.watchStatus = MovieStatus(rawValue: Int(sender.index))!
+        movie.save()
+    }
+    
+    fileprivate func handleStart(_ currentCount:Float) {
+        movie.score = currentCount
+        movie.save()
+    }
 
     // MARK: - 刷新内容
     fileprivate func refreshContent() {
@@ -302,9 +386,22 @@ final class ZMMovieDetailViewController: ZMViewController, UIScrollViewDelegate 
         
         if let name = movie.name {
             if let movies = ZMMovie.objectsWhere("WHERE name == \"\(name)\"", arguments: nil) as? [ZMMovie] {
-                favoriteBtn.isSelected = movies.count != 0
+                if movies.count != 0 {
+                    movie.score = movies[0].score
+                    movie.isFav = movies[0].isFav
+                    movie.watchStatus = movies[0].watchStatus
+                }
             }
         }
+        favoriteBtn.isSelected = movie.isFav
+        starView.selectNumberOfStar = movie.score
+        do {
+            try segmentedControl
+                .setIndex(UInt(movie.watchStatus.rawValue), animated: false)
+            } catch {
+                dPrint(error)
+            }
+        movie.save()
     }
     
     fileprivate func refreshBaiduYun() {
@@ -372,7 +469,7 @@ extension ZMMovieDetailViewController: QMUIImagePreviewViewDelegate {
 extension ZMMovieDetailViewController {
     
     fileprivate func getMovieDetail() {
-//        showLoading()
+        showLoading()
         Alamofire.request(detailUrl)
             .responseData { [weak self] (response) in
                 guard let strongSelf = self else { return }
@@ -425,7 +522,8 @@ extension ZMMovieDetailViewController {
     }
     
     fileprivate func shouldShowBaiduYun() {
-        Alamofire.request("http://fancyfun.herokuapp.com/zimu/api/v1/movie/detail")
+        let v = kBundle.infoDictionary?["CFBundleShortVersionString"] as! String
+        Alamofire.request("http://fancyfun.herokuapp.com/zimu/api/v1/movie/detail", method: .get, parameters: ["v":v])
             .responseJSON { [weak self] (response) in
                 guard let strongSelf = self else { return }
                 if let json = response.result.value as? [String:Any] {

@@ -41,6 +41,14 @@ final class ZMBanner: ZMBaseModel {
 }
 
 /// 电影
+@objc enum MovieStatus: Int {
+    case wantWatch
+    case watched
+    case watching
+    case suspend
+    case other
+}
+
 final class ZMMovie: ZMCacheModel {
     @objc dynamic var name: String?
     @objc dynamic var classification: String?
@@ -50,6 +58,9 @@ final class ZMMovie: ZMCacheModel {
     @objc dynamic var producerInfo: String?
     @objc dynamic var synopsis: String?
     @objc dynamic var baiduYuns: [ZMBaiduYun] = [ZMBaiduYun]()
+    @objc dynamic var watchStatus: MovieStatus = .other
+    @objc dynamic var score: Float = 0
+    @objc dynamic var isFav: Bool = false
     
     override class func dbName() -> String {
         return "ZiMu_Data"
@@ -64,7 +75,7 @@ final class ZMMovie: ZMCacheModel {
     }
     
     override class func persistentProperties() -> [Any] {
-        return ["name", "classification","poster","homepagePoster","homepageUrl","producerInfo","synopsis"]
+        return ["name", "classification","poster","homepagePoster","homepageUrl","producerInfo","synopsis","isFav","watchStatus","score"]
     }
     
     public func copy() -> ZMMovie {

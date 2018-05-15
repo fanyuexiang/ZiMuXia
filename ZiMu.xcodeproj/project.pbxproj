@@ -82,6 +82,9 @@
 		B178251120747F06006A0778 /* GYModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250B20747F06006A0778 /* GYModelObject.m */; };
 		B178251220747F06006A0778 /* GYDataContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B178250C20747F06006A0778 /* GYDataContext.m */; };
 		B1782514207488E9006A0778 /* ZMCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1782513207488E9006A0778 /* ZMCollectionViewController.swift */; };
+		B194EFC220AA8EF20041C17E /* ZMStarRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194EFC120AA8EF10041C17E /* ZMStarRateView.swift */; };
+		B194EFC620AA95070041C17E /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194EFC420AA95070041C17E /* Options.swift */; };
+		B194EFC720AA95070041C17E /* BetterSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194EFC520AA95070041C17E /* BetterSegmentedControl.swift */; };
 		B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B812068C0E700773368 /* ZMMainViews.swift */; };
 		B1954B842068C25200773368 /* UILabel+ZM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B832068C25200773368 /* UILabel+ZM.swift */; };
 		B1954B882068C4DB00773368 /* CGFloat+WT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1954B852068C4DA00773368 /* CGFloat+WT.swift */; };
@@ -207,6 +210,9 @@
 		B178250B20747F06006A0778 /* GYModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYModelObject.m; sourceTree = "<group>"; };
 		B178250C20747F06006A0778 /* GYDataContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYDataContext.m; sourceTree = "<group>"; };
 		B1782513207488E9006A0778 /* ZMCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMCollectionViewController.swift; sourceTree = "<group>"; };
+		B194EFC120AA8EF10041C17E /* ZMStarRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZMStarRateView.swift; sourceTree = "<group>"; };
+		B194EFC420AA95070041C17E /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		B194EFC520AA95070041C17E /* BetterSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterSegmentedControl.swift; sourceTree = "<group>"; };
 		B1954B812068C0E700773368 /* ZMMainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMMainViews.swift; sourceTree = "<group>"; };
 		B1954B832068C25200773368 /* UILabel+ZM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ZM.swift"; sourceTree = "<group>"; };
 		B1954B852068C4DA00773368 /* CGFloat+WT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+WT.swift"; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 		2C10DB7A2067880100AE28F8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B194EFC320AA95070041C17E /* BetterSegmentedControl */,
 				B1B2D12C207E0864009EFEAC /* TTTAttributedLabel */,
 				B13AD09F207B19B900BA09D4 /* CWShareView */,
 				B13AD08E207B12E100BA09D4 /* MonkeyKing */,
@@ -469,6 +476,7 @@
 		2C10DBA82067A38200AE28F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B194EFC120AA8EF10041C17E /* ZMStarRateView.swift */,
 				B1954B812068C0E700773368 /* ZMMainViews.swift */,
 				B10B356A206B68830093867A /* ZMTransition.swift */,
 			);
@@ -667,6 +675,15 @@
 				B178250720747F06006A0778 /* GYDCUtilities.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B194EFC320AA95070041C17E /* BetterSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				B194EFC420AA95070041C17E /* Options.swift */,
+				B194EFC520AA95070041C17E /* BetterSegmentedControl.swift */,
+			);
+			path = BetterSegmentedControl;
 			sourceTree = "<group>";
 		};
 		B1954B8C2068EAAC00773368 /* ZJFlexibleLayout */ = {
@@ -897,6 +914,7 @@
 				B13AD0A6207B19BA00BA09D4 /* ShareView.swift in Sources */,
 				B1954B822068C0E700773368 /* ZMMainViews.swift in Sources */,
 				2C10DBEC20693D1300AE28F8 /* PixabayAPI.swift in Sources */,
+				B194EFC720AA95070041C17E /* BetterSegmentedControl.swift in Sources */,
 				B178251120747F06006A0778 /* GYModelObject.m in Sources */,
 				B1B2D12B207DEB0B009EFEAC /* AppThirdParty.swift in Sources */,
 				B178251020747F06006A0778 /* GYDBRunner.m in Sources */,
@@ -923,12 +941,14 @@
 				B1782514207488E9006A0778 /* ZMCollectionViewController.swift in Sources */,
 				B17824A820735174006A0778 /* AppCache.swift in Sources */,
 				2C10DBB02067A57700AE28F8 /* ZMTabBarController.swift in Sources */,
+				B194EFC220AA8EF20041C17E /* ZMStarRateView.swift in Sources */,
 				B13AD0A4207B19BA00BA09D4 /* ShareSheetCell.swift in Sources */,
 				B10B3570206B8B5E0093867A /* ZMMovieDetailViewController.swift in Sources */,
 				B10B3564206A531E0093867A /* AppFont.swift in Sources */,
 				B10B356B206B68830093867A /* ZMTransition.swift in Sources */,
 				B178251220747F06006A0778 /* GYDataContext.m in Sources */,
 				2C10DB9A20678EAB00AE28F8 /* TYTabPagerBarCell.m in Sources */,
+				B194EFC620AA95070041C17E /* Options.swift in Sources */,
 				B178250E20747F06006A0778 /* GYReflection.m in Sources */,
 				2C335E45207854E700223599 /* License.swift in Sources */,
 				B10B3562206A50400093867A /* ZMIntroduceViewController.swift in Sources */,

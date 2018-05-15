@@ -44,7 +44,7 @@ final class ZMCollectionViewController: ZMViewController {
     }
     
     private func refreshCollectionView() {
-        if let movies = ZMMovie.objectsWhere(nil, arguments: nil) as? [ZMMovie] {
+        if let movies = ZMMovie.objectsWhere("WHERE isFav=?", arguments: [1]) as? [ZMMovie] {
             self.movies = movies
         }
         if movies.count == 0 {
